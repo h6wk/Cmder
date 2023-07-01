@@ -1,0 +1,7 @@
+
+class Agent
+{
+public:
+  Agent();
+
+};
