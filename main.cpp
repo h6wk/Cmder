@@ -11,6 +11,9 @@ int main() {
 
   {
     Agent::SharedPtr agentSp = Agent::create();
+    if (agentSp) {
+      agentSp->doTask(Agent::Blocking, "???");
+    }
   }
 
   LOG("Program end");
