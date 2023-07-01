@@ -7,10 +7,12 @@
 int main() {
   pthread_setname_np(pthread_self(), "TH_MAIN");
 
-  LOG("Start");
+  LOG("Program start");
 
-  Agent agent;
+  {
+    Agent::SharedPtr agentSp = Agent::create();
+  }
 
-  LOG("End");
+  LOG("Program end");
   return 0;
 }
