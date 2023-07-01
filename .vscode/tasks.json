@@ -8,8 +8,8 @@
                 "-fdiagnostics-color=always",
                 "-std=c++20",
                 "-g",
-                //"${file}",
                 "${workspaceFolder}/*.cpp",
+                //"${workspaceFolder}/server/*.cpp",
                 "-o",
                 //"${fileDirname}\\${fileBasenameNoExtension}.exe"
                 "${workspaceFolder}\\Cmder.exe"

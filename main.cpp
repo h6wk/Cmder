@@ -4,7 +4,13 @@
 
 #include "Agent.hpp"
 
+#include "Server.hpp"
+
 int main() {
+
+  Server server;
+  server.start();
+
   pthread_setname_np(pthread_self(), "TH_MAIN");
 
   LOG("Program start");
