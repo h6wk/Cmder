@@ -1,6 +1,7 @@
 
-#include <thread>
+#include <condition_variable>
 #include <memory>
+#include <thread>
 
 class Server {
 public:
@@ -15,4 +16,10 @@ private:
   void run();
 
   std::unique_ptr<std::thread> mThreadPtr;
+
+  std::mutex mMutex;
+  std::condition_variable mConditionVariable;
+
+  enum Status {Init, Start, Run, Stop};
+  Status mStatus;
 };
