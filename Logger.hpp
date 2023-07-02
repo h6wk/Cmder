@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <thread>
 
 inline std::string className(const std::string& prettyFunction)
 {
@@ -24,7 +25,8 @@ struct scoped_logger
   {
     char name[8];
     pthread_getname_np(pthread_self(), &name[0], sizeof(name));
-    _ss << "[" << name << "," << getpid() << "] " << className << "::" << funcName << "(" << line << "): ";
+    _ss << "[" << name << "," << getpid() << "/" << std::this_thread::get_id() 
+        << "] " << className << "::" << funcName << "(" << line << "): ";
   }
 
   std::stringstream& stream(){ return _ss; }
