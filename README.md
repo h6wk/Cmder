@@ -14,11 +14,9 @@ Install MSYS2. Follow https://code.visualstudio.com/docs/cpp/config-mingw to set
 ...
 
 
-<div hidden>
+```plantuml
 
-```
-
-@startuml classdiagram
+@startuml
 
 class Agent {
         #Agent()
@@ -67,4 +65,3 @@ class scoped_logger {
 
 @enduml
 ```
-</div>
