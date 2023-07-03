@@ -36,15 +36,18 @@ std::string Agent::doTask(Mode mode, const std::string &task) const
 {
   std::string result;
   LOG("Task started in " << mode << " mode");
+  if (mCallback) {
+    mCallback->notify("Task started: " + task);
+  }
 
   std::future<std::string> futureResult = std::async([]() {
 
-    pthread_setname_np(pthread_self(), "TH_EXECUTOR");
+    //pthread_setname_np(pthread_self(), "TH_EXECUTOR");
 
     using namespace std::chrono_literals;
 
     LOG("Executor thread start");
-    std::this_thread::sleep_for(5000ms);
+    std::this_thread::sleep_for(2000ms);
     LOG("Executor thread stop");
     return std::string("3.14");
     });
@@ -55,6 +58,7 @@ std::string Agent::doTask(Mode mode, const std::string &task) const
 }
 
 Agent::Agent(const Server& server, Callback::SharedPtr callback)
+: mCallback(callback)
 {
   LOG("Created");
 }

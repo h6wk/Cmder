@@ -29,8 +29,10 @@ public:
   /// @return Get the return value
   std::string doTask(Mode mode, const std::string& task) const;
 
-protected:
+private:
   explicit Agent(const Server& server, Callback::SharedPtr callback);
+
+  Callback::SharedPtr mCallback;
 };
 
 std::ostream& operator<<(std::ostream& ostr, const Agent::Mode& mode);

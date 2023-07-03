@@ -20,6 +20,11 @@ int main() {
     if (agentSp) {
       agentSp->doTask(Agent::Blocking, "???");
     }
+
+    callback ?
+      LOG("Notifications: " << *callback)
+      : LOG("Notifications: -");
+
   }
 
   LOG("Program end");
