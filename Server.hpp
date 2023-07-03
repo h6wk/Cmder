@@ -1,3 +1,5 @@
+#ifndef SERVER_H_INCLUDED
+#define SERVER_H_INCLUDED
 
 #include <condition_variable>
 #include <memory>
@@ -23,3 +25,5 @@ private:
   enum Status {Init, Start, Run, Stop};
   Status mStatus;
 };
+
+#endif

@@ -1,9 +1,12 @@
+#ifndef AGENT_H_INCLUDED
+#define AGENT_H_INCLUDED
+
+#include "Callback.hpp"
+#include "Server.hpp"
 
 #include <memory>
 #include <string>
 
-#ifndef AGENT_H_INCLUDED
-#define AGENT_H_INCLUDED
 
 class Agent
 {
@@ -12,8 +15,11 @@ public:
   enum Mode {Async, Blocking};
 
   /// @brief Create a new Agent object.
+  /// @param server Reference to the server that will be called to do the task
+  /// @param callback Shared pointer to the callback (async!)
+  ///                 Empty pointer -> only blocking mode is possible
   /// @return Shared pointer on the newly created object.
-  static SharedPtr create();
+  static SharedPtr create(const Server& server, Callback::SharedPtr callback);
 
   virtual ~Agent();
 
@@ -24,7 +30,7 @@ public:
   std::string doTask(Mode mode, const std::string& task) const;
 
 protected:
-  Agent();
+  explicit Agent(const Server& server, Callback::SharedPtr callback);
 };
 
 std::ostream& operator<<(std::ostream& ostr, const Agent::Mode& mode);

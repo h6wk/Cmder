@@ -1,21 +1,22 @@
 
-#include <iostream>
-#include "Logger.hpp"
-
 #include "Agent.hpp"
-
+#include "Callback.hpp"
+#include "Logger.hpp"
 #include "Server.hpp"
 
+#include <iostream>
+
 int main() {
+
+  LOG("Program start");
 
   Server server;
   server.start();
 
-
-  LOG("Program start");
-
   {
-    Agent::SharedPtr agentSp = Agent::create();
+    Callback::SharedPtr callback = std::make_shared<Callback>();
+    Agent::SharedPtr agentSp = Agent::create(server, callback);
+    
     if (agentSp) {
       agentSp->doTask(Agent::Blocking, "???");
     }

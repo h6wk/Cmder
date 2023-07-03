@@ -21,12 +21,15 @@ std::ostream& operator<<(std::ostream& ostr, const Agent::Mode& mode)
 }
 
 
-Agent::SharedPtr Agent::create()
+Agent::SharedPtr Agent::create(const Server& server, Callback::SharedPtr callback)
 {
   //Use a temporary subclass to make a connection between a smart pointer generator function and a class with a private constructor.
-  struct MkSharedEnabler : public Agent {};
-  auto instance = std::make_shared<MkSharedEnabler>();
+  struct MkSharedEnabler : public Agent {
+    MkSharedEnabler(const Server& server, Callback::SharedPtr cb) : Agent(server, cb) {}
+  };
+  auto instance = std::make_shared<MkSharedEnabler>(server, callback);
   return instance;
+  //return std::make_shared<Agent>(server);
 }
 
 std::string Agent::doTask(Mode mode, const std::string &task) const
@@ -51,7 +54,7 @@ std::string Agent::doTask(Mode mode, const std::string &task) const
   return result;
 }
 
-Agent::Agent()
+Agent::Agent(const Server& server, Callback::SharedPtr callback)
 {
   LOG("Created");
 }
