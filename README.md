@@ -13,9 +13,12 @@ Install MSYS2. Follow https://code.visualstudio.com/docs/cpp/config-mingw to set
 ## Linux
 ...
 
+
 <div hidden>
+
 ```
-@startuml
+
+@startuml classdiagram
 
 class Agent {
         #Agent()
