@@ -6,18 +6,6 @@
 #include <future>
 #include <thread>
 
-std::ostream& operator<<(std::ostream& ostr, const Agent::Mode& mode)
-{
-  switch (mode) {
-  case Agent::Async:
-    ostr << "async";
-    break;
-  case Agent::Blocking:
-    ostr << "blocking";
-    break;
-  }
-  return ostr;
-}
 
 std::ostream& operator<<(std::ostream& ostr, const Agent::Task& task)
 {
@@ -46,10 +34,12 @@ Agent::SharedPtr Agent::create(const Server& server, Callback::SharedPtr callbac
   return instance;
 }
 
-Receipt Agent::doTask(Agent::Mode mode, Agent::Task task, std::string& result) const
+
+Receipt Agent::doTask(Receipt::Mode mode, Agent::Task task, std::string& result) const
 {
+  Receipt receipt(mode);
+
   result.clear();
-  
   LOG("Task '" << task << "' started in " << mode << " mode");
   if (mCallback) {
     mCallback->notify("Task started: " + task);
@@ -67,9 +57,20 @@ Receipt Agent::doTask(Agent::Mode mode, Agent::Task task, std::string& result) c
     return std::string("3.14");
     });
 
-  result = futureResult.get();
-  LOG("Task ended. Return value: " << result);
-  return Receipt();
+
+  switch (mode) {
+  case Receipt::Async:
+    // TODO: register the future in a store, put the result later into the callback
+    break;
+  case Receipt::Blocking:
+    result = futureResult.get();
+    break;
+  }
+
+  LOG("Leaving method with return value: " << result);
+
+  receipt.setEndTime();
+  return receipt;
 }
 
 Agent::Agent(const Server& server, Callback::SharedPtr callback)

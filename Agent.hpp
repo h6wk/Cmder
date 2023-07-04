@@ -21,9 +21,9 @@ class Agent
 {
 public:
   using SharedPtr = std::shared_ptr<Agent>;
-  enum Mode {Async, Blocking};
   enum Task {Pi, BlockMe_3s, PingMe_5x};
   enum ReturnCode {OK, FAIL};
+
 
   /// @brief Create a new Agent object.
   /// @param server Reference to the server that will be called to do the task
@@ -41,7 +41,7 @@ public:
   ///         into the callbak.
   /// @return Get back a receipt of ackowledge that can be used to find the corresponding
   ///         async result.
-  Receipt doTask(Mode mode, Task task, std::string& result) const;
+  Receipt doTask(Receipt::Mode mode, Task task, std::string& result) const;
 
 private:
   explicit Agent(const Server& server, Callback::SharedPtr callback);
@@ -52,7 +52,6 @@ private:
                                   //< some selection criteria.
 };
 
-std::ostream& operator<<(std::ostream& ostr, const Agent::Mode& mode);
 std::ostream& operator<<(std::ostream& ostr, const Agent::Task& task);
 
 #endif // AGENT_H_INCLUDED

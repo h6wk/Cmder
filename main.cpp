@@ -19,7 +19,7 @@ int main() {
     
     if (agentSp) {
       std::string result;
-      const Receipt receipt = agentSp->doTask(Agent::Blocking, Agent::Pi, result);
+      const Receipt receipt = agentSp->doTask(Receipt::Blocking, Agent::Pi, result);
     }
 
     LOG("Notifications: " << callback);

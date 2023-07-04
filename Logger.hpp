@@ -9,16 +9,23 @@
 
 inline static std::mutex sLoggerMutex;
 
+/// Example:
+///   Receipt Agent::doTask(Agent::Mode mode, Agent::Task task, std::string& result) const
+///   Agent::doTask(Mode, Task, std::string&) const::<lambda()>
 inline std::string className(const std::string& prettyFunction)
 {
-  size_t colons = prettyFunction.rfind("::");
+  //bool isLambda = (prettyFunction.find("<lambda()>") != std::string::npos);
+  size_t openBracket = prettyFunction.find("(");
+
+  size_t colons = prettyFunction.substr(0, openBracket).rfind("::");
   if (colons == std::string::npos) { 
     return "";
   }
-  size_t begin = prettyFunction.substr(0,colons).rfind(" ") + 1;
+  size_t begin = prettyFunction.substr(0, colons).rfind(" ") + 1;
   size_t end = colons - begin;
 
-  return prettyFunction.substr(begin,end);
+  std::string result(prettyFunction.substr(begin, end));
+  return result;
 }
 
 struct scoped_logger
