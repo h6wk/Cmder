@@ -16,12 +16,12 @@ public:
 
   void notify(const std::string& message);
 
-  friend std::ostream& operator<<(std::ostream& ostr, const Callback& cb);
+  friend std::ostream& operator<<(std::ostream& ostr, const Callback::SharedPtr& cb);
 
 private:
   std::map<std::chrono::time_point<std::chrono::system_clock>, std::string> mMessages;
 };
 
-std::ostream& operator<<(std::ostream& ostr, const Callback& cb);
+std::ostream& operator<<(std::ostream& ostr, const Callback::SharedPtr& cb);
 
 #endif

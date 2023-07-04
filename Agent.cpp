@@ -8,13 +8,28 @@
 
 std::ostream& operator<<(std::ostream& ostr, const Agent::Mode& mode)
 {
-  switch (mode)
-  {
+  switch (mode) {
   case Agent::Async:
     ostr << "async";
     break;
   case Agent::Blocking:
     ostr << "blocking";
+    break;
+  }
+  return ostr;
+}
+
+std::ostream& operator<<(std::ostream& ostr, const Agent::Task& task)
+{
+  switch (task) {
+  case Agent::Task::BlockMe_3s:
+    ostr << "BLOCK_ME_3s";
+    break;
+  case Agent::Task::Pi:
+    ostr << "PI";
+    break;
+  case Agent::Task::PingMe_5x:
+    ostr << "PING_ME_5x";
     break;
   }
   return ostr;
@@ -29,13 +44,13 @@ Agent::SharedPtr Agent::create(const Server& server, Callback::SharedPtr callbac
   };
   auto instance = std::make_shared<MkSharedEnabler>(server, callback);
   return instance;
-  //return std::make_shared<Agent>(server);
 }
 
-std::string Agent::doTask(Mode mode, const std::string &task) const
+Receipt Agent::doTask(Agent::Mode mode, Agent::Task task, std::string& result) const
 {
-  std::string result;
-  LOG("Task started in " << mode << " mode");
+  result.clear();
+  
+  LOG("Task '" << task << "' started in " << mode << " mode");
   if (mCallback) {
     mCallback->notify("Task started: " + task);
   }
@@ -54,11 +69,12 @@ std::string Agent::doTask(Mode mode, const std::string &task) const
 
   result = futureResult.get();
   LOG("Task ended. Return value: " << result);
-  return result;
+  return Receipt();
 }
 
 Agent::Agent(const Server& server, Callback::SharedPtr callback)
 : mCallback(callback)
+, mServer(server)
 {
   LOG("Created");
 }

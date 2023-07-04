@@ -18,13 +18,11 @@ int main() {
     Agent::SharedPtr agentSp = Agent::create(server, callback);
     
     if (agentSp) {
-      agentSp->doTask(Agent::Blocking, "???");
+      std::string result;
+      const Receipt receipt = agentSp->doTask(Agent::Blocking, Agent::Pi, result);
     }
 
-    callback ?
-      LOG("Notifications: " << *callback)
-      : LOG("Notifications: -");
-
+    LOG("Notifications: " << callback);
   }
 
   LOG("Program end");

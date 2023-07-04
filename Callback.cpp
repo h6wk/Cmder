@@ -10,9 +10,14 @@ void Callback::notify(const std::string &message)
   LOG("Add: '" << message << "' count: " << mMessages.size());
 }
 
-std::ostream &operator<<(std::ostream &ostr, const Callback &cb)
+std::ostream &operator<<(std::ostream &ostr, const Callback::SharedPtr &cb)
 {
-  for (auto message : cb.mMessages) {
+  if ( ! cb) {
+    ostr << "-";
+    return ostr;
+  }
+
+  for (auto message : cb->mMessages) {
     ostr << "\n        " << message.first << ": " << message.second;
   }
   return ostr;
