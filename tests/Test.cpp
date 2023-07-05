@@ -1,7 +1,19 @@
 #include "Test.hpp"
+#include "../Logger.hpp"
 
-//  mingw-w64-x86_64-gtest !
+#include <iostream>
 
-Test::Test()
+
+////////////////////////// SIMPLE TEST
+TEST(FirstTest, TestOne)
 {
+  EXPECT_TRUE(true);
+}
+
+
+
+/////////////////////////// FIXTURES
+TEST_F(ServerTest, T1)
+{
+  EXPECT_TRUE(false);
 }

@@ -32,8 +32,7 @@ int main() {
   LOG("Program end");
 
   // For testing:
-  Test t;
-
+  runTests();
 
   return 0;
 }
