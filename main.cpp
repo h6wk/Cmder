@@ -4,6 +4,10 @@
 #include "Logger.hpp"
 #include "Server.hpp"
 
+// For testing:
+#include "tests/Test.hpp"
+
+
 #include <iostream>
 
 int main() {
@@ -26,5 +30,10 @@ int main() {
   }
 
   LOG("Program end");
+
+  // For testing:
+  Test t;
+
+
   return 0;
 }
