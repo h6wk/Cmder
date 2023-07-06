@@ -42,7 +42,7 @@ Receipt Agent::doTask(Receipt::Mode mode, Agent::Task task, std::string& result)
   result.clear();
   LOG("Task '" << task << "' started in " << mode << " mode");
   if (mCallback) {
-    mCallback->notify("Task started: " + task);
+    mCallback->notify(receipt.getTaskId(), Callback::NOTIFICATION, "Task started: " + task);
   }
 
   std::future<std::string> futureResult = std::async([]() {

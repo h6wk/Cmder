@@ -3,6 +3,7 @@
 #include <atomic>
 #include <iostream>
 
+
 static std::atomic<TaskId> sNextTaskId = 0; 
 
 
@@ -24,10 +25,42 @@ Receipt::Receipt(Receipt::Mode mode)
 : mMode(mode)
 , mTaskId(sNextTaskId++)
 , mStartTime(std::chrono::system_clock::now())
+, mEndTime()
+, mStatus(OK)
 {
 }
 
 void Receipt::setEndTime()
 {
   mEndTime = std::chrono::system_clock::now();
+}
+
+Receipt::Mode Receipt::getExecutionMode() const
+{
+  return mMode;
+}
+
+TaskId Receipt::getTaskId() const
+{
+  return mTaskId;
+}
+
+const Receipt::ChronotTime_t& Receipt::getStartTime() const
+{
+  return mStartTime;
+}
+
+const Receipt::ChronotTime_t& Receipt::getEndTime() const
+{
+    return mEndTime;
+}
+
+Receipt::Status Receipt::getStatus() const
+{
+  return mStatus;
+}
+
+void Receipt::setStatus(Status status)
+{
+  mStatus = status;
 }

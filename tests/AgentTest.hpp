@@ -13,31 +13,32 @@ namespace Cmder::Testing {
     // Called before the first test in this test suite.
     static void SetUpTestSuite() {
       sCallback = std::make_shared<Callback>();
-      //sAgent = Agent::create(sServer, sCallback);
-      //sNoCallbackAgent = Agent::create(sServer, Callback::SharedPtr());
+      sNoCallbackAgent = Agent::create(sServer, Callback::SharedPtr());
+      sAsyncAgent = Agent::create(sServer, sCallback);
     }
 
     // Per-test-suite tear-down.
     // Called after the last test in this test suite.
     // Can be omitted if not needed.
     static void TearDownTestSuite() {
-      //sNoCallbackAgent.reset();
-      //sAgent.reset();
+      sAsyncAgent.reset();
+      sNoCallbackAgent.reset();
       sCallback.reset();
     }
 
     // virtual void SetUp() will be called before each test is run.
     void SetUp() override {
+      sCallback->clear();
     }
 
     // virtual void TearDown() will be called after each test is run. You should define it if there is cleanup work to do.
     //virtual void TearDown() {
     //}
 
-    //static Server sServer;
+    static Server sServer;
     static Callback::SharedPtr sCallback;
-    //static Agent::SharedPtr sAgent;
-    //static Agent::SharedPtr sNoCallbackAgent;
+    static Agent::SharedPtr sNoCallbackAgent;
+    static Agent::SharedPtr sAsyncAgent;
   };
 }
 
