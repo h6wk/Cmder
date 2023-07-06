@@ -22,8 +22,6 @@ class Agent
 public:
   using SharedPtr = std::shared_ptr<Agent>;
   enum Task {Pi, BlockMe_3s, PingMe_5x};
-  enum ReturnCode {OK, FAIL};
-
 
   /// @brief Create a new Agent object.
   /// @param server Reference to the server that will be called to do the task
