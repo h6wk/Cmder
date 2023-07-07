@@ -25,7 +25,9 @@ Install MSYS2. Follow https://code.visualstudio.com/docs/cpp/config-mingw to set
 ## Linux
 ...
 
-# Class diagram
+# Design
+
+## Class diagram
 
 Using hpp2plantuml. Installation:
 
@@ -38,3 +40,8 @@ Generate PlantUML:
 
 
 ![classdiag](diagrams/classdiagram.svg "Class diagram")
+
+## Sequence diagrams
+
+### Blocking the client with active notification channel
+![seq_diagram](diagrams/seq_user_agent_blocking_with_callback.svg "Blocking call")
