@@ -8,6 +8,10 @@
 #include <memory>
 #include <string>
 
+
+/**
+ * Thread safe container to store the notifications / results between the Agent and the User
+ */
 class Callback
 {
 public:
@@ -21,7 +25,7 @@ public:
   };
 
   Callback() = default;
-  virtual ~Callback() = default;
+  virtual ~Callback();
 
   /// @brief Add a new message into the callback.
   void notify(TaskId taskId, Type type, const std::string& message);
@@ -46,8 +50,11 @@ public:
   friend std::ostream& operator<<(std::ostream& ostr, const Callback::SharedPtr& cb);
 
 private:
+
   using Key_t = std::pair<TaskId, Type>;
+
   std::map<Key_t, Message_t> mMessages;
+  std::mutex mMutex;
 };
 
 std::ostream& operator<<(std::ostream& ostr, const Callback::SharedPtr& cb);

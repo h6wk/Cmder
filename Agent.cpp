@@ -2,10 +2,10 @@
 #include "Agent.hpp"
 #include "Logger.hpp"
 
+#include <assert.h>
 #include <chrono>
 #include <future>
 #include <thread>
-
 
 std::ostream& operator<<(std::ostream& ostr, const Agent::Task& task)
 {
@@ -40,21 +40,34 @@ Receipt Agent::doTask(Receipt::Mode mode, Agent::Task task, std::string& result)
   Receipt receipt(mode);
 
   result.clear();
+
   LOG("Task '" << task << "' started in " << mode << " mode");
   if (mCallback) {
     mCallback->notify(receipt.getTaskId(), Callback::NOTIFICATION, "Task started: " + task);
   }
+  else {
+    assert(mode != Receipt::Async);
+  }
 
-  std::future<std::string> futureResult = std::async([]() {
+  // This is the Agent's internal thread!
+  std::future<std::string> futureResult = std::async([&mode, this, &receipt]() {
 
     //pthread_setname_np(pthread_self(), "TH_EXECUTOR");
 
     using namespace std::chrono_literals;
 
     LOG("Executor thread start");
-    std::this_thread::sleep_for(2000ms);
+    std::this_thread::sleep_for(1000ms);
     LOG("Executor thread stop");
-    return std::string("3.14");
+
+    const std::string result("3.14");
+
+    if (mode == Receipt::Async) {
+      this->mCallback->notify(receipt.getTaskId(), Callback::RESULT, result);
+      return std::string("");
+    }
+
+    return result;
     });
 
 
@@ -63,6 +76,7 @@ Receipt Agent::doTask(Receipt::Mode mode, Agent::Task task, std::string& result)
     // TODO: register the future in a store, put the result later into the callback
     break;
   case Receipt::Blocking:
+    // The client's thred is blocked until the future is not calculated!
     result = futureResult.get();
     break;
   }

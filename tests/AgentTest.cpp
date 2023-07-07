@@ -22,6 +22,7 @@ namespace Cmder::Testing {
     EXPECT_EQ(receipt.getStatus(), Receipt::OK); 
     EXPECT_EQ(receipt.getExecutionMode(), Receipt::Blocking);
 
+    // Don't have any RESULT in the callback. Result was given as the return value of the blocking doCmd()
     std::optional<Callback::Message_t> message = sCallback->getFirst(receipt, Callback::RESULT);
     EXPECT_FALSE(message.has_value());
   }
@@ -29,6 +30,7 @@ namespace Cmder::Testing {
   TEST_F(AgentTest, AsyncAgent_AsyncCall)
   {
     ASSERT_TRUE(sAsyncAgent);
+    ASSERT_TRUE(sCallback);
     std::string result("No result yet");
     Receipt receipt = sAsyncAgent->doTask(Receipt::Async, Agent::Pi, result);
 
@@ -37,6 +39,11 @@ namespace Cmder::Testing {
     EXPECT_GT(receipt.getTaskId(), 0);
     EXPECT_EQ(receipt.getStatus(), Receipt::OK);
     EXPECT_EQ(receipt.getExecutionMode(), Receipt::Async);
+
+    // RESULT is in the callback.
+    std::optional<Callback::Message_t> message = sCallback->waitFirst(receipt, Callback::RESULT);
+    EXPECT_TRUE(message.has_value());
+    EXPECT_EQ(message->mResult, "3.14");
   }
 
 }
