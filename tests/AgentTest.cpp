@@ -29,14 +29,14 @@ namespace Cmder::Testing {
   TEST_F(AgentTest, AsyncAgent_AsyncCall)
   {
     ASSERT_TRUE(sAsyncAgent);
-    std::string result;
-    Receipt receipt = sAsyncAgent->doTask(Receipt::Blocking, Agent::Pi, result);
+    std::string result("No result yet");
+    Receipt receipt = sAsyncAgent->doTask(Receipt::Async, Agent::Pi, result);
 
-//    EXPECT_EQ(result, "3.14");
+    EXPECT_EQ(result, "");
 
-//    EXPECT_GT(receipt.getTaskId(), 0); 
-//    EXPECT_EQ(receipt.getStatus(), Receipt::OK); 
-//    EXPECT_EQ(receipt.getExecutionMode(), Receipt::Blocking); 
+    EXPECT_GT(receipt.getTaskId(), 0);
+    EXPECT_EQ(receipt.getStatus(), Receipt::OK);
+    EXPECT_EQ(receipt.getExecutionMode(), Receipt::Async);
   }
 
 }

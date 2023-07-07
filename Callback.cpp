@@ -27,6 +27,24 @@ std::optional<Callback::Message_t> Callback::getFirst(const Receipt& receipt, Ca
   return std::optional<Callback::Message_t>();
 }
 
+std::optional<Callback::Message_t> Callback::waitFirst(const Receipt &receipt, Type type)
+{
+  const Key_t key(std::make_pair(receipt.getTaskId(), type));
+
+  // Node handle is a move-only type that owns and provides access to the element => will be removed from the container!!!
+  while (true) {
+    auto nodeHandle = mMessages.extract(key);
+    if (nodeHandle) {
+      return std::make_optional<Message_t>(
+        nodeHandle.mapped().mTime, nodeHandle.mapped().mResult);
+    }
+
+    // TODO: sleep + check time limit! -> break;
+  }
+
+  return std::optional<Message_t>();
+}
+
 std::ostream& operator<<(std::ostream &ostr, const Callback::Message_t& msg)
 {
   ostr << msg.mTime << ", " << msg.mResult;

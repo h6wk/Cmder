@@ -5,7 +5,7 @@
 #include "Server.hpp"
 
 // For testing:
-#include "tests/Test.hpp"
+#include "tests/ServerTest.hpp"
 
 
 #include <iostream>
