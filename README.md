@@ -27,4 +27,14 @@ Install MSYS2. Follow https://code.visualstudio.com/docs/cpp/config-mingw to set
 
 # Class diagram
 
+Using hpp2plantuml. Installation:
+
+**$ pip install hpp2plantuml**
+
+Generate PlantUML:
+
+**$ hpp2plantuml -i "*.hpp" -i ".\tests\*.hpp" -o .\diagrams\classdiagram.puml**
+
+
+
 ![classdiag](diagrams/classdiagram.svg "Class diagram")

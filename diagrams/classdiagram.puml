@@ -1,0 +1,187 @@
+@startuml
+
+
+
+
+
+/' Objects '/
+
+class Agent {
+	-Agent(const Server& server, Callback::SharedPtr callback)
+	+~Agent()
+	-mCallback : Callback::SharedPtr
+	+doTask(Receipt::Mode mode, Task task, std::string& result) : Receipt {query}
+	+{static} create(const Server& server, Callback::SharedPtr callback) : SharedPtr
+	-mServer : const Server&
+}
+
+
+class Callback {
+	+Callback()
+	+~Callback()
+	+operator<<(std::ostream& ostr, const Callback::SharedPtr& cb) : std :: ostream&
+	-mMessages : std::map<Key_t, Message_t>
+	+getFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
+	+waitFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
+	+clear() : void
+	+notify(TaskId taskId, Type type, const std::string& message) : void
+}
+
+
+class Receipt {
+	+Receipt(Mode mode)
+	+getEndTime() : ChronotTime_t& {query}
+	+getStartTime() : ChronotTime_t& {query}
+	-mMode : Mode
+	-mStatus : Status
+	+getTaskId() : TaskId {query}
+	+getExecutionMode() : int {query}
+	+getStatus() : int {query}
+	-mEndTime : time_point<std::chrono::system_clock>
+	-mStartTime : time_point<std::chrono::system_clock>
+	-mTaskId : uint32_t
+	+setEndTime() : void
+	+setStatus(Status status) : void
+}
+
+
+class Server {
+	+Server()
+	+~Server()
+	-mStatus : Status
+	-mConditionVariable : std::condition_variable
+	-mMutex : std::mutex
+	-mThreadPtr : std::unique_ptr<std::thread>
+	-run() : void
+	+start() : void
+	+stop() : void
+}
+
+
+enum Agent::Task {
+	BlockMe_3s
+	Pi
+	PingMe_5x
+}
+
+
+enum Callback::Type {
+	NOTIFICATION
+	RESULT
+}
+
+
+enum Receipt::Mode {
+	Async
+	Blocking
+}
+
+
+enum Receipt::Status {
+	FAIL
+	OK
+}
+
+
+enum Server::Status {
+	Init
+	Run
+	Start
+	Stop
+}
+
+
+class Callback::Message_t {
+	+mTime : Receipt::ChronotTime_t
+	+mResult : std::string
+}
+
+
+class scoped_logger {
+	+scoped_logger(const std::string& className, const char* funcName, unsigned line)
+	+~scoped_logger()
+	-_ss : std::stringstream
+	+stream() : std::stringstream&
+}
+
+
+namespace Cmder {
+	namespace Testing {
+		class AgentTest {
+			#{static} sAsyncAgent : static Agent::SharedPtr
+			#{static} sNoCallbackAgent : static Agent::SharedPtr
+			#{static} sCallback : static Callback::SharedPtr
+			#{static} sServer : static Server
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#{static} TearDownTestSuite() : void
+		}
+
+		class ServerTest {
+			#{static} sServer : static Server
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#{static} TearDownTestSuite() : void
+		}
+	}
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+
+
+
+/' Aggregation relationships '/
+
+.Agent *-- .Callback
+
+
+.Agent *-- .Server
+
+
+Cmder.Testing.AgentTest "2" *-- .Agent
+
+
+Cmder.Testing.AgentTest *-- .Callback
+
+
+Cmder.Testing.AgentTest *-- .Server
+
+
+.Callback::Message_t *-- .Receipt
+
+
+Cmder.Testing.ServerTest *-- .Server
+
+
+
+
+
+
+/' Nested objects '/
+
+.Agent +-- .Agent::Task
+
+
+.Callback +-- .Callback::Message_t
+
+
+.Callback +-- .Callback::Type
+
+
+.Receipt +-- .Receipt::Mode
+
+
+.Receipt +-- .Receipt::Status
+
+
+.Server +-- .Server::Status
+
+
+
+
+@enduml
