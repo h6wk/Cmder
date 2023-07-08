@@ -46,4 +46,10 @@ namespace Cmder::Testing {
     EXPECT_EQ(message->mResult, "3.14");
   }
 
+  TEST_F(AgentTest, AsyncNoCallback)
+  {
+    //std::string result;
+    //EXPECT_AS(sNoCallbackAgent->doTask(Receipt::Async, Agent::Pi, result), "Cannot call async task execution");
+  }
+
 }

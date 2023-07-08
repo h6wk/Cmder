@@ -12,7 +12,7 @@ Server::Server()
 Server::~Server()
 {
   stop();
-  
+
   if (mThreadPtr) {
     mThreadPtr->join();
   }
@@ -33,6 +33,12 @@ void Server::stop()
   }
 
   mConditionVariable.notify_all();
+}
+
+Server::Status Server::getStatus() const
+{
+  std::lock_guard guard(mMutex);
+  return mStatus;
 }
 
 void Server::run()

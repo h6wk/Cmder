@@ -7,6 +7,8 @@
 
 class Server {
 public:
+  enum Status {Init, Start, Run, Stop};
+  
   Server();
   virtual ~Server();
 
@@ -14,15 +16,18 @@ public:
 
   void stop();
 
+  /// @brief Get back the status value
+  /// @return Enum value
+  Status getStatus() const;
+
 private:
   void run();
 
   std::unique_ptr<std::thread> mThreadPtr;
 
-  std::mutex mMutex;
+  mutable std::mutex mMutex;
   std::condition_variable mConditionVariable;
 
-  enum Status {Init, Start, Run, Stop};
   Status mStatus;
 };
 
