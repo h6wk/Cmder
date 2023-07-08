@@ -21,6 +21,7 @@ class Callback {
 	+~Callback()
 	+operator<<(std::ostream& ostr, const Callback::SharedPtr& cb) : std :: ostream&
 	-mMessages : std::map<Key_t, Message_t>
+	-mMutex : std::mutex
 	+getFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
 	+waitFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
 	+clear() : void

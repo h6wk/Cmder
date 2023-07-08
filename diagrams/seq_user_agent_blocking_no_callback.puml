@@ -3,40 +3,28 @@
 !pragma teoz true
 
 actor User
-queue Callback
 participant Agent
 participant Server
 
 group #lightgreen Notification 
 Server -[#purple]>> Agent --++#blue: notification
-Agent -[#blue]>> Callback --: notification
+return
 end
 
-User -[#red]> Callback --++#red: get() 
-return
 User -[#red]> Agent  --++#red: doCmd(XXX)
 
 group #lightgreen Notification 
 Server -[#purple]>> Agent --++#blue: notification
-Agent -[#blue]>> Callback --: notification
+return
 end
-
 
 Agent -[#blue]>> Server : executeTask(XXX)
 Server -[#purple]>> Agent: response
 Agent --[#red]>> User --: response
 
-User -[#red]> Callback --++#red: get()
-return
-
 group #lightgreen Notification 
 Server -[#purple]>> Agent --++#blue: notification
-Agent -[#blue]>> Callback --: notification
+return
 end
 
-
-User -[#red]> Callback --++#red: get()
-return
-User -[#red]> Callback --++#red: get()
-return
 @enduml
