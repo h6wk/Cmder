@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-09 22:09:17                               *
+ * @LastEditDate          : 2023-07-09 22:59:50                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -101,7 +101,10 @@ void Agent::notify(const std::string &message)
 }
 
 Agent::Agent(const Server &server, Callback::SharedPtr callback)
-    : mCallback(callback), mServer(server)
+: mCallback(callback)
+, mServer(server)
+, mThreadPtr()
+, mMutex()
 {
   LOG("Created");
 }

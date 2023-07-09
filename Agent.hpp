@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
- * @CreatedDate           : 2023-07-09 21:53:21                              *
- * @LastEditDate          : 2023-07-09 22:08:45                              *
+ * @CreatedDate           : 2023-07-01 12:00:00                              *
+ * @LastEditDate          : 2023-07-09 22:57:50                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -13,6 +13,7 @@
 
 #include <memory>
 #include <string>
+#include <thread>
 
 // -- forward declaration
 class Server;
@@ -58,10 +59,17 @@ public:
 private:
   explicit Agent(const Server& server, Callback::SharedPtr callback);
 
-  Callback::SharedPtr mCallback;  //< Client's callback to send async responses
-  const Server& mServer;          //< As of now the only service. Later the
-                                  //< service will be selected for a task based on
-                                  //< some selection criteria.
+  Callback::SharedPtr mCallback;            //< Client's callback to send async responses
+
+  const Server& mServer;                    //< As of now the only service. Later the
+                                            //< service will be selected for a task based on
+                                            //< some selection criteria.
+
+  std::unique_ptr<std::thread> mThreadPtr;  //< Thread responsible to accept notifications from
+                                            //< the server and forward them to the client.
+                                            //< NOTE: another worker thread is created to execute the task (doTask()).
+
+  mutable std::mutex mMutex;                //< Protect data containers against data race.
 };
 
 std::ostream& operator<<(std::ostream& ostr, const Agent::Task& task);
