@@ -1,6 +1,7 @@
 
 #include "AgentTest.hpp"
 #include "../Agent.hpp"
+#include "../Server.hpp"
 
 namespace Cmder::Testing {
 

@@ -11,7 +11,7 @@ class Agent {
 	+~Agent()
 	-mCallback : Callback::SharedPtr
 	+doTask(Receipt::Mode mode, Task task, std::string& result) : Receipt {query}
-	+{static} create(const Server& server, Callback::SharedPtr callback) : SharedPtr
+	+{static} create(Server& server, Callback::SharedPtr callback) : SharedPtr
 	-mServer : const Server&
 }
 
@@ -50,9 +50,12 @@ class Server {
 	+Server()
 	+~Server()
 	-mStatus : Status
+	+getStatus() : int {query}
+	-mMutex : mutable std::mutex
 	-mConditionVariable : std::condition_variable
-	-mMutex : std::mutex
 	-mThreadPtr : std::unique_ptr<std::thread>
+	-mAgents : std::vector<Agent::WeakPtr>
+	+registerAgent(Agent::SharedPtr agent) : void
 	-run() : void
 	+start() : void
 	+stop() : void
@@ -154,6 +157,9 @@ Cmder.Testing.AgentTest *-- .Server
 
 
 .Callback::Message_t *-- .Receipt
+
+
+.Server *-- .Agent
 
 
 Cmder.Testing.ServerTest *-- .Server

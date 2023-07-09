@@ -1,4 +1,5 @@
 
+#include "Agent.hpp"
 #include "Server.hpp"
 #include "Logger.hpp"
 
@@ -39,6 +40,12 @@ Server::Status Server::getStatus() const
 {
   std::lock_guard guard(mMutex);
   return mStatus;
+}
+
+void Server::registerAgent(Agent::SharedPtr agent)
+{
+  std::lock_guard guard(mMutex);
+  mAgents.push_back(agent);
 }
 
 void Server::run()

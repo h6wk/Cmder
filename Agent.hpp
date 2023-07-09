@@ -3,11 +3,12 @@
 
 #include "Callback.hpp"
 #include "Receipt.hpp"
-#include "Server.hpp"
 
 #include <memory>
 #include <string>
 
+// -- forward declaration
+class Server;
 
 /**
  * Client uses the agent to get access to a service. This represents a layer
@@ -21,6 +22,8 @@ class Agent
 {
 public:
   using SharedPtr = std::shared_ptr<Agent>;
+  using WeakPtr = std::weak_ptr<Agent>;
+
   enum Task {Pi, BlockMe_3s, PingMe_5x};
 
   /// @brief Create a new Agent object.
@@ -28,7 +31,7 @@ public:
   /// @param callback Shared pointer to the callback (async!)
   ///                 Empty pointer -> only blocking mode is possible
   /// @return Shared pointer on the newly created object.
-  static SharedPtr create(const Server& server, Callback::SharedPtr callback);
+  static SharedPtr create(Server& server, Callback::SharedPtr callback);
 
   virtual ~Agent();
 
