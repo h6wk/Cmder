@@ -1,3 +1,9 @@
+/******************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                           *
+ * @CreatedDate           : 2023-07-01 12:00:00                               *
+ * @LastEditDate          : 2023-07-09 22:09:17                               *
+ * @CopyRight             : GNU GPL                                           *
+ *****************************************************************************/
 
 #include "Agent.hpp"
 #include "Logger.hpp"
@@ -89,9 +95,13 @@ Receipt Agent::doTask(Receipt::Mode mode, Agent::Task task, std::string& result)
   return receipt;
 }
 
-Agent::Agent(const Server& server, Callback::SharedPtr callback)
-: mCallback(callback)
-, mServer(server)
+void Agent::notify(const std::string &message)
+{
+  LOG("Message: " << message);
+}
+
+Agent::Agent(const Server &server, Callback::SharedPtr callback)
+    : mCallback(callback), mServer(server)
 {
   LOG("Created");
 }

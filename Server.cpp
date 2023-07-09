@@ -1,3 +1,9 @@
+/*****************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                          *
+ * @CreatedDate           : 2023-07-02 12:00:00                              *
+ * @LastEditDate          : 2023-07-09 22:12:59                              *
+ * @CopyRight             : GNU GPL                                          *
+ ****************************************************************************/
 
 #include "Agent.hpp"
 #include "Server.hpp"
@@ -64,6 +70,19 @@ void Server::run()
     if (mStatus == Stop) {break;}
 
     mConditionVariable.wait_for(ul, 250ms);
-    LOG("TICK");
+
+    // Send TICK to all of the registered and alive agents
+    std::for_each(std::begin(mAgents)
+      , std::end(mAgents)
+      , [](const Agent::WeakPtr& agentWptr) {
+        Agent::SharedPtr agent = agentWptr.lock();
+        if (agent) {
+          LOG("TICK");
+          agent->notify("TICK");
+        }
+      }
+    );
   }
+
+  LOG("Server quits");
 }

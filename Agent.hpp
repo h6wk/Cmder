@@ -1,3 +1,10 @@
+/*****************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                          *
+ * @CreatedDate           : 2023-07-09 21:53:21                              *
+ * @LastEditDate          : 2023-07-09 22:08:45                              *
+ * @CopyRight             : GNU GPL                                          *
+ ****************************************************************************/
+
 #ifndef AGENT_H_INCLUDED
 #define AGENT_H_INCLUDED
 
@@ -43,6 +50,10 @@ public:
   /// @return Get back a receipt of ackowledge that can be used to find the corresponding
   ///         async result.
   Receipt doTask(Receipt::Mode mode, Task task, std::string& result) const;
+
+  /// @brief Server uses this interface to send notifications to the agent
+  /// @param message Notification
+  void notify(const std::string& message);
 
 private:
   explicit Agent(const Server& server, Callback::SharedPtr callback);

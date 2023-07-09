@@ -1,3 +1,10 @@
+/*****************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                          *
+ * @CreatedDate           : 2023-07-02 12:00:00                              *
+ * @LastEditDate          : 2023-07-09 22:04:27                              *
+ * @CopyRight             : GNU GPL                                          *
+ ****************************************************************************/
+
 #ifndef SERVER_H_INCLUDED
 #define SERVER_H_INCLUDED
 
