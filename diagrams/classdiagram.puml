@@ -6,16 +6,6 @@
 
 /' Objects '/
 
-class Agent {
-	-Agent(const Server& server, Callback::SharedPtr callback)
-	+~Agent()
-	-mCallback : Callback::SharedPtr
-	+doTask(Receipt::Mode mode, Task task, std::string& result) : Receipt {query}
-	+{static} create(Server& server, Callback::SharedPtr callback) : SharedPtr
-	-mServer : const Server&
-}
-
-
 class Callback {
 	+Callback()
 	+~Callback()
@@ -62,13 +52,6 @@ class Server {
 }
 
 
-enum Agent::Task {
-	BlockMe_3s
-	Pi
-	PingMe_5x
-}
-
-
 enum Callback::Type {
 	NOTIFICATION
 	RESULT
@@ -110,6 +93,43 @@ class scoped_logger {
 
 
 namespace Cmder {
+	class Agent {
+		-Agent(const Server& server, Callback::SharedPtr callback)
+		+~Agent()
+		-mCallback : Callback::SharedPtr
+		+doTask(Receipt::Mode mode, Task task, std::string& result) : Receipt {query}
+		+{static} create(Server& server, Callback::SharedPtr callback) : SharedPtr
+		+getStatus() : Status {query}
+		-mStatus : Status
+		-mServer : const Server&
+		-mMutex : mutable std::mutex
+		-mConditionVariable : std::condition_variable
+		-mThreadPtr : std::unique_ptr<std::thread>
+		+notify(const std::string& message) : void
+		-run() : void
+		+start() : void
+		+stop() : void
+	}
+
+	abstract class IControllableThread {
+		+{abstract} getStatus() : int {query}
+		+{abstract} start() : void
+		+{abstract} stop() : void
+	}
+
+	enum Agent::Task {
+		BlockMe_3s
+		Pi
+		PingMe_5x
+	}
+
+	enum Status {
+		Init
+		Run
+		Start
+		Stop
+	}
+
 	namespace Testing {
 		class AgentTest {
 			#{static} sAsyncAgent : static Agent::SharedPtr
@@ -136,18 +156,24 @@ namespace Cmder {
 
 /' Inheritance relationships '/
 
+Cmder.IControllableThread <|-- Cmder.Agent
+
+
 
 
 
 /' Aggregation relationships '/
 
-.Agent *-- .Callback
+Cmder.Agent *-- .Callback
 
 
-.Agent *-- .Server
+Cmder.Agent *-- .Server
 
 
-Cmder.Testing.AgentTest "2" *-- .Agent
+Cmder.Agent *-- Cmder.Status
+
+
+Cmder.Testing.AgentTest "2" *-- Cmder.Agent
 
 
 Cmder.Testing.AgentTest *-- .Callback
@@ -159,7 +185,13 @@ Cmder.Testing.AgentTest *-- .Server
 .Callback::Message_t *-- .Receipt
 
 
-.Server *-- .Agent
+.Receipt *-- Cmder.Status
+
+
+.Server *-- Cmder.Agent
+
+
+.Server *-- Cmder.Status
 
 
 Cmder.Testing.ServerTest *-- .Server
@@ -171,7 +203,7 @@ Cmder.Testing.ServerTest *-- .Server
 
 /' Nested objects '/
 
-.Agent +-- .Agent::Task
+Cmder.Agent +-- Cmder.Agent::Task
 
 
 .Callback +-- .Callback::Message_t

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-01 12:00:00                              *
- * @LastEditDate          : 2023-07-09 22:57:50                              *
+ * @LastEditDate          : 2023-07-09 23:48:02                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -9,8 +9,10 @@
 #define AGENT_H_INCLUDED
 
 #include "Callback.hpp"
+#include "IControllableThread.hpp"
 #include "Receipt.hpp"
 
+#include <condition_variable>
 #include <memory>
 #include <string>
 #include <thread>
@@ -18,60 +20,75 @@
 // -- forward declaration
 class Server;
 
-/**
- * Client uses the agent to get access to a service. This represents a layer
- * between the client and the service layer. In a multi service environment the
- * agent can select the proper service provider.
- * 
- * Accepts the task and forwards to the selected service. Accepts the service's
- * response and distributes to the client's callback.
- */
-class Agent
-{
-public:
-  using SharedPtr = std::shared_ptr<Agent>;
-  using WeakPtr = std::weak_ptr<Agent>;
+namespace Cmder {
 
-  enum Task {Pi, BlockMe_3s, PingMe_5x};
+  /**
+   * Client uses the agent to get access to a service. This represents a layer
+   * between the client and the service layer. In a multi service environment the
+   * agent can select the proper service provider.
+   * 
+   * Accepts the task and forwards to the selected service. Accepts the service's
+   * response and distributes to the client's callback.
+   */
+  class Agent : public IControllableThread
+  {
+  public:
+    using SharedPtr = std::shared_ptr<Agent>;
+    using WeakPtr = std::weak_ptr<Agent>;
 
-  /// @brief Create a new Agent object.
-  /// @param server Reference to the server that will be called to do the task
-  /// @param callback Shared pointer to the callback (async!)
-  ///                 Empty pointer -> only blocking mode is possible
-  /// @return Shared pointer on the newly created object.
-  static SharedPtr create(Server& server, Callback::SharedPtr callback);
+    enum Task {Pi, BlockMe_3s, PingMe_5x};
 
-  virtual ~Agent();
+    /// @brief Create a new Agent object.
+    /// @param server Reference to the server that will be called to do the task
+    /// @param callback Shared pointer to the callback (async!)
+    ///                 Empty pointer -> only blocking mode is possible
+    /// @return Shared pointer on the newly created object.
+    static SharedPtr create(Server& server, Callback::SharedPtr callback);
 
-  /// @brief Invoke a task and get the result of it
-  /// @param mode Blocking the caller or asynch (NOTE: only blocking works now)
-  /// @param task Name of task
-  /// @param result The result in blocking mode. In async mode the result is pushed
-  ///         into the callbak.
-  /// @return Get back a receipt of ackowledge that can be used to find the corresponding
-  ///         async result.
-  Receipt doTask(Receipt::Mode mode, Task task, std::string& result) const;
+    virtual ~Agent();
 
-  /// @brief Server uses this interface to send notifications to the agent
-  /// @param message Notification
-  void notify(const std::string& message);
+    // IControllableThread interfaces:
+    void start() override;
+    void stop() override;
+    Status getStatus() const override;
 
-private:
-  explicit Agent(const Server& server, Callback::SharedPtr callback);
+    /// @brief Invoke a task and get the result of it
+    /// @param mode Blocking the caller or asynch (NOTE: only blocking works now)
+    /// @param task Name of task
+    /// @param result The result in blocking mode. In async mode the result is pushed
+    ///         into the callbak.
+    /// @return Get back a receipt of ackowledge that can be used to find the corresponding
+    ///         async result.
+    Receipt doTask(Receipt::Mode mode, Task task, std::string& result) const;
 
-  Callback::SharedPtr mCallback;            //< Client's callback to send async responses
+    /// @brief Server uses this interface to send notifications to the agent
+    /// @param message Notification
+    void notify(const std::string& message);
 
-  const Server& mServer;                    //< As of now the only service. Later the
-                                            //< service will be selected for a task based on
-                                            //< some selection criteria.
+  private:
+    explicit Agent(const Server& server, Callback::SharedPtr callback);
 
-  std::unique_ptr<std::thread> mThreadPtr;  //< Thread responsible to accept notifications from
-                                            //< the server and forward them to the client.
-                                            //< NOTE: another worker thread is created to execute the task (doTask()).
+    void run();
 
-  mutable std::mutex mMutex;                //< Protect data containers against data race.
-};
+    Callback::SharedPtr mCallback;            //< Client's callback to send async responses
 
-std::ostream& operator<<(std::ostream& ostr, const Agent::Task& task);
+    const Server& mServer;                    //< As of now the only service. Later the
+                                              //< service will be selected for a task based on
+                                              //< some selection criteria.
+
+    std::unique_ptr<std::thread> mThreadPtr;  //< Thread responsible to accept notifications from
+                                              //< the server and forward them to the client.
+                                              //< NOTE: another worker thread is created to execute the task (doTask()).
+
+    mutable std::mutex mMutex;                //< Protect data containers against data race.
+
+    Status mStatus;
+
+    std::condition_variable mConditionVariable;
+  };
+
+  std::ostream& operator<<(std::ostream& ostr, const Agent::Task& task);
+
+}
 
 #endif // AGENT_H_INCLUDED

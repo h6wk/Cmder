@@ -1,13 +1,16 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-09 22:12:59                              *
+ * @LastEditDate          : 2023-07-09 23:19:58                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
 #include "Agent.hpp"
 #include "Server.hpp"
 #include "Logger.hpp"
+
+using namespace Cmder;
+
 
 Server::Server()
 : mThreadPtr()

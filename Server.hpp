@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-09 22:04:27                              *
+ * @LastEditDate          : 2023-07-09 23:18:15                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -13,6 +13,8 @@
 #include <condition_variable>
 #include <memory>
 #include <thread>
+
+using namespace Cmder;
 
 class Server {
 public:
