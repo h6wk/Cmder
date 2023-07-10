@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-10 15:02:08                               *
+ * @LastEditDate          : 2023-07-10 23:42:51                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -12,7 +12,9 @@
 #include <assert.h>
 #include <chrono>
 #include <future>
+#include <random>
 #include <thread>
+
 
 namespace Cmder {
 
@@ -55,11 +57,21 @@ namespace Cmder {
 
   Agent::SharedPtr Agent::create(Server& server, Callback::SharedPtr callback)
   {
+    static const std::array<std::string, 6> sAgentNames{
+      "Mulder", "Scully", "Bond", "Bourne", "Hunt", "Nikita"
+    };
+    
+    static std::default_random_engine generator;
+    static std::uniform_int_distribution<int> distrName(0, sAgentNames.max_size());
+    static std::uniform_int_distribution<int> distrId(100, 999);
+    std::stringstream ss;
+    ss << "<<" << sAgentNames[distrName(generator)] << "_" << distrId(generator) << ">>";
+
     //Use a temporary subclass to make a connection between a smart pointer generator function and a class with a private constructor.
     struct MkSharedEnabler : public Agent {
-      MkSharedEnabler(const Server& server, Callback::SharedPtr cb) : Agent(server, cb) {}
+      MkSharedEnabler(const Server& server, Callback::SharedPtr cb, const std::string& name) : Agent(server, cb, name) {}
     };
-    auto instance = std::make_shared<MkSharedEnabler>(server, callback);
+    auto instance = std::make_shared<MkSharedEnabler>(server, callback, ss.str());
     server.registerAgent(instance);
     return instance;
   }
@@ -119,22 +131,38 @@ namespace Cmder {
 
   void Agent::notify(const std::string &message)
   {
-    LOG("Message: " << message << " (" << &(*this) << ")");
+    LOG("Agent " << mDebugName << " got message: " << message);
+
+    std::lock_guard guard(mMutex);
+    mNotifications.push(message);
   }
 
-  Agent::Agent(const Server &server, Callback::SharedPtr callback)
-  : mCallback(callback)
-  , mServer(server)
+  const std::string &Agent::getName() const
+  {
+    return mDebugName;
+  }
+
+  uint64_t Agent::statNotification(const std::string &notificationName) const
+  {
+    std::lock_guard guard(mMutex);
+    return mNotifications.size();
+  }
+
+  Agent::Agent(const Server &server, Callback::SharedPtr callback, const std::string& name)
+  : mMutex()
   , mThreadPtr()
-  , mMutex()
   , mConditionVariable()
+  , mServer(server)
+  , mCallback(callback)
+  , mNotifications()
+  , mDebugName(name)
   {
     {
       std::lock_guard guard(mMutex);
       mStatus = Status::Init;
     }
 
-    LOG("Created. Status set to " << mStatus);
+    LOG("Agent " << mDebugName << " created. Status set to " << mStatus);
   }
 
   void Agent::run()

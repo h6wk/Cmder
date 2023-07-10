@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-10 13:16:03                              *
+ * @LastEditDate          : 2023-07-10 23:54:22                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -15,40 +15,42 @@
 #include <memory>
 #include <thread>
 
-using namespace Cmder;
+namespace Cmder {
 
-class Server {
-public:
-  
-  Server();
-  virtual ~Server();
+  class Server : public IControllableThread {
+  public:
+    
+    Server();
+    virtual ~Server();
 
-  /// @brief Start the internal working thread.
-  void start();
+    // IControllableThread abstract interfaces:
+    void start() override;
+    void stop() override;
+    Cmder::Status getStatus() const override;
 
-  /// @brief Ask the internal thread to leave and stop. No more nofitications
-  ///        or no new tasks are going to be accepted.
-  void stop();
+    /// @brief Registers an agent into the server (for notifications)
+    /// @param agent Shared pointer to the agent
+    void registerAgent(Agent::SharedPtr agent);
 
-  /// @brief Get back the status value
-  /// @return Enum value
-  Cmder::Status getStatus() const;
+    uint64_t statNotification(const std::string& notificationName) const;
 
-  /// @brief Registers an agent into the server (for notifications)
-  /// @param agent Shared pointer to the agent
-  void registerAgent(Agent::SharedPtr agent);
+  private:
+    void run();
 
-private:
-  void run();
+    mutable std::mutex mMutex;                  //< Protect data containers against data race
 
-  std::unique_ptr<std::thread> mThreadPtr;
+    std::unique_ptr<std::thread> mThreadPtr;    //< Do internal calculations. Send notifications
 
-  mutable std::mutex mMutex;
-  std::condition_variable mConditionVariable;
+    std::condition_variable mConditionVariable; //< For the control of the thread
 
-  std::vector<Agent::WeakPtr> mAgents;        //< List of agents that registered itself. The agent lifetime is not
-                                              //< known. Need to lock to test the existence of it.
-  Status mStatus;
-};
+    Status mStatus;                             //< The status of mThreadPtr
+    
+    std::vector<Agent::WeakPtr> mAgents;        //< List of agents that registered itself. The agent lifetime is not
+                                                //< known. Need to lock to test the existence of it
+
+    std::map<std::string, uint64_t> mNotificationStatistics;  //< Nr. of notifications sent of a given type
+  };
+
+}
 
 #endif

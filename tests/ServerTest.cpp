@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-07 12:00:00                              *
- * @LastEditDate          : 2023-07-10 15:06:38                              *
+ * @LastEditDate          : 2023-07-10 23:45:50                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -39,6 +39,7 @@ namespace Cmder::Testing {
     agentLongLife.reset();
 
     //TODO : add interfaces to check the arrival of the TICK messages
+    //EXPECT_EQ(mServer->statNotification("TICK"), agentShortLife->statNotification("TICK") + agentLongLife->statNotification("TICK"));
   }
 
 }
