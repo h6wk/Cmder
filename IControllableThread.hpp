@@ -1,9 +1,12 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-09 23:06:37                              *
- * @LastEditDate          : 2023-07-09 23:10:12                              *
+ * @LastEditDate          : 2023-07-10 13:10:53                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
+
+#ifndef ICONTROLLABLETHREAD_H_INCLUDED
+#define ICONTROLLABLETHREAD_H_INCLUDED
 
 namespace Cmder {
 
@@ -28,3 +31,5 @@ namespace Cmder {
   };
 
 }
+
+#endif

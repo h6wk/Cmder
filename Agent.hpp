@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-01 12:00:00                              *
- * @LastEditDate          : 2023-07-09 23:48:02                              *
+ * @LastEditDate          : 2023-07-10 15:03:17                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -68,6 +68,7 @@ namespace Cmder {
   private:
     explicit Agent(const Server& server, Callback::SharedPtr callback);
 
+    /// @brief The method that will be executed by the working thread.
     void run();
 
     Callback::SharedPtr mCallback;            //< Client's callback to send async responses
@@ -82,12 +83,15 @@ namespace Cmder {
 
     mutable std::mutex mMutex;                //< Protect data containers against data race.
 
-    Status mStatus;
+    Status mStatus;                           //< The status of mThreadPtr.
 
-    std::condition_variable mConditionVariable;
+    std::condition_variable mConditionVariable; //< For the control of the thread
+
+    std::string mDebugName;                   //< To name (ID) for better logging
   };
 
   std::ostream& operator<<(std::ostream& ostr, const Agent::Task& task);
+  std::ostream& operator<<(std::ostream& ostr, const Status& status);
 
 }
 

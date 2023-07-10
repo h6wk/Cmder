@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-09 23:18:15                              *
+ * @LastEditDate          : 2023-07-10 13:16:03                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -9,6 +9,7 @@
 #define SERVER_H_INCLUDED
 
 #include "Agent.hpp"
+#include "IControllableThread.hpp"
 
 #include <condition_variable>
 #include <memory>
@@ -18,7 +19,6 @@ using namespace Cmder;
 
 class Server {
 public:
-  enum Status {Init, Start, Run, Stop};
   
   Server();
   virtual ~Server();
@@ -32,7 +32,7 @@ public:
 
   /// @brief Get back the status value
   /// @return Enum value
-  Status getStatus() const;
+  Cmder::Status getStatus() const;
 
   /// @brief Registers an agent into the server (for notifications)
   /// @param agent Shared pointer to the agent
@@ -46,10 +46,9 @@ private:
   mutable std::mutex mMutex;
   std::condition_variable mConditionVariable;
 
-  Status mStatus;
-
   std::vector<Agent::WeakPtr> mAgents;        //< List of agents that registered itself. The agent lifetime is not
                                               //< known. Need to lock to test the existence of it.
+  Status mStatus;
 };
 
 #endif

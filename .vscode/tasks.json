@@ -7,7 +7,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-std=c++20",
-                //"-g",
+                "-g",
                 "${workspaceFolder}/*.cpp",
                 "${workspaceFolder}/tests/*.cpp",
                 "-lgtest",

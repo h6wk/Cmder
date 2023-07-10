@@ -1,11 +1,14 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-09 23:19:58                              *
+ * @LastEditDate          : 2023-07-10 15:00:51                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
 #include "Agent.hpp"
+
+#include <cassert>
+
 #include "Server.hpp"
 #include "Logger.hpp"
 
@@ -16,36 +19,42 @@ Server::Server()
 : mThreadPtr()
 {
   std::lock_guard guard(mMutex);
-  mStatus = Init;
+  mStatus = Status::Init;
 }
 
 Server::~Server()
 {
   stop();
 
+  // TODO: mutex?
   if (mThreadPtr) {
     mThreadPtr->join();
   }
+  LOG("Deleted");
 }
 
 void Server::start()
 {
+  // restart is not supported! need to destroy the object and join the thread 
+  assert(mStatus == Status::Init);
+
   mThreadPtr = std::make_unique<std::thread>(&Server::run, this);
   std::lock_guard guard(mMutex);
-  mStatus = Start;
+  mStatus = Status::Start;
 }
 
 void Server::stop()
 {
   {
     std::lock_guard guard(mMutex);
-    mStatus = Stop;
+    mStatus = Status::Stop;
   }
 
+  // Don't need to hold the lock while calling notify_all()
   mConditionVariable.notify_all();
 }
 
-Server::Status Server::getStatus() const
+Cmder::Status Server::getStatus() const
 {
   std::lock_guard guard(mMutex);
   return mStatus;
@@ -55,6 +64,8 @@ void Server::registerAgent(Agent::SharedPtr agent)
 {
   std::lock_guard guard(mMutex);
   mAgents.push_back(agent);
+
+  LOG("Agent #" << mAgents.size() << "(" << &(*agent) << ") registered itself");
 }
 
 void Server::run()
@@ -63,14 +74,14 @@ void Server::run()
 
   {
     std::lock_guard guard(mMutex);
-    mStatus = Run;
+    mStatus = Status::Run;
   }
 
-  LOG("Server runs");
+  LOG("Server-thread runs");
 
   while (true) {
     std::unique_lock ul(mMutex);
-    if (mStatus == Stop) {break;}
+    if (mStatus == Status::Stop) {break;}
 
     mConditionVariable.wait_for(ul, 250ms);
 
@@ -79,13 +90,13 @@ void Server::run()
       , std::end(mAgents)
       , [](const Agent::WeakPtr& agentWptr) {
         Agent::SharedPtr agent = agentWptr.lock();
+        LOG("TICK");
         if (agent) {
-          LOG("TICK");
           agent->notify("TICK");
         }
       }
     );
   }
 
-  LOG("Server quits");
+  LOG("Server-thread quits");
 }

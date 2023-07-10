@@ -1,3 +1,10 @@
+/*****************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                          *
+ * @CreatedDate           : 2023-07-07 12:00:00                              *
+ * @LastEditDate          : 2023-07-10 14:04:24                              *
+ * @CopyRight             : GNU GPL                                          *
+ ****************************************************************************/
+
 #ifndef SERVERTEST_H_INCLUDED
 #define SERVERTEST_H_INCLUDED
 
@@ -36,13 +43,18 @@ namespace Cmder::Testing {
 
     // virtual void SetUp() will be called before each test is run.
     void SetUp() override {
+      mServer = std::make_unique<Server>();
     }
 
     // virtual void TearDown() will be called after each test is run. You should define it if there is cleanup work to do.
-    //virtual void TearDown() {
-    //}
+    virtual void TearDown() {
+      if (mServer) {
+        mServer.release();
+      }
+    }
 
-    static Server sServer;
+
+    std::unique_ptr<Server> mServer;
   };
 }
 

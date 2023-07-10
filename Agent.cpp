@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-09 23:50:23                               *
+ * @LastEditDate          : 2023-07-10 15:02:08                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -27,6 +27,26 @@ namespace Cmder {
       break;
     case Agent::Task::PingMe_5x:
       ostr << "PING_ME_5x";
+      break;
+    }
+    return ostr;
+  }
+
+
+  std::ostream& operator<<(std::ostream& ostr, const Status& status)
+  {
+    switch (status) {
+    case Status::Init:
+      ostr << "INIT";
+      break;
+    case Status::Run:
+      ostr << "RUN";
+      break;
+    case Status::Start:
+      ostr << "START";
+      break;
+    case Status::Stop:
+      ostr << "STOP";
       break;
     }
     return ostr;
@@ -99,7 +119,7 @@ namespace Cmder {
 
   void Agent::notify(const std::string &message)
   {
-    LOG("Message: " << message);
+    LOG("Message: " << message << " (" << &(*this) << ")");
   }
 
   Agent::Agent(const Server &server, Callback::SharedPtr callback)
@@ -107,23 +127,53 @@ namespace Cmder {
   , mServer(server)
   , mThreadPtr()
   , mMutex()
-  , mStatus(Status::Init)
   , mConditionVariable()
   {
-    LOG("Created");
+    {
+      std::lock_guard guard(mMutex);
+      mStatus = Status::Init;
+    }
+
+    LOG("Created. Status set to " << mStatus);
   }
 
   void Agent::run()
   {
+    using namespace std::chrono_literals;
+
+    {
+      std::lock_guard guard(mMutex);
+      mStatus = Status::Run;
+    }
+
+    LOG("Agent runs");
+
+    while (true) {
+
+      std::unique_lock ul(mMutex);
+      if (mStatus == Status::Stop) {break;}
+
+      mConditionVariable.wait_for(ul, 500ms);
+    }
+
+    LOG("Agent-thread quits");
   }
 
   Agent::~Agent()
   {
+    stop();
+
+    if (mThreadPtr) {
+      mThreadPtr->join();
+    }
     LOG("Deleted");
   }
 
   void Agent::start()
   {
+    // restart is not supported! need to destroy the object and join the thread 
+    assert(mStatus == Status::Init);
+
     mThreadPtr = std::make_unique<std::thread>(&Agent::run, this);
     std::lock_guard guard(mMutex);
     mStatus = Status::Start;
@@ -136,11 +186,13 @@ namespace Cmder {
       mStatus = Status::Stop;
     }
 
+    // Don't need to hold the lock while calling notify_all()
     mConditionVariable.notify_all();
   }
 
   Status Agent::getStatus() const
   {
+    std::lock_guard guard(mMutex);
     return mStatus;
   }
 }
