@@ -36,22 +36,6 @@ class Receipt {
 }
 
 
-class Server {
-	+Server()
-	+~Server()
-	-mStatus : Status
-	+getStatus() : int {query}
-	-mMutex : mutable std::mutex
-	-mConditionVariable : std::condition_variable
-	-mThreadPtr : std::unique_ptr<std::thread>
-	-mAgents : std::vector<Agent::WeakPtr>
-	+registerAgent(Agent::SharedPtr agent) : void
-	-run() : void
-	+start() : void
-	+stop() : void
-}
-
-
 enum Callback::Type {
 	NOTIFICATION
 	RESULT
@@ -67,14 +51,6 @@ enum Receipt::Mode {
 enum Receipt::Status {
 	FAIL
 	OK
-}
-
-
-enum Server::Status {
-	Init
-	Run
-	Start
-	Stop
 }
 
 
@@ -94,7 +70,7 @@ class scoped_logger {
 
 namespace Cmder {
 	class Agent {
-		-Agent(const Server& server, Callback::SharedPtr callback)
+		-Agent(const Server& server, Callback::SharedPtr callback, const std::string& name)
 		+~Agent()
 		-mCallback : Callback::SharedPtr
 		+doTask(Receipt::Mode mode, Task task, std::string& result) : Receipt {query}
@@ -104,7 +80,11 @@ namespace Cmder {
 		-mServer : const Server&
 		-mMutex : mutable std::mutex
 		-mConditionVariable : std::condition_variable
+		-mNotifications : std::queue<std::string>
+		-mDebugName : std::string
+		+getName() : std::string& {query}
 		-mThreadPtr : std::unique_ptr<std::thread>
+		+statNotification(const std::string& notificationName) : uint64_t {query}
 		+notify(const std::string& message) : void
 		-run() : void
 		+start() : void
@@ -115,6 +95,23 @@ namespace Cmder {
 		+{abstract} getStatus() : int {query}
 		+{abstract} start() : void
 		+{abstract} stop() : void
+	}
+
+	class Server {
+		+Server()
+		+~Server()
+		+getStatus() : Cmder::Status {query}
+		-mStatus : Status
+		-mMutex : mutable std::mutex
+		-mConditionVariable : std::condition_variable
+		-mNotificationStatistics : std::map<std::string, uint64_t>
+		-mThreadPtr : std::unique_ptr<std::thread>
+		-mAgents : std::vector<Agent::WeakPtr>
+		+statNotification(const std::string& notificationName) : uint64_t {query}
+		+registerAgent(Agent::SharedPtr agent) : void
+		-run() : void
+		+start() : void
+		+stop() : void
 	}
 
 	enum Agent::Task {
@@ -142,9 +139,10 @@ namespace Cmder {
 		}
 
 		class ServerTest {
-			#{static} sServer : static Server
+			#mServer : std::unique_ptr<Server>
 			#SetUp() : void
 			#{static} SetUpTestSuite() : void
+			#TearDown() : void
 			#{static} TearDownTestSuite() : void
 		}
 	}
@@ -159,6 +157,9 @@ namespace Cmder {
 Cmder.IControllableThread <|-- Cmder.Agent
 
 
+Cmder.IControllableThread <|-- Cmder.Server
+
+
 
 
 
@@ -167,7 +168,7 @@ Cmder.IControllableThread <|-- Cmder.Agent
 Cmder.Agent *-- .Callback
 
 
-Cmder.Agent *-- .Server
+Cmder.Agent *-- Cmder.Server
 
 
 Cmder.Agent *-- Cmder.Status
@@ -179,7 +180,7 @@ Cmder.Testing.AgentTest "2" *-- Cmder.Agent
 Cmder.Testing.AgentTest *-- .Callback
 
 
-Cmder.Testing.AgentTest *-- .Server
+Cmder.Testing.AgentTest *-- Cmder.Server
 
 
 .Callback::Message_t *-- .Receipt
@@ -188,13 +189,13 @@ Cmder.Testing.AgentTest *-- .Server
 .Receipt *-- Cmder.Status
 
 
-.Server *-- Cmder.Agent
+Cmder.Server *-- Cmder.Agent
 
 
-.Server *-- Cmder.Status
+Cmder.Server *-- Cmder.Status
 
 
-Cmder.Testing.ServerTest *-- .Server
+Cmder.Testing.ServerTest *-- Cmder.Server
 
 
 
@@ -216,9 +217,6 @@ Cmder.Agent +-- Cmder.Agent::Task
 
 
 .Receipt +-- .Receipt::Status
-
-
-.Server +-- .Server::Status
 
 
 
