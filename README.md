@@ -1,8 +1,14 @@
 # Cmder
 
-This will be an async task executor
+Async/sync task executor implementation: user will be able to create an **agent** and ask it to execute a **task** (do some calculation, anything). The **agent** checks the availability and capability of the **servers** in a pool, and selects the best one for the execution.
 
-Details later.
+There are three layers involved:
+* User level
+* Agent level
+* Server level
+The communication way between the layers are done either in **synchronous** (blocking the caller) or in **asynchronous** way (don't block the result will be submitted later once it is available).
+
+More details later.
 
 # Build
 This is a small project. Visual Studio Code's task.json will be used to build the project.

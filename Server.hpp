@@ -1,15 +1,16 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-10 23:54:22                              *
+ * @LastEditDate          : 2023-07-11 11:46:13                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
-#ifndef SERVER_H_INCLUDED
-#define SERVER_H_INCLUDED
+#ifndef A694C050_D5F4_4037_BF8A_42619171DEE0
+#define A694C050_D5F4_4037_BF8A_42619171DEE0
 
 #include "Agent.hpp"
 #include "IControllableThread.hpp"
+#include "IStatProvider.hpp"
 
 #include <condition_variable>
 #include <memory>
@@ -17,7 +18,7 @@
 
 namespace Cmder {
 
-  class Server : public IControllableThread {
+  class Server : public IControllableThread, public IStatProvider {
   public:
     
     Server();
@@ -32,7 +33,11 @@ namespace Cmder {
     /// @param agent Shared pointer to the agent
     void registerAgent(Agent::SharedPtr agent);
 
-    uint64_t statNotification(const std::string& notificationName) const;
+    /// @brief Temp. solution to remove an agent. Not completely safe to identify the agent with a generated name.
+    /// @param agentName to remove
+    void unregister(const std::string agentName);
+
+    uint64_t statNotification(const std::string& notificationName) const override;
 
   private:
     void run();
@@ -45,7 +50,8 @@ namespace Cmder {
 
     Status mStatus;                             //< The status of mThreadPtr
     
-    std::vector<Agent::WeakPtr> mAgents;        //< List of agents that registered itself. The agent lifetime is not
+    using AgentCont_t = std::vector<Agent::WeakPtr>;
+    AgentCont_t mAgents;                        //< List of agents that registered itself. The agent lifetime is not
                                                 //< known. Need to lock to test the existence of it
 
     std::map<std::string, uint64_t> mNotificationStatistics;  //< Nr. of notifications sent of a given type
@@ -53,4 +59,4 @@ namespace Cmder {
 
 }
 
-#endif
+#endif /* A694C050_D5F4_4037_BF8A_42619171DEE0 */

@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-10 23:42:51                               *
+ * @LastEditDate          : 2023-07-11 12:12:29                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -15,6 +15,23 @@
 #include <random>
 #include <thread>
 
+namespace {
+  /// @brief Helper method to generate an ID for the next agent instance
+  /// @return String in form of "Name_1234"
+  std::string getNextAgentName()
+  {
+    static const std::array<std::string, 6> sAgentNames{
+      "Mulder", "Scully", "Bond", "Bourne", "Hunt", "Nikita"
+    };
+    
+    static std::default_random_engine generator;
+    static std::uniform_int_distribution<int> distrName(0, sAgentNames.max_size());
+    static std::uniform_int_distribution<int> distrId(100, 999);
+    std::stringstream ss;
+    ss << "<<" << sAgentNames[distrName(generator)] << "_" << distrId(generator) << ">>";
+    return ss.str();
+  }
+}
 
 namespace Cmder {
 
@@ -57,21 +74,12 @@ namespace Cmder {
 
   Agent::SharedPtr Agent::create(Server& server, Callback::SharedPtr callback)
   {
-    static const std::array<std::string, 6> sAgentNames{
-      "Mulder", "Scully", "Bond", "Bourne", "Hunt", "Nikita"
-    };
-    
-    static std::default_random_engine generator;
-    static std::uniform_int_distribution<int> distrName(0, sAgentNames.max_size());
-    static std::uniform_int_distribution<int> distrId(100, 999);
-    std::stringstream ss;
-    ss << "<<" << sAgentNames[distrName(generator)] << "_" << distrId(generator) << ">>";
-
     //Use a temporary subclass to make a connection between a smart pointer generator function and a class with a private constructor.
     struct MkSharedEnabler : public Agent {
-      MkSharedEnabler(const Server& server, Callback::SharedPtr cb, const std::string& name) : Agent(server, cb, name) {}
+      MkSharedEnabler(Server& server, Callback::SharedPtr cb) : Agent(server, cb) {}
     };
-    auto instance = std::make_shared<MkSharedEnabler>(server, callback, ss.str());
+    auto instance = std::make_shared<MkSharedEnabler>(server, callback);
+
     server.registerAgent(instance);
     return instance;
   }
@@ -129,7 +137,7 @@ namespace Cmder {
     return receipt;
   }
 
-  void Agent::notify(const std::string &message)
+  void Agent::notify(const std::string& message)
   {
     LOG("Agent " << mDebugName << " got message: " << message);
 
@@ -137,9 +145,19 @@ namespace Cmder {
     mNotifications.push(message);
   }
 
-  const std::string &Agent::getName() const
+  const std::string& Agent::getName() const
   {
     return mDebugName;
+  }
+
+  void Agent::registerAgent()
+  {
+    // TODO: check the call Agent::create()
+  }
+
+  void Agent::unregisterAgent()
+  {
+    mServer.unregister(mDebugName);
   }
 
   uint64_t Agent::statNotification(const std::string &notificationName) const
@@ -148,14 +166,14 @@ namespace Cmder {
     return mNotifications.size();
   }
 
-  Agent::Agent(const Server &server, Callback::SharedPtr callback, const std::string& name)
+  Agent::Agent(Server &server, Callback::SharedPtr callback)
   : mMutex()
   , mThreadPtr()
   , mConditionVariable()
   , mServer(server)
   , mCallback(callback)
   , mNotifications()
-  , mDebugName(name)
+  , mDebugName(getNextAgentName())
   {
     {
       std::lock_guard guard(mMutex);

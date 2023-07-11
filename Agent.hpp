@@ -1,12 +1,12 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-01 12:00:00                              *
- * @LastEditDate          : 2023-07-10 23:52:09                              *
+ * @LastEditDate          : 2023-07-11 12:11:23                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
-#ifndef AGENT_H_INCLUDED
-#define AGENT_H_INCLUDED
+#ifndef C5CEADB5_5E42_402E_B2D4_5B6CAA2A11FA
+#define C5CEADB5_5E42_402E_B2D4_5B6CAA2A11FA
 
 #include "Callback.hpp"
 #include "IControllableThread.hpp"
@@ -50,10 +50,18 @@ namespace Cmder {
 
     virtual ~Agent();
 
-    // IControllableThread interfaces:
-    void start() override;
-    void stop() override;
-    Status getStatus() const override;
+    //////////////////////////////////////////////////////////////////////////
+    // IControllableThread abstract interface implementations:              //
+    void start() override;                                                  //
+    void stop() override;                                                   //
+    Status getStatus() const override;                                      //
+    //////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////////////////////////
+    // IStatProvider abstract interface implementations:                    //
+    uint64_t statNotification(const std::string& notificationName) const;   //
+    //////////////////////////////////////////////////////////////////////////
+
 
     /// @brief Invoke a task and get the result of it
     /// @param mode Blocking the caller or asynch (NOTE: only blocking works now)
@@ -68,12 +76,17 @@ namespace Cmder {
     /// @param message Notification
     void notify(const std::string& message);
 
+    /// @brief Get the name of the agent (for debugging).
+    ///        It is automatically generated at the time of creation.
+    /// @return Name as a string constant reference.
     const std::string& getName() const;
 
-    uint64_t statNotification(const std::string& notificationName) const;
+    // Helpers to set up/break down the link between the agent and the server (for testing purposes)
+    void registerAgent();
+    void unregisterAgent();
 
   private:
-    explicit Agent(const Server& server, Callback::SharedPtr callback, const std::string& name);
+    explicit Agent(Server& server, Callback::SharedPtr callback);
 
     /// @brief The method that will be executed by the working thread.
     void run();
@@ -88,7 +101,7 @@ namespace Cmder {
 
     Status mStatus;                           //< The status of mThreadPtr
 
-    const Server& mServer;                    //< As of now the only service. Later the
+    Server& mServer;                          //< As of now the only service. Later the
                                               //< service will be selected for a task based on
                                               //< some selection criteria.
 
@@ -104,4 +117,4 @@ namespace Cmder {
 
 }
 
-#endif // AGENT_H_INCLUDED
+#endif /* C5CEADB5_5E42_402E_B2D4_5B6CAA2A11FA */

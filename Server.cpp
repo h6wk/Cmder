@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-10 23:49:38                              *
+ * @LastEditDate          : 2023-07-11 12:00:55                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -71,7 +71,27 @@ namespace Cmder {
     std::lock_guard guard(mMutex);
     mAgents.push_back(agent);
 
-    LOG("Agent #" << mAgents.size() << " with call name " << agent->getName() << " was registered");
+    LOG("Agent #" << mAgents.size() << " called " << agent->getName() << " is registered");
+  }
+
+  void Server::unregister(const std::string agentName)
+  {
+    std::lock_guard guard(mMutex);
+    for (AgentCont_t::const_iterator agentWptrIter = mAgents.begin(); agentWptrIter != mAgents.end(); /* inc. in body*/) {
+
+      Agent::SharedPtr agent = agentWptrIter->lock();
+      if ( ! agent) {
+        LOG("Removing a dead reference onto an agent. No more info about!");
+        agentWptrIter = mAgents.erase(agentWptrIter);
+      }
+      else if (agent->getName() == agentName) {
+        LOG("Unregister agent called: " << agentName);
+        agentWptrIter = mAgents.erase(agentWptrIter);
+      }
+      else {
+        ++agentWptrIter;
+      }
+    }
   }
 
   uint64_t Server::statNotification(const std::string &notificationName) const
@@ -108,8 +128,8 @@ namespace Cmder {
       std::for_each(std::begin(mAgents)
         , std::end(mAgents)
         , [&tickStat](const Agent::WeakPtr& agentWptr) {
-          Agent::SharedPtr agent = agentWptr.lock();
           LOG("TICK");
+          Agent::SharedPtr agent = agentWptr.lock();
           if (agent) {
             agent->notify("TICK");
             ++(*tickStat);
