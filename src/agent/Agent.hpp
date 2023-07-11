@@ -1,16 +1,18 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-01 12:00:00                              *
- * @LastEditDate          : 2023-07-11 12:11:23                              *
+ * @LastEditDate          : 2023-07-11 23:55:33                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
 #ifndef C5CEADB5_5E42_402E_B2D4_5B6CAA2A11FA
 #define C5CEADB5_5E42_402E_B2D4_5B6CAA2A11FA
 
-#include "Callback.hpp"
-#include "IControllableThread.hpp"
-#include "Receipt.hpp"
+#include <agent/Task.hpp>
+
+#include "../../Callback.hpp"
+#include "../../IControllableThread.hpp"
+#include "../../Receipt.hpp"
 
 #include <condition_variable>
 #include <memory>
@@ -38,8 +40,6 @@ namespace Cmder {
   public:
     using SharedPtr = std::shared_ptr<Agent>;
     using WeakPtr = std::weak_ptr<Agent>;
-
-    enum Task {Pi, BlockMe_3s, PingMe_5x};
 
     /// @brief Create a new Agent object.
     /// @param server Reference to the server that will be called to do the task
@@ -70,7 +70,7 @@ namespace Cmder {
     ///         into the callbak.
     /// @return Get back a receipt of ackowledge that can be used to find the corresponding
     ///         async result.
-    Receipt doTask(Receipt::Mode mode, Task task, std::string& result) const;
+    Receipt doTask(Receipt::Mode mode, const TaskName& task, std::string& result) const;
 
     /// @brief Server uses this interface to send notifications to the agent
     /// @param message Notification
@@ -112,7 +112,6 @@ namespace Cmder {
     std::string mDebugName;                   //< To name (ID) for better logging
   };
 
-  std::ostream& operator<<(std::ostream& ostr, const Agent::Task& task);
   std::ostream& operator<<(std::ostream& ostr, const Status& status);
 
 }

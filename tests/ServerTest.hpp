@@ -1,12 +1,12 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-07 12:00:00                              *
- * @LastEditDate          : 2023-07-10 14:04:24                              *
+ * @LastEditDate          : 2023-07-11 22:47:23                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
-#ifndef SERVERTEST_H_INCLUDED
-#define SERVERTEST_H_INCLUDED
+#ifndef D1C1E98B_59A1_47AC_B7A9_6CAEF4E6C0A3
+#define D1C1E98B_59A1_47AC_B7A9_6CAEF4E6C0A3
 
 #include "../Logger.hpp"
 #include "../Server.hpp"
@@ -14,15 +14,6 @@
 //  mingw-w64-x86_64-gtest !
 #include <gtest/gtest.h>
 
-namespace {
-  void runTests()
-  {
-    testing::InitGoogleTest();
-    std::cout << std::endl;
-    int retVal =  RUN_ALL_TESTS();
-    LOG("Tests executed: " << retVal);
-  }
-}
 
 namespace Cmder::Testing {
 
@@ -58,4 +49,4 @@ namespace Cmder::Testing {
   };
 }
 
-#endif
+#endif /* D1C1E98B_59A1_47AC_B7A9_6CAEF4E6C0A3 */

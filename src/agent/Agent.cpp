@@ -1,13 +1,13 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-11 12:12:29                               *
+ * @LastEditDate          : 2023-07-11 23:54:24                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
 #include "Agent.hpp"
-#include "Logger.hpp"
-#include "Server.hpp"
+#include "../../Logger.hpp"
+#include "../../Server.hpp"
 
 #include <assert.h>
 #include <chrono>
@@ -34,23 +34,6 @@ namespace {
 }
 
 namespace Cmder {
-
-  std::ostream& operator<<(std::ostream& ostr, const Agent::Task& task)
-  {
-    switch (task) {
-    case Agent::Task::BlockMe_3s:
-      ostr << "BLOCK_ME_3s";
-      break;
-    case Agent::Task::Pi:
-      ostr << "PI";
-      break;
-    case Agent::Task::PingMe_5x:
-      ostr << "PING_ME_5x";
-      break;
-    }
-    return ostr;
-  }
-
 
   std::ostream& operator<<(std::ostream& ostr, const Status& status)
   {
@@ -85,7 +68,7 @@ namespace Cmder {
   }
 
 
-  Receipt Agent::doTask(Receipt::Mode mode, Agent::Task task, std::string& result) const
+  Receipt Agent::doTask(Receipt::Mode mode, const TaskName& task, std::string& result) const
   {
     Receipt receipt(mode);
 
@@ -93,7 +76,7 @@ namespace Cmder {
 
     LOG("Task '" << task << "' started in " << mode << " mode");
     if (mCallback) {
-      mCallback->notify(receipt.getTaskId(), Callback::NOTIFICATION, "Task started: " + task);
+      mCallback->notify(receipt.getTaskId(), Callback::NOTIFICATION, "Task started: " /*+ task*/);
     }
     else {
       assert(mode != Receipt::Async);

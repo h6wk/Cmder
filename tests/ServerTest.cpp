@@ -1,13 +1,13 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-07 12:00:00                              *
- * @LastEditDate          : 2023-07-10 23:45:50                              *
+ * @LastEditDate          : 2023-07-11 23:39:06                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
 #include "ServerTest.hpp"
 
-#include "../Agent.hpp"
+#include <agent/Agent.hpp>
 #include "../IControllableThread.hpp"
 #include "../Logger.hpp"
 
@@ -33,13 +33,13 @@ namespace Cmder::Testing {
     Agent::SharedPtr agentLongLife = Agent::create(*mServer, Callback::SharedPtr());
 
     std::this_thread::sleep_for(1000ms);
-    agentShortLife.reset();
+    agentShortLife->unregisterAgent();
 
     std::this_thread::sleep_for(1000ms);
-    agentLongLife.reset();
+    agentLongLife->unregisterAgent();
 
-    //TODO : add interfaces to check the arrival of the TICK messages
-    //EXPECT_EQ(mServer->statNotification("TICK"), agentShortLife->statNotification("TICK") + agentLongLife->statNotification("TICK"));
+    EXPECT_GT(agentLongLife->statNotification("TICK"), agentShortLife->statNotification("TICK"));
+    EXPECT_EQ(mServer->statNotification("TICK"), agentShortLife->statNotification("TICK") + agentLongLife->statNotification("TICK"));
   }
 
 }

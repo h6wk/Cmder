@@ -1,9 +1,16 @@
-#ifndef AGENTTEST_H_INCLUDED
-#define AGENTTEST_H_INCLUDED
+/*****************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                          *
+ * @CreatedDate           : 2023-07-06 12:00:00                              *
+ * @LastEditDate          : 2023-07-11 23:35:50                              *
+ * @CopyRight             : GNU GPL                                          *
+ ****************************************************************************/
+
+#ifndef C24E3114_7C87_43CB_87F1_FA599D88BA16
+#define C24E3114_7C87_43CB_87F1_FA599D88BA16
 
 #include <gtest/gtest.h>
 
-#include "../Agent.hpp"
+#include <agent/Agent.hpp>
 
 namespace Cmder::Testing {
   class AgentTest : public testing::Test {
@@ -42,4 +49,4 @@ namespace Cmder::Testing {
   };
 }
 
-#endif
+#endif /* C24E3114_7C87_43CB_87F1_FA599D88BA16 */

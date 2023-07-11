@@ -70,14 +70,14 @@ class scoped_logger {
 
 namespace Cmder {
 	class Agent {
-		-Agent(const Server& server, Callback::SharedPtr callback, const std::string& name)
+		-Agent(Server& server, Callback::SharedPtr callback)
 		+~Agent()
 		-mCallback : Callback::SharedPtr
-		+doTask(Receipt::Mode mode, Task task, std::string& result) : Receipt {query}
+		+doTask(Receipt::Mode mode, const TaskName& task, std::string& result) : Receipt {query}
+		-mServer : Server&
 		+{static} create(Server& server, Callback::SharedPtr callback) : SharedPtr
 		+getStatus() : Status {query}
 		-mStatus : Status
-		-mServer : const Server&
 		-mMutex : mutable std::mutex
 		-mConditionVariable : std::condition_variable
 		-mNotifications : std::queue<std::string>
@@ -86,15 +86,21 @@ namespace Cmder {
 		-mThreadPtr : std::unique_ptr<std::thread>
 		+statNotification(const std::string& notificationName) : uint64_t {query}
 		+notify(const std::string& message) : void
+		+registerAgent() : void
 		-run() : void
 		+start() : void
 		+stop() : void
+		+unregisterAgent() : void
 	}
 
 	abstract class IControllableThread {
 		+{abstract} getStatus() : int {query}
 		+{abstract} start() : void
 		+{abstract} stop() : void
+	}
+
+	abstract class IStatProvider {
+		+{abstract} statNotification(const std::string& notificationName) : uint64_t {query}
 	}
 
 	class Server {
@@ -106,18 +112,17 @@ namespace Cmder {
 		-mConditionVariable : std::condition_variable
 		-mNotificationStatistics : std::map<std::string, uint64_t>
 		-mThreadPtr : std::unique_ptr<std::thread>
-		-mAgents : std::vector<Agent::WeakPtr>
 		+statNotification(const std::string& notificationName) : uint64_t {query}
+		-mAgents : vector<Agent::WeakPtr>
 		+registerAgent(Agent::SharedPtr agent) : void
 		-run() : void
 		+start() : void
 		+stop() : void
+		+unregister(const std::string agentName) : void
 	}
 
-	enum Agent::Task {
-		BlockMe_3s
-		Pi
-		PingMe_5x
+	class Task {
+		-mTaskConfiguration : std::vector<TaskConfig>
 	}
 
 	enum Status {
@@ -125,6 +130,15 @@ namespace Cmder {
 		Run
 		Start
 		Stop
+	}
+
+	enum TaskName {
+		BlockMe_3s
+		Pi
+		PingMe_5x
+	}
+
+	class Task::TaskConfig {
 	}
 
 	namespace Testing {
@@ -158,6 +172,9 @@ Cmder.IControllableThread <|-- Cmder.Agent
 
 
 Cmder.IControllableThread <|-- Cmder.Server
+
+
+Cmder.IStatProvider <|-- Cmder.Server
 
 
 
@@ -204,9 +221,6 @@ Cmder.Testing.ServerTest *-- Cmder.Server
 
 /' Nested objects '/
 
-Cmder.Agent +-- Cmder.Agent::Task
-
-
 .Callback +-- .Callback::Message_t
 
 
@@ -217,6 +231,9 @@ Cmder.Agent +-- Cmder.Agent::Task
 
 
 .Receipt +-- .Receipt::Status
+
+
+Cmder.Task +-- Cmder.Task::TaskConfig
 
 
 

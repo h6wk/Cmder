@@ -1,14 +1,14 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-11 11:46:13                              *
+ * @LastEditDate          : 2023-07-11 23:38:37                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
 #ifndef A694C050_D5F4_4037_BF8A_42619171DEE0
 #define A694C050_D5F4_4037_BF8A_42619171DEE0
 
-#include "Agent.hpp"
+#include <agent/Agent.hpp>
 #include "IControllableThread.hpp"
 #include "IStatProvider.hpp"
 

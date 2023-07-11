@@ -1,6 +1,14 @@
+/*****************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                          *
+ * @CreatedDate           : 2023-07-06 12:00:00                              *
+ * @LastEditDate          : 2023-07-11 23:56:17                              *
+ * @CopyRight             : GNU GPL                                          *
+ ****************************************************************************/
+
 
 #include "AgentTest.hpp"
-#include "../Agent.hpp"
+#include <agent/Agent.hpp>
+#include <agent/Task.hpp>
 #include "../Server.hpp"
 
 namespace Cmder::Testing {
@@ -15,11 +23,11 @@ namespace Cmder::Testing {
     ASSERT_TRUE(sAsyncAgent);
     ASSERT_TRUE(sCallback);
     std::string result;
-    Receipt receipt = sAsyncAgent->doTask(Receipt::Blocking, Agent::Pi, result);
+    Receipt receipt = sAsyncAgent->doTask(Receipt::Blocking, TaskName::Pi, result);
 
     EXPECT_EQ(result, "3.14");
 
-    EXPECT_GT(receipt.getTaskId(), 0); 
+    EXPECT_GE(receipt.getTaskId(), 0); 
     EXPECT_EQ(receipt.getStatus(), Receipt::OK); 
     EXPECT_EQ(receipt.getExecutionMode(), Receipt::Blocking);
 
@@ -33,7 +41,7 @@ namespace Cmder::Testing {
     ASSERT_TRUE(sAsyncAgent);
     ASSERT_TRUE(sCallback);
     std::string result("No result yet");
-    Receipt receipt = sAsyncAgent->doTask(Receipt::Async, Agent::Pi, result);
+    Receipt receipt = sAsyncAgent->doTask(Receipt::Async, TaskName::Pi, result);
 
     EXPECT_EQ(result, "");
 

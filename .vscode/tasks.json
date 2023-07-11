@@ -8,11 +8,13 @@
                 "-fdiagnostics-color=always",
                 "-std=c++20",
                 "-g",
+                "-I${workspaceFolder}/src",
                 "${workspaceFolder}/*.cpp",
+                "${workspaceFolder}/src/agent/*.cpp",
                 "${workspaceFolder}/tests/*.cpp",
                 "-lgtest",
                 "-o",
-                "${workspaceFolder}\\Cmder.exe"
+                "${workspaceFolder}/build/CmderTest.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
