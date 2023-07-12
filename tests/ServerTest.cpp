@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-07 12:00:00                              *
- * @LastEditDate          : 2023-07-11 23:39:06                              *
+ * @LastEditDate          : 2023-07-12 23:37:08                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -12,7 +12,7 @@
 #include "../Logger.hpp"
 
 
-namespace Cmder::Testing {
+namespace cmder::tst {
 
   using namespace std::chrono_literals;
 

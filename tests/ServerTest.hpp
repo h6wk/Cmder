@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-07 12:00:00                              *
- * @LastEditDate          : 2023-07-11 22:47:23                              *
+ * @LastEditDate          : 2023-07-12 23:34:46                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -15,7 +15,11 @@
 #include <gtest/gtest.h>
 
 
-namespace Cmder::Testing {
+namespace cmder::tst {
+
+  using namespace cmder;
+  using namespace cmder::agent;
+  using namespace Cmder;
 
   // To use gtest fixture, derive from testing::Test 
   class ServerTest : public testing::Test {

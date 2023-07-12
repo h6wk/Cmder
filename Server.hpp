@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-11 23:38:37                              *
+ * @LastEditDate          : 2023-07-12 10:53:08                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -18,16 +18,34 @@
 
 namespace Cmder {
 
+  using namespace cmder::agent;
+
+  /**
+   * Entity that accepts the task does the job and delivers the result to the
+   * agent. It can work in sync or async mode, that depends on the type of 
+   * the task.
+   */
   class Server : public IControllableThread, public IStatProvider {
   public:
     
     Server();
     virtual ~Server();
 
-    // IControllableThread abstract interfaces:
-    void start() override;
-    void stop() override;
-    Cmder::Status getStatus() const override;
+    //////////////////////////////////////////////////////////////////////////////////
+    // IControllableThread abstract interface implementations:                      //
+    //////////////////////////////////////////////////////////////////////////////////
+    void start() override;                                                          //
+    void stop() override;                                                           //
+    Cmder::Status getStatus() const override;                                       //
+    //////////////////////////////////////////////////////////////////////////////////
+
+
+    //////////////////////////////////////////////////////////////////////////////////
+    // IStatProvider abstract interface implementations:                            //
+    //////////////////////////////////////////////////////////////////////////////////
+    uint64_t statNotification(const std::string& notificationName) const override;  //
+    //////////////////////////////////////////////////////////////////////////////////
+
 
     /// @brief Registers an agent into the server (for notifications)
     /// @param agent Shared pointer to the agent
@@ -35,9 +53,7 @@ namespace Cmder {
 
     /// @brief Temp. solution to remove an agent. Not completely safe to identify the agent with a generated name.
     /// @param agentName to remove
-    void unregister(const std::string agentName);
-
-    uint64_t statNotification(const std::string& notificationName) const override;
+    void unregisterAgent(const std::string& agentName);
 
   private:
     void run();

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-01 12:00:00                              *
- * @LastEditDate          : 2023-07-11 23:55:33                              *
+ * @LastEditDate          : 2023-07-12 23:42:33                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -12,6 +12,7 @@
 
 #include "../../Callback.hpp"
 #include "../../IControllableThread.hpp"
+#include "../../IStatProvider.hpp"
 #include "../../Receipt.hpp"
 
 #include <condition_variable>
@@ -20,11 +21,17 @@
 #include <string>
 #include <thread>
 
-
 namespace Cmder {
 
   // -- forward declaration
   class Server;
+}
+
+
+namespace cmder::agent {
+
+  using namespace Cmder;
+
 
   
   /**
@@ -35,7 +42,7 @@ namespace Cmder {
    * Accepts the task and forwards to the selected service. Accepts the service's
    * response and distributes to the client's callback.
    */
-  class Agent : public IControllableThread
+  class Agent : public IControllableThread, public IStatProvider
   {
   public:
     using SharedPtr = std::shared_ptr<Agent>;
@@ -46,7 +53,7 @@ namespace Cmder {
     /// @param callback Shared pointer to the callback (async!)
     ///                 Empty pointer -> only blocking mode is possible
     /// @return Shared pointer on the newly created object.
-    static SharedPtr create(Server& server, Callback::SharedPtr callback);
+    static SharedPtr create(Cmder::Server& server, Callback::SharedPtr callback);
 
     virtual ~Agent();
 
@@ -57,10 +64,11 @@ namespace Cmder {
     Status getStatus() const override;                                      //
     //////////////////////////////////////////////////////////////////////////
 
-    //////////////////////////////////////////////////////////////////////////
-    // IStatProvider abstract interface implementations:                    //
-    uint64_t statNotification(const std::string& notificationName) const;   //
-    //////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////////////////////////////////
+    // IStatProvider abstract interface implementations:                            //
+    uint64_t statNotification(const std::string& notificationName) const override;  //
+    //////////////////////////////////////////////////////////////////////////////////
 
 
     /// @brief Invoke a task and get the result of it
@@ -105,7 +113,10 @@ namespace Cmder {
                                               //< service will be selected for a task based on
                                               //< some selection criteria.
 
-    Callback::SharedPtr mCallback;            //< Client's callback to send async responses
+    Callback::WeakPtr mClientCallback;        //< Client's callback to send async responses
+                                              //< Since this ia a weak pointer, agent doesn't own it!
+
+    Callback::SharedPtr mCallback;            //< Agent's callback to receive notifications and async responses from the server
 
     std::queue<std::string> mNotifications;   //< Notification queue (recevied from the server)
 

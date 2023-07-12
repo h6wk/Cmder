@@ -1,79 +1,89 @@
+/*****************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                          *
+ * @CreatedDate           : 2023-07-03 12:00:00                              *
+ * @LastEditDate          : 2023-07-12 23:30:36                              *
+ * @CopyRight             : GNU GPL                                          *
+ ****************************************************************************/
+
 #include "Callback.hpp"
 #include "Logger.hpp"
 
 #include <chrono>
 #include <iostream>
 
-Callback::~Callback()
-{
-  std::lock_guard guard(mMutex);
-  mMessages.clear();
-}
+namespace cmder {
 
-void Callback::notify(TaskId taskId, Callback::Type type, const std::string &message)
-{
-  std::lock_guard guard(mMutex);
-
-  mMessages.emplace(
-    std::make_pair(taskId, type)
-    , Message_t(std::chrono::system_clock::now(), message));
-  LOG("Add: '" << message << "' count: " << mMessages.size());
-}
-
-void Callback::clear()
-{
-  mMessages.clear();
-}
-
-std::optional<Callback::Message_t> Callback::getFirst(const Receipt& receipt, Callback::Type type)
-{
-  std::lock_guard guard(mMutex);
-
-  auto it = mMessages.find(std::make_pair(receipt.getTaskId(), type));
-  if (it != mMessages.end()) {
-    return std::make_optional(it->second);
+  Callback::~Callback()
+  {
+    std::lock_guard guard(mMutex);
+    mMessages.clear();
   }
 
-  return std::optional<Callback::Message_t>();
-}
-
-std::optional<Callback::Message_t> Callback::waitFirst(const Receipt &receipt, Type type)
-{
-  const Key_t key(std::make_pair(receipt.getTaskId(), type));
-
-  // Node handle is a move-only type that owns and provides access to the element => will be removed from the container!!!
-  while (true) {
-
+  void Callback::notify(TaskId taskId, Callback::Type type, const std::string &message)
+  {
     std::lock_guard guard(mMutex);
 
-    auto nodeHandle = mMessages.extract(key);
-    if (nodeHandle) {
-      return std::make_optional<Message_t>(
-        nodeHandle.mapped().mTime, nodeHandle.mapped().mResult);
-    }
-
-    // TODO: sleep + check time limit! -> break;
+    mMessages.emplace(
+      std::make_pair(taskId, type)
+      , Message_t(std::chrono::system_clock::now(), message));
+    LOG("Add: '" << message << "' count: " << mMessages.size());
   }
 
-  return std::optional<Message_t>();
-}
+  void Callback::clear()
+  {
+    mMessages.clear();
+  }
 
-std::ostream& operator<<(std::ostream &ostr, const Callback::Message_t& msg)
-{
-  ostr << msg.mTime << ", " << msg.mResult;
-  return ostr;
-}
+  std::optional<Callback::Message_t> Callback::getFirst(const Receipt& receipt, Callback::Type type)
+  {
+    std::lock_guard guard(mMutex);
 
-std::ostream& operator<<(std::ostream &ostr, const Callback::SharedPtr& cb)
-{
-  if ( ! cb) {
-    ostr << "-";
+    auto it = mMessages.find(std::make_pair(receipt.getTaskId(), type));
+    if (it != mMessages.end()) {
+      return std::make_optional(it->second);
+    }
+
+    return std::optional<Callback::Message_t>();
+  }
+
+  std::optional<Callback::Message_t> Callback::waitFirst(const Receipt &receipt, Type type)
+  {
+    const Key_t key(std::make_pair(receipt.getTaskId(), type));
+
+    // Node handle is a move-only type that owns and provides access to the element => will be removed from the container!!!
+    while (true) {
+
+      std::lock_guard guard(mMutex);
+
+      auto nodeHandle = mMessages.extract(key);
+      if (nodeHandle) {
+        return std::make_optional<Message_t>(
+          nodeHandle.mapped().mTime, nodeHandle.mapped().mResult);
+      }
+
+      // TODO: sleep + check time limit! -> break;
+    }
+
+    return std::optional<Message_t>();
+  }
+
+  std::ostream& operator<<(std::ostream &ostr, const Callback::Message_t& msg)
+  {
+    ostr << msg.mTime << ", " << msg.mResult;
     return ostr;
   }
 
-  std::lock_guard guard(cb->mMutex);
-  for (auto message : cb->mMessages) {
-    ostr << "\n        (" << message.first.first << "," << message.first.second << "): " << message.second;
+  std::ostream& operator<<(std::ostream &ostr, const Callback::SharedPtr& cb)
+  {
+    if ( ! cb) {
+      ostr << "-";
+      return ostr;
+    }
+
+    std::lock_guard guard(cb->mMutex);
+    for (auto message : cb->mMessages) {
+      ostr << "\n        (" << message.first.first << "," << message.first.second << "): " << message.second;
+    }
+    return ostr;
   }
-  return ostr;
 }

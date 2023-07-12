@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-11 23:54:24                               *
+ * @LastEditDate          : 2023-07-13 00:12:21                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -33,7 +33,7 @@ namespace {
   }
 }
 
-namespace Cmder {
+namespace cmder::agent {
 
   std::ostream& operator<<(std::ostream& ostr, const Status& status)
   {
@@ -55,7 +55,7 @@ namespace Cmder {
   }
 
 
-  Agent::SharedPtr Agent::create(Server& server, Callback::SharedPtr callback)
+  Agent::SharedPtr Agent::create(Cmder::Server& server, Callback::SharedPtr callback)
   {
     //Use a temporary subclass to make a connection between a smart pointer generator function and a class with a private constructor.
     struct MkSharedEnabler : public Agent {
@@ -75,8 +75,8 @@ namespace Cmder {
     result.clear();
 
     LOG("Task '" << task << "' started in " << mode << " mode");
-    if (mCallback) {
-      mCallback->notify(receipt.getTaskId(), Callback::NOTIFICATION, "Task started: " /*+ task*/);
+    if (auto clientCb = mClientCallback.lock()) {
+      clientCb->notify(receipt.getTaskId(), Callback::NOTIFICATION, "Task started: " /*+ task*/);
     }
     else {
       assert(mode != Receipt::Async);
@@ -96,7 +96,10 @@ namespace Cmder {
       const std::string result("3.14");
 
       if (mode == Receipt::Async) {
-        this->mCallback->notify(receipt.getTaskId(), Callback::RESULT, result);
+        auto clientCb = mClientCallback.lock();
+        if (clientCb) {
+          clientCb->notify(receipt.getTaskId(), Callback::RESULT, result);
+        }
         return std::string("");
       }
 
@@ -140,7 +143,7 @@ namespace Cmder {
 
   void Agent::unregisterAgent()
   {
-    mServer.unregister(mDebugName);
+    mServer.unregisterAgent(mDebugName);
   }
 
   uint64_t Agent::statNotification(const std::string &notificationName) const
@@ -154,7 +157,8 @@ namespace Cmder {
   , mThreadPtr()
   , mConditionVariable()
   , mServer(server)
-  , mCallback(callback)
+  , mClientCallback(callback)
+  , mCallback(std::make_shared<Callback>())
   , mNotifications()
   , mDebugName(getNextAgentName())
   {
@@ -175,7 +179,7 @@ namespace Cmder {
       mStatus = Status::Run;
     }
 
-    LOG("Agent runs");
+    LOG("Agent " << mDebugName << " runs");
 
     while (true) {
 

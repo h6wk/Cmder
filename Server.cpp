@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-11 23:38:17                              *
+ * @LastEditDate          : 2023-07-12 10:41:34                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -72,7 +72,7 @@ namespace Cmder {
     LOG("Agent #" << mAgents.size() << " called " << agent->getName() << " is registered");
   }
 
-  void Server::unregister(const std::string agentName)
+  void Server::unregisterAgent(const std::string& agentName)
   {
     std::lock_guard guard(mMutex);
     for (AgentCont_t::const_iterator agentWptrIter = mAgents.begin(); agentWptrIter != mAgents.end(); /* inc. in body*/) {
@@ -92,7 +92,7 @@ namespace Cmder {
     }
   }
 
-  uint64_t Server::statNotification(const std::string &notificationName) const
+  uint64_t Server::statNotification(const std::string& notificationName) const
   {
     std::lock_guard guard(mMutex);
     auto it = mNotificationStatistics.find(notificationName);

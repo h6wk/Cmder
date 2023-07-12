@@ -6,19 +6,6 @@
 
 /' Objects '/
 
-class Callback {
-	+Callback()
-	+~Callback()
-	+operator<<(std::ostream& ostr, const Callback::SharedPtr& cb) : std :: ostream&
-	-mMessages : std::map<Key_t, Message_t>
-	-mMutex : std::mutex
-	+getFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
-	+waitFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
-	+clear() : void
-	+notify(TaskId taskId, Type type, const std::string& message) : void
-}
-
-
 class Receipt {
 	+Receipt(Mode mode)
 	+getEndTime() : ChronotTime_t& {query}
@@ -36,12 +23,6 @@ class Receipt {
 }
 
 
-enum Callback::Type {
-	NOTIFICATION
-	RESULT
-}
-
-
 enum Receipt::Mode {
 	Async
 	Blocking
@@ -54,12 +35,6 @@ enum Receipt::Status {
 }
 
 
-class Callback::Message_t {
-	+mTime : Receipt::ChronotTime_t
-	+mResult : std::string
-}
-
-
 class scoped_logger {
 	+scoped_logger(const std::string& className, const char* funcName, unsigned line)
 	+~scoped_logger()
@@ -68,31 +43,92 @@ class scoped_logger {
 }
 
 
-namespace Cmder {
-	class Agent {
-		-Agent(Server& server, Callback::SharedPtr callback)
-		+~Agent()
-		-mCallback : Callback::SharedPtr
-		+doTask(Receipt::Mode mode, const TaskName& task, std::string& result) : Receipt {query}
-		-mServer : Server&
-		+{static} create(Server& server, Callback::SharedPtr callback) : SharedPtr
-		+getStatus() : Status {query}
-		-mStatus : Status
-		-mMutex : mutable std::mutex
-		-mConditionVariable : std::condition_variable
-		-mNotifications : std::queue<std::string>
-		-mDebugName : std::string
-		+getName() : std::string& {query}
-		-mThreadPtr : std::unique_ptr<std::thread>
-		+statNotification(const std::string& notificationName) : uint64_t {query}
-		+notify(const std::string& message) : void
-		+registerAgent() : void
-		-run() : void
-		+start() : void
-		+stop() : void
-		+unregisterAgent() : void
+namespace cmder {
+	class Callback {
+		+Callback()
+		+~Callback()
+		+operator<<(std::ostream& ostr, const Callback::SharedPtr& cb) : std :: ostream&
+		-mMessages : std::map<Key_t, Message_t>
+		-mMutex : std::mutex
+		+getFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
+		+waitFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
+		+clear() : void
+		+notify(TaskId taskId, Type type, const std::string& message) : void
 	}
 
+	enum Callback::Type {
+		NOTIFICATION
+		RESULT
+	}
+
+	class Callback::Message_t {
+		+mTime : Receipt::ChronotTime_t
+		+mResult : std::string
+	}
+
+	namespace tst {
+		class AgentTest {
+			#{static} sAsyncAgent : static Agent::SharedPtr
+			#{static} sNoCallbackAgent : static Agent::SharedPtr
+			#{static} sCallback : static Callback::SharedPtr
+			#{static} sServer : static Server
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#{static} TearDownTestSuite() : void
+		}
+
+		class ServerTest {
+			#mServer : std::unique_ptr<Server>
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#TearDown() : void
+			#{static} TearDownTestSuite() : void
+		}
+	}
+
+	namespace agent {
+		class Agent {
+			-Agent(Server& server, Callback::SharedPtr callback)
+			+~Agent()
+			-mCallback : Callback::SharedPtr
+			-mClientCallback : Callback::WeakPtr
+			+doTask(Receipt::Mode mode, const TaskName& task, std::string& result) : Receipt {query}
+			-mServer : Server&
+			+{static} create(Cmder::Server& server, Callback::SharedPtr callback) : SharedPtr
+			+getStatus() : Status {query}
+			-mStatus : Status
+			-mMutex : mutable std::mutex
+			-mConditionVariable : std::condition_variable
+			-mNotifications : std::queue<std::string>
+			-mDebugName : std::string
+			+getName() : std::string& {query}
+			-mThreadPtr : std::unique_ptr<std::thread>
+			+statNotification(const std::string& notificationName) : uint64_t {query}
+			+notify(const std::string& message) : void
+			+registerAgent() : void
+			-run() : void
+			+start() : void
+			+stop() : void
+			+unregisterAgent() : void
+		}
+
+		class Task {
+			-mTaskConfiguration : std::vector<TaskConfig>
+		}
+
+		enum TaskName {
+			BlockMe_3s
+			Pi
+			PingMe_5x
+		}
+
+		class Task::TaskConfig {
+		}
+	}
+}
+
+
+namespace Cmder {
 	abstract class IControllableThread {
 		+{abstract} getStatus() : int {query}
 		+{abstract} start() : void
@@ -118,11 +154,7 @@ namespace Cmder {
 		-run() : void
 		+start() : void
 		+stop() : void
-		+unregister(const std::string agentName) : void
-	}
-
-	class Task {
-		-mTaskConfiguration : std::vector<TaskConfig>
+		+unregisterAgent(const std::string& agentName) : void
 	}
 
 	enum Status {
@@ -130,35 +162,6 @@ namespace Cmder {
 		Run
 		Start
 		Stop
-	}
-
-	enum TaskName {
-		BlockMe_3s
-		Pi
-		PingMe_5x
-	}
-
-	class Task::TaskConfig {
-	}
-
-	namespace Testing {
-		class AgentTest {
-			#{static} sAsyncAgent : static Agent::SharedPtr
-			#{static} sNoCallbackAgent : static Agent::SharedPtr
-			#{static} sCallback : static Callback::SharedPtr
-			#{static} sServer : static Server
-			#SetUp() : void
-			#{static} SetUpTestSuite() : void
-			#{static} TearDownTestSuite() : void
-		}
-
-		class ServerTest {
-			#mServer : std::unique_ptr<Server>
-			#SetUp() : void
-			#{static} SetUpTestSuite() : void
-			#TearDown() : void
-			#{static} TearDownTestSuite() : void
-		}
 	}
 }
 
@@ -168,10 +171,13 @@ namespace Cmder {
 
 /' Inheritance relationships '/
 
-Cmder.IControllableThread <|-- Cmder.Agent
+Cmder.IControllableThread <|-- cmder.agent.Agent
 
 
 Cmder.IControllableThread <|-- Cmder.Server
+
+
+Cmder.IStatProvider <|-- cmder.agent.Agent
 
 
 Cmder.IStatProvider <|-- Cmder.Server
@@ -182,37 +188,37 @@ Cmder.IStatProvider <|-- Cmder.Server
 
 /' Aggregation relationships '/
 
-Cmder.Agent *-- .Callback
+cmder.agent.Agent "2" *-- cmder.Callback
 
 
-Cmder.Agent *-- Cmder.Server
+cmder.agent.Agent *-- Cmder.Server
 
 
-Cmder.Agent *-- Cmder.Status
+cmder.agent.Agent *-- Cmder.Status
 
 
-Cmder.Testing.AgentTest "2" *-- Cmder.Agent
+cmder.tst.AgentTest "2" *-- cmder.agent.Agent
 
 
-Cmder.Testing.AgentTest *-- .Callback
+cmder.tst.AgentTest *-- cmder.Callback
 
 
-Cmder.Testing.AgentTest *-- Cmder.Server
+cmder.tst.AgentTest *-- Cmder.Server
 
 
-.Callback::Message_t *-- .Receipt
+cmder.Callback::Message_t *-- .Receipt
 
 
 .Receipt *-- Cmder.Status
 
 
-Cmder.Server *-- Cmder.Agent
+Cmder.Server *-- cmder.agent.Agent
 
 
 Cmder.Server *-- Cmder.Status
 
 
-Cmder.Testing.ServerTest *-- Cmder.Server
+cmder.tst.ServerTest *-- Cmder.Server
 
 
 
@@ -221,10 +227,10 @@ Cmder.Testing.ServerTest *-- Cmder.Server
 
 /' Nested objects '/
 
-.Callback +-- .Callback::Message_t
+cmder.Callback +-- cmder.Callback::Message_t
 
 
-.Callback +-- .Callback::Type
+cmder.Callback +-- cmder.Callback::Type
 
 
 .Receipt +-- .Receipt::Mode
@@ -233,7 +239,7 @@ Cmder.Testing.ServerTest *-- Cmder.Server
 .Receipt +-- .Receipt::Status
 
 
-Cmder.Task +-- Cmder.Task::TaskConfig
+cmder.agent.Task +-- cmder.agent.Task::TaskConfig
 
 
 

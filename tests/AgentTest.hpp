@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-06 12:00:00                              *
- * @LastEditDate          : 2023-07-11 23:35:50                              *
+ * @LastEditDate          : 2023-07-12 23:36:12                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -12,13 +12,19 @@
 
 #include <agent/Agent.hpp>
 
-namespace Cmder::Testing {
+namespace cmder::tst {
+
+  using namespace cmder;
+  using namespace cmder::agent;
+  using namespace Cmder;
+
   class AgentTest : public testing::Test {
   protected:  // You should make the members protected s.t. they can be accessed from sub-classes.
         
     // Per-test-suite set-up.
     // Called before the first test in this test suite.
-    static void SetUpTestSuite() {
+    static void SetUpTestSuite()
+    {
       sCallback = std::make_shared<Callback>();
       sNoCallbackAgent = Agent::create(sServer, Callback::SharedPtr());
       sAsyncAgent = Agent::create(sServer, sCallback);
@@ -27,14 +33,16 @@ namespace Cmder::Testing {
     // Per-test-suite tear-down.
     // Called after the last test in this test suite.
     // Can be omitted if not needed.
-    static void TearDownTestSuite() {
+    static void TearDownTestSuite()
+    {
       sAsyncAgent.reset();
       sNoCallbackAgent.reset();
       sCallback.reset();
     }
 
     // virtual void SetUp() will be called before each test is run.
-    void SetUp() override {
+    void SetUp() override
+    {
       sCallback->clear();
     }
 

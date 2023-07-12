@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-06 12:00:00                              *
- * @LastEditDate          : 2023-07-11 23:56:17                              *
+ * @LastEditDate          : 2023-07-12 23:35:26                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -11,7 +11,7 @@
 #include <agent/Task.hpp>
 #include "../Server.hpp"
 
-namespace Cmder::Testing {
+namespace cmder::tst {
 
   Server AgentTest::sServer;
   Callback::SharedPtr AgentTest::sCallback;

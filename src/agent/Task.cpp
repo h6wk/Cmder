@@ -7,7 +7,9 @@
 
 #include <agent/Task.hpp>
 
-namespace Cmder {
+
+namespace cmder::agent {
+
   std::ostream& operator<<(std::ostream& ostr, const TaskName& task)
   {
     switch (task) {

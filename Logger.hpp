@@ -1,12 +1,12 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-06-29 12:00:00                               *
- * @LastEditDate          : 2023-07-09 23:27:43                               *
+ * @LastEditDate          : 2023-07-12 09:17:44                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
-#ifndef LOGGER_H_INCLUDED
-#define LOGGER_H_INCLUDED
+#ifndef C1649F17_2A57_4A42_9EB6_E7D5FBCABA9B
+#define C1649F17_2A57_4A42_9EB6_E7D5FBCABA9B
 
 #include <iostream>
 #include <mutex>
@@ -64,4 +64,4 @@ private:
   scoped_logger(__CLASS_NAME__, __FUNCTION__, __LINE__).stream() << What
 
 
-#endif // LOGGER_H_INCLUDED
+#endif /* C1649F17_2A57_4A42_9EB6_E7D5FBCABA9B */
