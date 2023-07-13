@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-06 12:00:00                              *
- * @LastEditDate          : 2023-07-12 23:35:26                              *
+ * @LastEditDate          : 2023-07-13 15:02:16                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -9,9 +9,11 @@
 #include "AgentTest.hpp"
 #include <agent/Agent.hpp>
 #include <agent/Task.hpp>
-#include "../Server.hpp"
+#include <server/Server.hpp>
 
 namespace cmder::tst {
+
+  using cmder::Server;
 
   Server AgentTest::sServer;
   Callback::SharedPtr AgentTest::sCallback;

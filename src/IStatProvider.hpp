@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-11 11:17:28                              *
- * @LastEditDate          : 2023-07-11 11:20:10                              *
+ * @LastEditDate          : 2023-07-13 15:14:59                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -11,7 +11,7 @@
 #include <cstdint>
 #include <string>
 
-namespace Cmder {
+namespace cmder {
 
   class IStatProvider {
   public:

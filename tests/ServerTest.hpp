@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-07 12:00:00                              *
- * @LastEditDate          : 2023-07-12 23:34:46                              *
+ * @LastEditDate          : 2023-07-13 15:22:48                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -9,7 +9,7 @@
 #define D1C1E98B_59A1_47AC_B7A9_6CAEF4E6C0A3
 
 #include "../Logger.hpp"
-#include "../Server.hpp"
+#include <server/Server.hpp>
 
 //  mingw-w64-x86_64-gtest !
 #include <gtest/gtest.h>
@@ -19,7 +19,7 @@ namespace cmder::tst {
 
   using namespace cmder;
   using namespace cmder::agent;
-  using namespace Cmder;
+  using cmder::Server;
 
   // To use gtest fixture, derive from testing::Test 
   class ServerTest : public testing::Test {

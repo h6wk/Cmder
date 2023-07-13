@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-12 10:53:08                              *
+ * @LastEditDate          : 2023-07-13 15:21:51                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -9,14 +9,14 @@
 #define A694C050_D5F4_4037_BF8A_42619171DEE0
 
 #include <agent/Agent.hpp>
-#include "IControllableThread.hpp"
-#include "IStatProvider.hpp"
+#include "../IControllableThread.hpp"
+#include "../IStatProvider.hpp"
 
 #include <condition_variable>
 #include <memory>
 #include <thread>
 
-namespace Cmder {
+namespace cmder {
 
   using namespace cmder::agent;
 
@@ -36,7 +36,7 @@ namespace Cmder {
     //////////////////////////////////////////////////////////////////////////////////
     void start() override;                                                          //
     void stop() override;                                                           //
-    Cmder::Status getStatus() const override;                                       //
+    Status getStatus() const override;                                       //
     //////////////////////////////////////////////////////////////////////////////////
 
 

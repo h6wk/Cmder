@@ -1,14 +1,14 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-07 12:00:00                              *
- * @LastEditDate          : 2023-07-12 23:37:08                              *
+ * @LastEditDate          : 2023-07-13 15:22:28                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
 #include "ServerTest.hpp"
 
 #include <agent/Agent.hpp>
-#include "../IControllableThread.hpp"
+#include <IControllableThread.hpp>
 #include "../Logger.hpp"
 
 

@@ -11,6 +11,7 @@
                 "-I${workspaceFolder}/src",
                 "${workspaceFolder}/*.cpp",
                 "${workspaceFolder}/src/agent/*.cpp",
+                "${workspaceFolder}/src/server/*.cpp",
                 "${workspaceFolder}/tests/*.cpp",
                 "-lgtest",
                 "-o",

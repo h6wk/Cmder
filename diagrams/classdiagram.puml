@@ -56,9 +56,44 @@ namespace cmder {
 		+notify(TaskId taskId, Type type, const std::string& message) : void
 	}
 
+	abstract class IControllableThread {
+		+{abstract} getStatus() : int {query}
+		+{abstract} start() : void
+		+{abstract} stop() : void
+	}
+
+	abstract class IStatProvider {
+		+{abstract} statNotification(const std::string& notificationName) : uint64_t {query}
+	}
+
+	class Server {
+		+Server()
+		+~Server()
+		+getStatus() : Status {query}
+		-mStatus : Status
+		-mMutex : mutable std::mutex
+		-mConditionVariable : std::condition_variable
+		-mNotificationStatistics : std::map<std::string, uint64_t>
+		-mThreadPtr : std::unique_ptr<std::thread>
+		+statNotification(const std::string& notificationName) : uint64_t {query}
+		-mAgents : vector<Agent::WeakPtr>
+		+registerAgent(Agent::SharedPtr agent) : void
+		-run() : void
+		+start() : void
+		+stop() : void
+		+unregisterAgent(const std::string& agentName) : void
+	}
+
 	enum Callback::Type {
 		NOTIFICATION
 		RESULT
+	}
+
+	enum Status {
+		Init
+		Run
+		Start
+		Stop
 	}
 
 	class Callback::Message_t {
@@ -68,10 +103,10 @@ namespace cmder {
 
 	namespace tst {
 		class AgentTest {
+			#{static} sServer : Server
 			#{static} sAsyncAgent : static Agent::SharedPtr
 			#{static} sNoCallbackAgent : static Agent::SharedPtr
 			#{static} sCallback : static Callback::SharedPtr
-			#{static} sServer : static Server
 			#SetUp() : void
 			#{static} SetUpTestSuite() : void
 			#{static} TearDownTestSuite() : void
@@ -94,7 +129,7 @@ namespace cmder {
 			-mClientCallback : Callback::WeakPtr
 			+doTask(Receipt::Mode mode, const TaskName& task, std::string& result) : Receipt {query}
 			-mServer : Server&
-			+{static} create(Cmder::Server& server, Callback::SharedPtr callback) : SharedPtr
+			+{static} create(Server& server, Callback::SharedPtr callback) : SharedPtr
 			+getStatus() : Status {query}
 			-mStatus : Status
 			-mMutex : mutable std::mutex
@@ -128,59 +163,21 @@ namespace cmder {
 }
 
 
-namespace Cmder {
-	abstract class IControllableThread {
-		+{abstract} getStatus() : int {query}
-		+{abstract} start() : void
-		+{abstract} stop() : void
-	}
-
-	abstract class IStatProvider {
-		+{abstract} statNotification(const std::string& notificationName) : uint64_t {query}
-	}
-
-	class Server {
-		+Server()
-		+~Server()
-		+getStatus() : Cmder::Status {query}
-		-mStatus : Status
-		-mMutex : mutable std::mutex
-		-mConditionVariable : std::condition_variable
-		-mNotificationStatistics : std::map<std::string, uint64_t>
-		-mThreadPtr : std::unique_ptr<std::thread>
-		+statNotification(const std::string& notificationName) : uint64_t {query}
-		-mAgents : vector<Agent::WeakPtr>
-		+registerAgent(Agent::SharedPtr agent) : void
-		-run() : void
-		+start() : void
-		+stop() : void
-		+unregisterAgent(const std::string& agentName) : void
-	}
-
-	enum Status {
-		Init
-		Run
-		Start
-		Stop
-	}
-}
-
-
 
 
 
 /' Inheritance relationships '/
 
-Cmder.IControllableThread <|-- cmder.agent.Agent
+cmder.IControllableThread <|-- cmder.agent.Agent
 
 
-Cmder.IControllableThread <|-- Cmder.Server
+cmder.IControllableThread <|-- cmder.Server
 
 
-Cmder.IStatProvider <|-- cmder.agent.Agent
+cmder.IStatProvider <|-- cmder.agent.Agent
 
 
-Cmder.IStatProvider <|-- Cmder.Server
+cmder.IStatProvider <|-- cmder.Server
 
 
 
@@ -191,10 +188,10 @@ Cmder.IStatProvider <|-- Cmder.Server
 cmder.agent.Agent "2" *-- cmder.Callback
 
 
-cmder.agent.Agent *-- Cmder.Server
+cmder.agent.Agent *-- cmder.Server
 
 
-cmder.agent.Agent *-- Cmder.Status
+cmder.agent.Agent *-- cmder.Status
 
 
 cmder.tst.AgentTest "2" *-- cmder.agent.Agent
@@ -203,22 +200,22 @@ cmder.tst.AgentTest "2" *-- cmder.agent.Agent
 cmder.tst.AgentTest *-- cmder.Callback
 
 
-cmder.tst.AgentTest *-- Cmder.Server
+cmder.tst.AgentTest *-- cmder.Server
 
 
 cmder.Callback::Message_t *-- .Receipt
 
 
-.Receipt *-- Cmder.Status
+.Receipt *-- cmder.Status
 
 
-Cmder.Server *-- cmder.agent.Agent
+cmder.Server *-- cmder.agent.Agent
 
 
-Cmder.Server *-- Cmder.Status
+cmder.Server *-- cmder.Status
 
 
-cmder.tst.ServerTest *-- Cmder.Server
+cmder.tst.ServerTest *-- cmder.Server
 
 
 

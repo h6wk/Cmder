@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-06 12:00:00                              *
- * @LastEditDate          : 2023-07-12 23:36:12                              *
+ * @LastEditDate          : 2023-07-13 15:01:52                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -11,12 +11,12 @@
 #include <gtest/gtest.h>
 
 #include <agent/Agent.hpp>
+#include <server/Server.hpp>
 
 namespace cmder::tst {
 
-  using namespace cmder;
+  using cmder::Server;
   using namespace cmder::agent;
-  using namespace Cmder;
 
   class AgentTest : public testing::Test {
   protected:  // You should make the members protected s.t. they can be accessed from sub-classes.

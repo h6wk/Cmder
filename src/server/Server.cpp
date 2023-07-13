@@ -1,17 +1,17 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-12 10:41:34                              *
+ * @LastEditDate          : 2023-07-13 15:21:40                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
 #include <cassert>
 
 #include "Server.hpp"
-#include "Logger.hpp"
+#include "../Logger.hpp"
 
 
-namespace Cmder {
+namespace cmder {
 
   Server::Server()
   : mMutex()
@@ -56,7 +56,7 @@ namespace Cmder {
     mConditionVariable.notify_all();
   }
 
-  Cmder::Status Server::getStatus() const
+  Status Server::getStatus() const
   {
     std::lock_guard guard(mMutex);
     return mStatus;

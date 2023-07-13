@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-01 12:00:00                              *
- * @LastEditDate          : 2023-07-12 23:42:33                              *
+ * @LastEditDate          : 2023-07-13 15:20:43                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -11,8 +11,8 @@
 #include <agent/Task.hpp>
 
 #include "../../Callback.hpp"
-#include "../../IControllableThread.hpp"
-#include "../../IStatProvider.hpp"
+#include <IControllableThread.hpp>
+#include <IStatProvider.hpp>
 #include "../../Receipt.hpp"
 
 #include <condition_variable>
@@ -21,7 +21,7 @@
 #include <string>
 #include <thread>
 
-namespace Cmder {
+namespace cmder {
 
   // -- forward declaration
   class Server;
@@ -29,9 +29,6 @@ namespace Cmder {
 
 
 namespace cmder::agent {
-
-  using namespace Cmder;
-
 
   
   /**
@@ -53,7 +50,7 @@ namespace cmder::agent {
     /// @param callback Shared pointer to the callback (async!)
     ///                 Empty pointer -> only blocking mode is possible
     /// @return Shared pointer on the newly created object.
-    static SharedPtr create(Cmder::Server& server, Callback::SharedPtr callback);
+    static SharedPtr create(Server& server, Callback::SharedPtr callback);
 
     virtual ~Agent();
 

@@ -1,22 +1,21 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-09 23:06:37                              *
- * @LastEditDate          : 2023-07-10 13:10:53                              *
+ * @LastEditDate          : 2023-07-13 15:20:16                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
-#ifndef ICONTROLLABLETHREAD_H_INCLUDED
-#define ICONTROLLABLETHREAD_H_INCLUDED
+#ifndef C23E3281_F7B0_4080_B75D_90A6A3DB4848
+#define C23E3281_F7B0_4080_B75D_90A6A3DB4848
 
-namespace Cmder {
+namespace cmder {
 
   enum class Status
   {
     Init, Start, Run, Stop
   };
 
-  class IControllableThread
-  {
+  class IControllableThread {
   public:
     /// @brief Start the internal working thread.
     virtual void start() = 0;
@@ -32,4 +31,4 @@ namespace Cmder {
 
 }
 
-#endif
+#endif /* C23E3281_F7B0_4080_B75D_90A6A3DB4848 */

@@ -1,42 +1,44 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1518px" preserveAspectRatio="none" style="width:2176px;height:1518px;background:#FFFFFF;" version="1.1" viewBox="0 0 2176 1518" width="2176px" zoomAndPan="magnify"><defs/><g><!--MD5=[6669928f3067a619cffd39cae9441b58]
-cluster Cmder--><g id="cluster_Cmder"><path d="M8.5,6 L61.5,6 A3.75,3.75 0 0 1 64,8.5 L71,28.2969 L1543.5,28.2969 A2.5,2.5 0 0 1 1546,30.7969 L1546,1310.5 A2.5,2.5 0 0 1 1543.5,1313 L8.5,1313 A2.5,2.5 0 0 1 6,1310.5 L6,8.5 A2.5,2.5 0 0 1 8.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="71" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="52" x="10" y="20.9951">Cmder</text></g><!--MD5=[e902e7dcfcb16454252f8a4b8b16b082]
-cluster Cmder.Testing--><g id="cluster_Cmder.Testing"><path d="M766.5,50 L826.5,50 A3.75,3.75 0 0 1 829,52.5 L836,72.2969 L1422.5,72.2969 A2.5,2.5 0 0 1 1425,74.7969 L1425,261.5 A2.5,2.5 0 0 1 1422.5,264 L766.5,264 A2.5,2.5 0 0 1 764,261.5 L764,52.5 A2.5,2.5 0 0 1 766.5,50 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="764" x2="836" y1="72.2969" y2="72.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="59" x="768" y="64.9951">Testing</text></g><!--MD5=[6b27664959a1ba1f602f4c17304ec430]
-class Cmder.Agent--><g id="elem_Cmder.Agent"><rect codeLine="71" fill="#F1F1F1" height="390.2344" id="Cmder.Agent" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="663" x="866.75" y="308"/><ellipse cx="1173.5" cy="324" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1176.4688,329.6406 Q1175.8906,329.9375 1175.25,330.0781 Q1174.6094,330.2344 1173.9063,330.2344 Q1171.4063,330.2344 1170.0781,328.5938 Q1168.7656,326.9375 1168.7656,323.8125 Q1168.7656,320.6875 1170.0781,319.0313 Q1171.4063,317.375 1173.9063,317.375 Q1174.6094,317.375 1175.25,317.5313 Q1175.9063,317.6875 1176.4688,317.9844 L1176.4688,320.7031 Q1175.8438,320.125 1175.25,319.8594 Q1174.6563,319.5781 1174.0313,319.5781 Q1172.6875,319.5781 1172,320.6563 Q1171.3125,321.7188 1171.3125,323.8125 Q1171.3125,325.9063 1172,326.9844 Q1172.6875,328.0469 1174.0313,328.0469 Q1174.6563,328.0469 1175.25,327.7813 Q1175.8438,327.5 1176.4688,326.9219 L1176.4688,329.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="1194" y="328.8467">Agent</text><line style="stroke:#181818;stroke-width:0.5;" x1="867.75" x2="1528.75" y1="340" y2="340"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="874.75" y="350.6484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="218" x="886.75" y="356.9951">mCallback : Callback::SharedPtr</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="874.75" y="366.9453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="886.75" y="373.292">mServer : Server&amp;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="874.75" y="383.2422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="886.75" y="389.5889">mStatus : Status</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="874.75" y="399.5391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203" x="886.75" y="405.8857">mMutex : mutable std::mutex</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="874.75" y="415.8359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="301" x="886.75" y="422.1826">mConditionVariable : std::condition_variable</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="874.75" y="432.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="282" x="886.75" y="438.4795">mNotifications : std::queue&lt;std::string&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="874.75" y="448.4297"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="886.75" y="454.7764">mDebugName : std::string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="874.75" y="464.7266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="301" x="886.75" y="471.0732">mThreadPtr : std::unique_ptr&lt;std::thread&gt;</text><line style="stroke:#181818;stroke-width:0.5;" x1="867.75" x2="1528.75" y1="478.375" y2="478.375"/><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="874.75" y="489.0234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="356" x="886.75" y="495.3701">Agent(Server&amp; server, Callback::SharedPtr callback)</text><ellipse cx="877.75" cy="508.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="886.75" y="511.667">~Agent()</text><ellipse cx="877.75" cy="524.6172" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="637" x="886.75" y="527.9639">doTask(Receipt::Mode mode, const TaskName&amp; task, std::string&amp; result) : Receipt {query}</text><ellipse cx="877.75" cy="540.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="440" x="886.75" y="544.2607">create(Server&amp; server, Callback::SharedPtr callback) : SharedPtr</text><ellipse cx="877.75" cy="557.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="195" x="886.75" y="560.5576">getStatus() : Status {query}</text><ellipse cx="877.75" cy="573.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="230" x="886.75" y="576.8545">getName() : std::string&amp; {query}</text><ellipse cx="877.75" cy="589.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="487" x="886.75" y="593.1514">statNotification(const std::string&amp; notificationName) : uint64_t {query}</text><ellipse cx="877.75" cy="606.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="282" x="886.75" y="609.4482">notify(const std::string&amp; message) : void</text><ellipse cx="877.75" cy="622.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="886.75" y="625.7451">registerAgent() : void</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="874.75" y="635.6953"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="886.75" y="642.042">run() : void</text><ellipse cx="877.75" cy="654.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="886.75" y="658.3389">start() : void</text><ellipse cx="877.75" cy="671.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="886.75" y="674.6357">stop() : void</text><ellipse cx="877.75" cy="687.5859" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="886.75" y="690.9326">unregisterAgent() : void</text></g><!--MD5=[2526fb78d29621537a2d0a39abc55676]
-class Cmder.IControllableThread--><g id="elem_Cmder.IControllableThread"><rect codeLine="95" fill="#F1F1F1" height="96.8906" id="Cmder.IControllableThread" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="194" x="551" y="118.5"/><ellipse cx="578.15" cy="134.5" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M578.2594,129.8438 L577.1031,134.9219 L579.4313,134.9219 L578.2594,129.8438 Z M576.775,127.6094 L579.7594,127.6094 L583.1188,140 L580.6656,140 L579.9,136.9375 L576.6188,136.9375 L575.8688,140 L573.4313,140 L576.775,127.6094 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="135" x="594.85" y="139.3467">IControllableThread</text><line style="stroke:#181818;stroke-width:0.5;" x1="552" x2="744" y1="150.5" y2="150.5"/><line style="stroke:#181818;stroke-width:0.5;" x1="552" x2="744" y1="158.5" y2="158.5"/><ellipse cx="562" cy="172.1484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="168" x="571" y="175.4951">getStatus() : int {query}</text><ellipse cx="562" cy="188.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="82" x="571" y="191.792">start() : void</text><ellipse cx="562" cy="204.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="82" x="571" y="208.0889">stop() : void</text></g><!--MD5=[8785e483ad40ab6bd1028e5a6995daed]
-class Cmder.IStatProvider--><g id="elem_Cmder.IStatProvider"><rect codeLine="101" fill="#F1F1F1" height="64.2969" id="Cmder.IStatProvider" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="511" x="320.75" y="471"/><ellipse cx="528.5" cy="487" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M528.6094,482.3438 L527.4531,487.4219 L529.7813,487.4219 L528.6094,482.3438 Z M527.125,480.1094 L530.1094,480.1094 L533.4688,492.5 L531.0156,492.5 L530.25,489.4375 L526.9688,489.4375 L526.2188,492.5 L523.7813,492.5 L527.125,480.1094 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="87" x="549" y="491.8467">IStatProvider</text><line style="stroke:#181818;stroke-width:0.5;" x1="321.75" x2="830.75" y1="503" y2="503"/><line style="stroke:#181818;stroke-width:0.5;" x1="321.75" x2="830.75" y1="511" y2="511"/><ellipse cx="331.75" cy="524.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="485" x="340.75" y="527.9951">statNotification(const std::string&amp; notificationName) : uint64_t {query}</text></g><!--MD5=[73d95e8b91e1d2f5479410bbec7d2c0c]
-class Cmder.Server--><g id="elem_Cmder.Server"><rect codeLine="105" fill="#F1F1F1" height="292.4531" id="Cmder.Server" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="513" x="319.75" y="758"/><ellipse cx="550" cy="774" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M552.9688,779.6406 Q552.3906,779.9375 551.75,780.0781 Q551.1094,780.2344 550.4063,780.2344 Q547.9063,780.2344 546.5781,778.5938 Q545.2656,776.9375 545.2656,773.8125 Q545.2656,770.6875 546.5781,769.0313 Q547.9063,767.375 550.4063,767.375 Q551.1094,767.375 551.75,767.5313 Q552.4063,767.6875 552.9688,767.9844 L552.9688,770.7031 Q552.3438,770.125 551.75,769.8594 Q551.1563,769.5781 550.5313,769.5781 Q549.1875,769.5781 548.5,770.6563 Q547.8125,771.7188 547.8125,773.8125 Q547.8125,775.9063 548.5,776.9844 Q549.1875,778.0469 550.5313,778.0469 Q551.1563,778.0469 551.75,777.7813 Q552.3438,777.5 552.9688,776.9219 L552.9688,779.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="570.5" y="778.8467">Server</text><line style="stroke:#181818;stroke-width:0.5;" x1="320.75" x2="831.75" y1="790" y2="790"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="327.75" y="800.6484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="339.75" y="806.9951">mStatus : Status</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="327.75" y="816.9453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203" x="339.75" y="823.292">mMutex : mutable std::mutex</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="327.75" y="833.2422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="301" x="339.75" y="839.5889">mConditionVariable : std::condition_variable</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="327.75" y="849.5391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="385" x="339.75" y="855.8857">mNotificationStatistics : std::map&lt;std::string, uint64_t&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="327.75" y="865.8359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="301" x="339.75" y="872.1826">mThreadPtr : std::unique_ptr&lt;std::thread&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="327.75" y="882.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="250" x="339.75" y="888.4795">mAgents : vector&lt;Agent::WeakPtr&gt;</text><line style="stroke:#181818;stroke-width:0.5;" x1="320.75" x2="831.75" y1="895.7813" y2="895.7813"/><ellipse cx="330.75" cy="909.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="339.75" y="912.7764">Server()</text><ellipse cx="330.75" cy="925.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="339.75" y="929.0732">~Server()</text><ellipse cx="330.75" cy="942.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="251" x="339.75" y="945.3701">getStatus() : Cmder::Status {query}</text><ellipse cx="330.75" cy="958.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="487" x="339.75" y="961.667">statNotification(const std::string&amp; notificationName) : uint64_t {query}</text><ellipse cx="330.75" cy="974.6172" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308" x="339.75" y="977.9639">registerAgent(Agent::SharedPtr agent) : void</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="327.75" y="987.9141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="339.75" y="994.2607">run() : void</text><ellipse cx="330.75" cy="1007.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="339.75" y="1010.5576">start() : void</text><ellipse cx="330.75" cy="1023.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="339.75" y="1026.8545">stop() : void</text><ellipse cx="330.75" cy="1039.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="320" x="339.75" y="1043.1514">unregister(const std::string agentName) : void</text></g><!--MD5=[e3781612e5a89293b6819c796baf50fe]
-class Cmder.Task--><g id="elem_Cmder.Task"><rect codeLine="123" fill="#F1F1F1" height="64.2969" id="Cmder.Task" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="353" x="162.75" y="135"/><ellipse cx="318.5" cy="151" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M321.4688,156.6406 Q320.8906,156.9375 320.25,157.0781 Q319.6094,157.2344 318.9063,157.2344 Q316.4063,157.2344 315.0781,155.5938 Q313.7656,153.9375 313.7656,150.8125 Q313.7656,147.6875 315.0781,146.0313 Q316.4063,144.375 318.9063,144.375 Q319.6094,144.375 320.25,144.5313 Q320.9063,144.6875 321.4688,144.9844 L321.4688,147.7031 Q320.8438,147.125 320.25,146.8594 Q319.6563,146.5781 319.0313,146.5781 Q317.6875,146.5781 317,147.6563 Q316.3125,148.7188 316.3125,150.8125 Q316.3125,152.9063 317,153.9844 Q317.6875,155.0469 319.0313,155.0469 Q319.6563,155.0469 320.25,154.7813 Q320.8438,154.5 321.4688,153.9219 L321.4688,156.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="339" y="155.8467">Task</text><line style="stroke:#181818;stroke-width:0.5;" x1="163.75" x2="514.75" y1="167" y2="167"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="170.75" y="177.6484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="327" x="182.75" y="183.9951">mTaskConfiguration : std::vector&lt;TaskConfig&gt;</text><line style="stroke:#181818;stroke-width:0.5;" x1="163.75" x2="514.75" y1="191.2969" y2="191.2969"/></g><!--MD5=[f7491cd3ca834088eb93961ee9671336]
-class Cmder.Status--><g id="elem_Cmder.Status"><rect codeLine="127" fill="#F1F1F1" height="113.1875" id="Cmder.Status" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="76" x="766" y="1183.5"/><ellipse cx="781" cy="1199.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M785.1094,1205.5 L777.3906,1205.5 L777.3906,1193.1094 L785.1094,1193.1094 L785.1094,1195.2656 L779.8438,1195.2656 L779.8438,1197.9375 L784.6094,1197.9375 L784.6094,1200.0938 L779.8438,1200.0938 L779.8438,1203.3438 L785.1094,1203.3438 L785.1094,1205.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="795" y="1204.3467">Status</text><line style="stroke:#181818;stroke-width:0.5;" x1="767" x2="841" y1="1215.5" y2="1215.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="772" y="1232.4951">Init</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28" x="772" y="1248.792">Run</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="772" y="1265.0889">Start</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="772" y="1281.3857">Stop</text><line style="stroke:#181818;stroke-width:0.5;" x1="767" x2="841" y1="1288.6875" y2="1288.6875"/></g><!--MD5=[dd7cdebdbe08dbfe47618d31a4872e74]
-class Cmder.TaskName--><g id="elem_Cmder.TaskName"><rect codeLine="134" fill="#F1F1F1" height="96.8906" id="Cmder.TaskName" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="22.75" y="118.5"/><ellipse cx="37.75" cy="134.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M41.8594,140.5 L34.1406,140.5 L34.1406,128.1094 L41.8594,128.1094 L41.8594,130.2656 L36.5938,130.2656 L36.5938,132.9375 L41.3594,132.9375 L41.3594,135.0938 L36.5938,135.0938 L36.5938,138.3438 L41.8594,138.3438 L41.8594,140.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="51.75" y="139.3467">TaskName</text><line style="stroke:#181818;stroke-width:0.5;" x1="23.75" x2="126.75" y1="150.5" y2="150.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="28.75" y="167.4951">BlockMe_3s</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="12" x="28.75" y="183.792">Pi</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="28.75" y="200.0889">PingMe_5x</text><line style="stroke:#181818;stroke-width:0.5;" x1="23.75" x2="126.75" y1="207.3906" y2="207.3906"/></g><!--MD5=[d370d4ed968dcd787970d31c51041376]
-class Cmder.Task::TaskConfig--><g id="elem_Cmder.Task::TaskConfig"><rect codeLine="140" fill="#F1F1F1" height="48" id="Cmder.Task::TaskConfig" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="152" x="22" y="479"/><ellipse cx="37" cy="495" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M39.9688,500.6406 Q39.3906,500.9375 38.75,501.0781 Q38.1094,501.2344 37.4063,501.2344 Q34.9063,501.2344 33.5781,499.5938 Q32.2656,497.9375 32.2656,494.8125 Q32.2656,491.6875 33.5781,490.0313 Q34.9063,488.375 37.4063,488.375 Q38.1094,488.375 38.75,488.5313 Q39.4063,488.6875 39.9688,488.9844 L39.9688,491.7031 Q39.3438,491.125 38.75,490.8594 Q38.1563,490.5781 37.5313,490.5781 Q36.1875,490.5781 35.5,491.6563 Q34.8125,492.7188 34.8125,494.8125 Q34.8125,496.9063 35.5,497.9844 Q36.1875,499.0469 37.5313,499.0469 Q38.1563,499.0469 38.75,498.7813 Q39.3438,498.5 39.9688,497.9219 L39.9688,500.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="51" y="499.8467">Task::TaskConfig</text><line style="stroke:#181818;stroke-width:0.5;" x1="23" x2="173" y1="511" y2="511"/><line style="stroke:#181818;stroke-width:0.5;" x1="23" x2="173" y1="519" y2="519"/></g><!--MD5=[b101834b75e1f62a3cf6dd626de36055]
-class Cmder.Testing.AgentTest--><g id="elem_Cmder.Testing.AgentTest"><rect codeLine="144" fill="#F1F1F1" height="162.0781" id="Cmder.Testing.AgentTest" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="324" x="1085" y="86"/><ellipse cx="1206.75" cy="102" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1209.7188,107.6406 Q1209.1406,107.9375 1208.5,108.0781 Q1207.8594,108.2344 1207.1563,108.2344 Q1204.6563,108.2344 1203.3281,106.5938 Q1202.0156,104.9375 1202.0156,101.8125 Q1202.0156,98.6875 1203.3281,97.0313 Q1204.6563,95.375 1207.1563,95.375 Q1207.8594,95.375 1208.5,95.5313 Q1209.1563,95.6875 1209.7188,95.9844 L1209.7188,98.7031 Q1209.0938,98.125 1208.5,97.8594 Q1207.9063,97.5781 1207.2813,97.5781 Q1205.9375,97.5781 1205.25,98.6563 Q1204.5625,99.7188 1204.5625,101.8125 Q1204.5625,103.9063 1205.25,104.9844 Q1205.9375,106.0469 1207.2813,106.0469 Q1207.9063,106.0469 1208.5,105.7813 Q1209.0938,105.5 1209.7188,104.9219 L1209.7188,107.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="1227.25" y="106.8467">AgentTest</text><line style="stroke:#181818;stroke-width:0.5;" x1="1086" x2="1408" y1="118" y2="118"/><polygon fill="none" points="1096,126.6484,1100,130.6484,1096,134.6484,1092,130.6484" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="263" x="1105" y="134.9951">sAsyncAgent : static Agent::SharedPtr</text><polygon fill="none" points="1096,142.9453,1100,146.9453,1096,150.9453,1092,146.9453" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="298" x="1105" y="151.292">sNoCallbackAgent : static Agent::SharedPtr</text><polygon fill="none" points="1096,159.2422,1100,163.2422,1096,167.2422,1092,163.2422" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="254" x="1105" y="167.5889">sCallback : static Callback::SharedPtr</text><polygon fill="none" points="1096,175.5391,1100,179.5391,1096,183.5391,1092,179.5391" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="150" x="1105" y="183.8857">sServer : static Server</text><line style="stroke:#181818;stroke-width:0.5;" x1="1086" x2="1408" y1="191.1875" y2="191.1875"/><polygon fill="#FFFF44" points="1096,199.8359,1100,203.8359,1096,207.8359,1092,203.8359" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="1105" y="208.1826">SetUp() : void</text><polygon fill="#FFFF44" points="1096,216.1328,1100,220.1328,1096,224.1328,1092,220.1328" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="159" x="1105" y="224.4795">SetUpTestSuite() : void</text><polygon fill="#FFFF44" points="1096,232.4297,1100,236.4297,1096,240.4297,1092,236.4297" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="188" x="1105" y="240.7764">TearDownTestSuite() : void</text></g><!--MD5=[e47e86a929398a8db33a862faee5d82a]
-class Cmder.Testing.ServerTest--><g id="elem_Cmder.Testing.ServerTest"><rect codeLine="154" fill="#F1F1F1" height="129.4844" id="Cmder.Testing.ServerTest" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="270" x="780" y="102.5"/><ellipse cx="873.25" cy="118.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M876.2188,124.1406 Q875.6406,124.4375 875,124.5781 Q874.3594,124.7344 873.6563,124.7344 Q871.1563,124.7344 869.8281,123.0938 Q868.5156,121.4375 868.5156,118.3125 Q868.5156,115.1875 869.8281,113.5313 Q871.1563,111.875 873.6563,111.875 Q874.3594,111.875 875,112.0313 Q875.6563,112.1875 876.2188,112.4844 L876.2188,115.2031 Q875.5938,114.625 875,114.3594 Q874.4063,114.0781 873.7813,114.0781 Q872.4375,114.0781 871.75,115.1563 Q871.0625,116.2188 871.0625,118.3125 Q871.0625,120.4063 871.75,121.4844 Q872.4375,122.5469 873.7813,122.5469 Q874.4063,122.5469 875,122.2813 Q875.5938,122 876.2188,121.4219 L876.2188,124.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="893.75" y="123.3467">ServerTest</text><line style="stroke:#181818;stroke-width:0.5;" x1="781" x2="1049" y1="134.5" y2="134.5"/><polygon fill="none" points="791,143.1484,795,147.1484,791,151.1484,787,147.1484" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="244" x="800" y="151.4951">mServer : std::unique_ptr&lt;Server&gt;</text><line style="stroke:#181818;stroke-width:0.5;" x1="781" x2="1049" y1="158.7969" y2="158.7969"/><polygon fill="#FFFF44" points="791,167.4453,795,171.4453,791,175.4453,787,171.4453" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="800" y="175.792">SetUp() : void</text><polygon fill="#FFFF44" points="791,183.7422,795,187.7422,791,191.7422,787,187.7422" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="159" x="800" y="192.0889">SetUpTestSuite() : void</text><polygon fill="#FFFF44" points="791,200.0391,795,204.0391,791,208.0391,787,204.0391" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="800" y="208.3857">TearDown() : void</text><polygon fill="#FFFF44" points="791,216.3359,795,220.3359,791,224.3359,787,220.3359" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="188" x="800" y="224.6826">TearDownTestSuite() : void</text></g><!--MD5=[687e0e93109a4e3b835e34cee365dc7c]
-class Callback--><g id="elem_Callback"><rect codeLine="8" fill="#F1F1F1" height="194.6719" id="Callback" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="592" x="1565" y="405.5"/><ellipse cx="1828.25" cy="421.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1831.2188,427.1406 Q1830.6406,427.4375 1830,427.5781 Q1829.3594,427.7344 1828.6563,427.7344 Q1826.1563,427.7344 1824.8281,426.0938 Q1823.5156,424.4375 1823.5156,421.3125 Q1823.5156,418.1875 1824.8281,416.5313 Q1826.1563,414.875 1828.6563,414.875 Q1829.3594,414.875 1830,415.0313 Q1830.6563,415.1875 1831.2188,415.4844 L1831.2188,418.2031 Q1830.5938,417.625 1830,417.3594 Q1829.4063,417.0781 1828.7813,417.0781 Q1827.4375,417.0781 1826.75,418.1563 Q1826.0625,419.2188 1826.0625,421.3125 Q1826.0625,423.4063 1826.75,424.4844 Q1827.4375,425.5469 1828.7813,425.5469 Q1829.4063,425.5469 1830,425.2813 Q1830.5938,425 1831.2188,424.4219 L1831.2188,427.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="1848.75" y="426.3467">Callback</text><line style="stroke:#181818;stroke-width:0.5;" x1="1566" x2="2156" y1="437.5" y2="437.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1573" y="448.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="303" x="1585" y="454.4951">mMessages : std::map&lt;Key_t, Message_t&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1573" y="464.4453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="1585" y="470.792">mMutex : std::mutex</text><line style="stroke:#181818;stroke-width:0.5;" x1="1566" x2="2156" y1="478.0938" y2="478.0938"/><ellipse cx="1576" cy="491.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="1585" y="495.0889">Callback()</text><ellipse cx="1576" cy="508.0391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="1585" y="511.3857">~Callback()</text><ellipse cx="1576" cy="524.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="566" x="1585" y="527.6826">operator&lt;&lt;(std::ostream&amp; ostr, const Callback::SharedPtr&amp; cb) : std :: ostream&amp;</text><ellipse cx="1576" cy="540.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="497" x="1585" y="543.9795">getFirst(const Receipt&amp; receipt, Type type) : std::optional&lt;Message_t&gt;</text><ellipse cx="1576" cy="556.9297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="501" x="1585" y="560.2764">waitFirst(const Receipt&amp; receipt, Type type) : std::optional&lt;Message_t&gt;</text><ellipse cx="1576" cy="573.2266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="1585" y="576.5732">clear() : void</text><ellipse cx="1576" cy="589.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="456" x="1585" y="592.8701">notify(TaskId taskId, Type type, const std::string&amp; message) : void</text></g><!--MD5=[34b75dd4d6d4601c280a5b76e9c1a953]
-class Receipt--><g id="elem_Receipt"><rect codeLine="21" fill="#F1F1F1" height="259.8594" id="Receipt" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="398" x="1612" y="1110"/><ellipse cx="1780.25" cy="1126" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1783.2188,1131.6406 Q1782.6406,1131.9375 1782,1132.0781 Q1781.3594,1132.2344 1780.6563,1132.2344 Q1778.1563,1132.2344 1776.8281,1130.5938 Q1775.5156,1128.9375 1775.5156,1125.8125 Q1775.5156,1122.6875 1776.8281,1121.0313 Q1778.1563,1119.375 1780.6563,1119.375 Q1781.3594,1119.375 1782,1119.5313 Q1782.6563,1119.6875 1783.2188,1119.9844 L1783.2188,1122.7031 Q1782.5938,1122.125 1782,1121.8594 Q1781.4063,1121.5781 1780.7813,1121.5781 Q1779.4375,1121.5781 1778.75,1122.6563 Q1778.0625,1123.7188 1778.0625,1125.8125 Q1778.0625,1127.9063 1778.75,1128.9844 Q1779.4375,1130.0469 1780.7813,1130.0469 Q1781.4063,1130.0469 1782,1129.7813 Q1782.5938,1129.5 1783.2188,1128.9219 L1783.2188,1131.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="1800.75" y="1130.8467">Receipt</text><line style="stroke:#181818;stroke-width:0.5;" x1="1613" x2="2009" y1="1142" y2="1142"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1620" y="1152.6484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="1632" y="1158.9951">mMode : Mode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1620" y="1168.9453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="1632" y="1175.292">mStatus : Status</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1620" y="1185.2422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="367" x="1632" y="1191.5889">mEndTime : time_point&lt;std::chrono::system_clock&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1620" y="1201.5391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="372" x="1632" y="1207.8857">mStartTime : time_point&lt;std::chrono::system_clock&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1620" y="1217.8359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="1632" y="1224.1826">mTaskId : uint32_t</text><line style="stroke:#181818;stroke-width:0.5;" x1="1613" x2="2009" y1="1231.4844" y2="1231.4844"/><ellipse cx="1623" cy="1245.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="1632" y="1248.4795">Receipt(Mode mode)</text><ellipse cx="1623" cy="1261.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="282" x="1632" y="1264.7764">getEndTime() : ChronotTime_t&amp; {query}</text><ellipse cx="1623" cy="1277.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="287" x="1632" y="1281.0732">getStartTime() : ChronotTime_t&amp; {query}</text><ellipse cx="1623" cy="1294.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="197" x="1632" y="1297.3701">getTaskId() : TaskId {query}</text><ellipse cx="1623" cy="1310.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="231" x="1632" y="1313.667">getExecutionMode() : int {query}</text><ellipse cx="1623" cy="1326.6172" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="168" x="1632" y="1329.9639">getStatus() : int {query}</text><ellipse cx="1623" cy="1342.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="1632" y="1346.2607">setEndTime() : void</text><ellipse cx="1623" cy="1359.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208" x="1632" y="1362.5576">setStatus(Status status) : void</text></g><!--MD5=[85b7aeefaadb719f4e60472b44e3a0b8]
-class Callback::Type--><g id="elem_Callback::Type"><rect codeLine="38" fill="#F1F1F1" height="80.5938" id="Callback::Type" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="133" x="1971.75" y="863.5"/><ellipse cx="1986.75" cy="879.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1990.8594,885.5 L1983.1406,885.5 L1983.1406,873.1094 L1990.8594,873.1094 L1990.8594,875.2656 L1985.5938,875.2656 L1985.5938,877.9375 L1990.3594,877.9375 L1990.3594,880.0938 L1985.5938,880.0938 L1985.5938,883.3438 L1990.8594,883.3438 L1990.8594,885.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="2000.75" y="884.3467">Callback::Type</text><line style="stroke:#181818;stroke-width:0.5;" x1="1972.75" x2="2103.75" y1="895.5" y2="895.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="1977.75" y="912.4951">NOTIFICATION</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="1977.75" y="928.792">RESULT</text><line style="stroke:#181818;stroke-width:0.5;" x1="1972.75" x2="2103.75" y1="936.0938" y2="936.0938"/></g><!--MD5=[56d3b85566b7013b7a0d77cf3a9da218]
-class Receipt::Mode--><g id="elem_Receipt::Mode"><rect codeLine="44" fill="#F1F1F1" height="80.5938" id="Receipt::Mode" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="134" x="1658" y="1430.5"/><ellipse cx="1673" cy="1446.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1677.1094,1452.5 L1669.3906,1452.5 L1669.3906,1440.1094 L1677.1094,1440.1094 L1677.1094,1442.2656 L1671.8438,1442.2656 L1671.8438,1444.9375 L1676.6094,1444.9375 L1676.6094,1447.0938 L1671.8438,1447.0938 L1671.8438,1450.3438 L1677.1094,1450.3438 L1677.1094,1452.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="1687" y="1451.3467">Receipt::Mode</text><line style="stroke:#181818;stroke-width:0.5;" x1="1659" x2="1791" y1="1462.5" y2="1462.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="1664" y="1479.4951">Async</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="1664" y="1495.792">Blocking</text><line style="stroke:#181818;stroke-width:0.5;" x1="1659" x2="1791" y1="1503.0938" y2="1503.0938"/></g><!--MD5=[c34f78efd55114cb950f71aaddf20012]
-class Receipt::Status--><g id="elem_Receipt::Status"><rect codeLine="50" fill="#F1F1F1" height="80.5938" id="Receipt::Status" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="1827.75" y="1430.5"/><ellipse cx="1842.75" cy="1446.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1846.8594,1452.5 L1839.1406,1452.5 L1839.1406,1440.1094 L1846.8594,1440.1094 L1846.8594,1442.2656 L1841.5938,1442.2656 L1841.5938,1444.9375 L1846.3594,1444.9375 L1846.3594,1447.0938 L1841.5938,1447.0938 L1841.5938,1450.3438 L1846.8594,1450.3438 L1846.8594,1452.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="1856.75" y="1451.3467">Receipt::Status</text><line style="stroke:#181818;stroke-width:0.5;" x1="1828.75" x2="1965.75" y1="1462.5" y2="1462.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="1833.75" y="1479.4951">FAIL</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="1833.75" y="1495.792">OK</text><line style="stroke:#181818;stroke-width:0.5;" x1="1828.75" x2="1965.75" y1="1503.0938" y2="1503.0938"/></g><!--MD5=[caac18772e54bee9b64ca90683596fb8]
-class Callback::Message_t--><g id="elem_Callback::Message_t"><rect codeLine="56" fill="#F1F1F1" height="80.5938" id="Callback::Message_t" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="251" x="1685.75" y="863.5"/><ellipse cx="1736" cy="879.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1738.9688,885.1406 Q1738.3906,885.4375 1737.75,885.5781 Q1737.1094,885.7344 1736.4063,885.7344 Q1733.9063,885.7344 1732.5781,884.0938 Q1731.2656,882.4375 1731.2656,879.3125 Q1731.2656,876.1875 1732.5781,874.5313 Q1733.9063,872.875 1736.4063,872.875 Q1737.1094,872.875 1737.75,873.0313 Q1738.4063,873.1875 1738.9688,873.4844 L1738.9688,876.2031 Q1738.3438,875.625 1737.75,875.3594 Q1737.1563,875.0781 1736.5313,875.0781 Q1735.1875,875.0781 1734.5,876.1563 Q1733.8125,877.2188 1733.8125,879.3125 Q1733.8125,881.4063 1734.5,882.4844 Q1735.1875,883.5469 1736.5313,883.5469 Q1737.1563,883.5469 1737.75,883.2813 Q1738.3438,883 1738.9688,882.4219 L1738.9688,885.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="1756.5" y="884.3467">Callback::Message_t</text><line style="stroke:#181818;stroke-width:0.5;" x1="1686.75" x2="1935.75" y1="895.5" y2="895.5"/><ellipse cx="1696.75" cy="909.1484" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="225" x="1705.75" y="912.4951">mTime : Receipt::ChronotTime_t</text><ellipse cx="1696.75" cy="925.4453" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="1705.75" y="928.792">mResult : std::string</text><line style="stroke:#181818;stroke-width:0.5;" x1="1686.75" x2="1935.75" y1="936.0938" y2="936.0938"/></g><!--MD5=[644b5eb9c16c6c1d603327159cdb92d3]
-class scoped_logger--><g id="elem_scoped_logger"><rect codeLine="62" fill="#F1F1F1" height="113.1875" id="scoped_logger" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="607" x="1562.75" y="110.5"/><ellipse cx="1810.5" cy="126.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1813.4688,132.1406 Q1812.8906,132.4375 1812.25,132.5781 Q1811.6094,132.7344 1810.9063,132.7344 Q1808.4063,132.7344 1807.0781,131.0938 Q1805.7656,129.4375 1805.7656,126.3125 Q1805.7656,123.1875 1807.0781,121.5313 Q1808.4063,119.875 1810.9063,119.875 Q1811.6094,119.875 1812.25,120.0313 Q1812.9063,120.1875 1813.4688,120.4844 L1813.4688,123.2031 Q1812.8438,122.625 1812.25,122.3594 Q1811.6563,122.0781 1811.0313,122.0781 Q1809.6875,122.0781 1809,123.1563 Q1808.3125,124.2188 1808.3125,126.3125 Q1808.3125,128.4063 1809,129.4844 Q1809.6875,130.5469 1811.0313,130.5469 Q1811.6563,130.5469 1812.25,130.2813 Q1812.8438,130 1813.4688,129.4219 L1813.4688,132.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="1831" y="131.3467">scoped_logger</text><line style="stroke:#181818;stroke-width:0.5;" x1="1563.75" x2="2168.75" y1="142.5" y2="142.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1570.75" y="153.1484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="1582.75" y="159.4951">_ss : std::stringstream</text><line style="stroke:#181818;stroke-width:0.5;" x1="1563.75" x2="2168.75" y1="166.7969" y2="166.7969"/><ellipse cx="1573.75" cy="180.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="581" x="1582.75" y="183.792">scoped_logger(const std::string&amp; className, const char* funcName, unsigned line)</text><ellipse cx="1573.75" cy="196.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="1582.75" y="200.0889">~scoped_logger()</text><ellipse cx="1573.75" cy="213.0391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="1582.75" y="216.3857">stream() : std::stringstream&amp;</text></g><!--MD5=[ab38a78e8acf248efd1cc74ac7d17596]
-reverse link Cmder.IControllableThread to Cmder.Agent--><g id="link_Cmder.IControllableThread_Cmder.Agent"><path codeLine="170" d="M708.889,229.3 C725.847,244.44 744.884,259.8 764,272 C798.242,293.85 811.524,290.13 848,308 C854.083,310.98 860.21,314.01 866.37,317.09 " fill="none" id="Cmder.IControllableThread-backto-Cmder.Agent" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="703.926,234.24,693.956,215.54,713.41,223.94,703.926,234.24" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[39a07376048056f82c79dcfba4c09acb]
-reverse link Cmder.IControllableThread to Cmder.Server--><g id="link_Cmder.IControllableThread_Cmder.Server"><path codeLine="173" d="M592.99,229.68 C575.16,246.03 554.206,261.91 532,272 C472.072,299.22 281.623,258.71 238,308 C180.562,372.9 195.48,622.481 238,698 C258.034,733.582 287.015,763.699 319.7,788.967 " fill="none" id="Cmder.IControllableThread-backto-Cmder.Server" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="588.256,224.52,607.498,215.65,597.99,234.59,588.256,224.52" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[fa9cb4c0493c49006535f851308b7d50]
-reverse link Cmder.IStatProvider to Cmder.Server--><g id="link_Cmder.IStatProvider_Cmder.Server"><path codeLine="176" d="M576,555.575 C576,606.591 576,687.057 576,757.708 " fill="none" id="Cmder.IStatProvider-backto-Cmder.Server" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="569,555.309,576,535.309,583,555.309,569,555.309" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[fbdf90a246226e85fc52c953f7eefd33]
-reverse link Cmder.Agent to Callback--><g id="link_Cmder.Agent_Callback"><path codeLine="184" d="M1542.73,503 C1550.08,503 1557.44,503 1564.79,503 " fill="none" id="Cmder.Agent-backto-Callback" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1529.5,503,1535.5,507,1541.5,503,1535.5,499,1529.5,503" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5f070a83d3a92dfae157d3f8d058d8ab]
-reverse link Cmder.Agent to Cmder.Server--><g id="link_Cmder.Agent_Cmder.Server"><path codeLine="187" d="M871.423,705.314 C843.74,723.077 816.223,740.822 789.748,757.984 " fill="none" id="Cmder.Agent-backto-Cmder.Server" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="882.453,698.24,875.243,698.1116,872.3515,704.7176,879.5615,704.846,882.453,698.24" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[22c02906b7bf5eef95c36d5fdf2c0b9f]
-reverse link Cmder.Server to Cmder.Agent--><g id="link_Cmder.Server_Cmder.Agent"><path codeLine="208" d="M826.279,750.89 C853.401,733.656 881.162,715.92 908.695,698.24 " fill="none" id="Cmder.Server-backto-Cmder.Agent" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="815.108,757.984,822.3173,758.1444,825.2382,751.5514,818.0289,751.391,815.108,757.984" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[208de34f581ccb6e0c9473f02a0d7dd0]
-reverse link Cmder.Agent to Cmder.Status--><g id="link_Cmder.Agent_Cmder.Status"><path codeLine="190" d="M1087.8,709.577 C1001.48,870.614 887.357,1083.499 833.959,1183.113 " fill="none" id="Cmder.Agent-backto-Cmder.Status" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1093.97,698.074,1087.6099,701.4724,1088.3007,708.6503,1094.6608,705.2519,1093.97,698.074" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[acbca8f51b8f134ee641c3769debd151]
-reverse link Cmder.Testing.AgentTest to Cmder.Agent--><g id="link_Cmder.Testing.AgentTest_Cmder.Agent"><path codeLine="193" d="M1233.32,261.27 C1231.15,276.02 1228.85,291.74 1226.49,307.8 " fill="none" id="Cmder.Testing.AgentTest-backto-Cmder.Agent" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1235.26,248,1230.4325,253.3568,1233.5205,259.8733,1238.348,254.5165,1235.26,248" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1224.7168" y="268.228">2</text></g><!--MD5=[b7ed66f30699f3d749314a60335d18bb]
-reverse link Cmder.Testing.AgentTest to Callback--><g id="link_Cmder.Testing.AgentTest_Callback"><path codeLine="196" d="M1421.17,245.46 C1462.54,264.98 1506.2,286.52 1546,308 C1601.25,337.82 1660.23,373.15 1712.04,405.44 " fill="none" id="Cmder.Testing.AgentTest-backto-Callback" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1409.28,239.88,1413.0075,246.053,1420.1393,244.9864,1416.4118,238.8134,1409.28,239.88" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[dac00d6dac2d87be23a4764571de12a3]
-reverse link Cmder.Testing.AgentTest to Cmder.Server--><g id="link_Cmder.Testing.AgentTest_Cmder.Server"><path codeLine="199" d="M1114.32,253.78 C1098.82,261.02 1082.87,267.34 1067,272 C985.457,295.93 361.661,246.51 303,308 C273.089,339.35 283.632,659.236 303,698 C313.795,719.606 328.071,739.528 344.446,757.755 " fill="none" id="Cmder.Testing.AgentTest-backto-Cmder.Server" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1126.08,248.07,1118.9356,247.0912,1115.2843,253.3095,1122.4286,254.2883,1126.08,248.07" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[8672172a630260964f6faa239709a3cf]
-reverse link Callback::Message_t to Receipt--><g id="link_Callback::Message_t_Receipt"><path codeLine="202" d="M1811,957.761 C1811,998.564 1811,1056.842 1811,1109.775 " fill="none" id="Callback::Message_t-backto-Receipt" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1811,944.626,1807,950.626,1811,956.626,1815,950.626,1811,944.626" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[487fb8a49337b43a59761822cfb8472c]
-reverse link Receipt to Cmder.Status--><g id="link_Receipt_Cmder.Status"><path codeLine="205" d="M1598.73,1240 C1346.6,1240 1094.48,1240 842.353,1240 " fill="none" id="Receipt-backto-Cmder.Status" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1611.88,1240,1605.88,1236,1599.88,1240,1605.88,1244,1611.88,1240" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[9f9f142becf0c0bde389e9081cee633b]
-reverse link Cmder.Server to Cmder.Status--><g id="link_Cmder.Server_Cmder.Status"><path codeLine="211" d="M682.393,1060.856 C712.319,1104.696 742.948,1149.564 765.98,1183.305 " fill="none" id="Cmder.Server-backto-Cmder.Status" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="675.009,1050.04,675.0877,1057.2507,681.774,1059.9514,681.6953,1052.7407,675.009,1050.04" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[98c558907183f545df7ce44ab7c00f56]
-reverse link Cmder.Testing.ServerTest to Cmder.Server--><g id="link_Cmder.Testing.ServerTest_Cmder.Server"><path codeLine="214" d="M835.486,239.37 C817.085,252.37 796.773,264.25 776,272 C723.709,291.51 313.023,267.15 275,308 C215.954,371.44 234.484,621.387 275,698 C286.749,720.217 302.106,740.477 319.668,758.852 " fill="none" id="Cmder.Testing.ServerTest-backto-Cmder.Server" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="846.088,231.61,838.8837,231.923,836.4017,238.6935,843.606,238.3805,846.088,231.61" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[59543f07a28b41313b01d526ae5b31f0]
-reverse link Callback to Callback::Message_t--><g id="link_Callback_Callback::Message_t"><path codeLine="223" d="M1847,615.713 C1836.64,698.383 1823.13,806.174 1815.97,863.347 " fill="none" id="Callback-backto-Callback::Message_t" style="stroke:#181818;stroke-width:1.0;"/><ellipse cx="1847.9058" cy="608.525" fill="#FFFFFF" rx="8" ry="8" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1846.9117" x2="1848.9" y1="616.463" y2="600.587"/><line style="stroke:#181818;stroke-width:1.0;" x1="1839.9679" x2="1855.8438" y1="607.5308" y2="609.5191"/></g><!--MD5=[b786da24d691ca71eb7a2d6158d415f7]
-reverse link Callback to Callback::Type--><g id="link_Callback_Callback::Type"><path codeLine="226" d="M1909.99,614.429 C1946.73,697.263 1994.92,805.878 2020.41,863.347 " fill="none" id="Callback-backto-Callback::Type" style="stroke:#181818;stroke-width:1.0;"/><ellipse cx="1907.0936" cy="607.8999" fill="#FFFFFF" rx="8" ry="8" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1910.3372" x2="1903.85" y1="615.2129" y2="600.587"/><line style="stroke:#181818;stroke-width:1.0;" x1="1899.7807" x2="1914.4065" y1="611.1435" y2="604.6563"/></g><!--MD5=[337e37ce856fbf4a62df92e975117e08]
-reverse link Receipt to Receipt::Mode--><g id="link_Receipt_Receipt::Mode"><path codeLine="229" d="M1757.12,1384.465 C1750.83,1401.212 1744.88,1417.0747 1739.84,1430.4869 " fill="none" id="Receipt-backto-Receipt::Mode" style="stroke:#181818;stroke-width:1.0;"/><ellipse cx="1759.6572" cy="1377.7122" fill="#FFFFFF" rx="8" ry="8" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1756.8443" x2="1762.47" y1="1385.2014" y2="1370.223"/><line style="stroke:#181818;stroke-width:1.0;" x1="1752.168" x2="1767.1464" y1="1374.8994" y2="1380.525"/></g><!--MD5=[ff8f68cd9860b13c4e769e1081d0a27c]
-reverse link Receipt to Receipt::Status--><g id="link_Receipt_Receipt::Status"><path codeLine="232" d="M1864.88,1384.465 C1871.17,1401.212 1877.12,1417.0747 1882.16,1430.4869 " fill="none" id="Receipt-backto-Receipt::Status" style="stroke:#181818;stroke-width:1.0;"/><ellipse cx="1862.3428" cy="1377.7122" fill="#FFFFFF" rx="8" ry="8" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1865.1557" x2="1859.53" y1="1385.2014" y2="1370.223"/><line style="stroke:#181818;stroke-width:1.0;" x1="1854.8536" x2="1869.832" y1="1380.525" y2="1374.8994"/></g><!--MD5=[c5fcf80cf9c4beb4ff422f9e79f5e684]
-reverse link Cmder.Task to Cmder.Task::TaskConfig--><g id="link_Cmder.Task_Cmder.Task::TaskConfig"><path codeLine="235" d="M291.604,209.52 C263.184,235.93 227.533,271.85 201,308 C159.146,365.03 123.867,441.27 107.61,478.94 " fill="none" id="Cmder.Task-backto-Cmder.Task::TaskConfig" style="stroke:#181818;stroke-width:1.0;"/><ellipse cx="296.9984" cy="204.5754" fill="#FFFFFF" rx="8" ry="8" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="291.1008" x2="302.896" y1="209.9808" y2="199.17"/><line style="stroke:#181818;stroke-width:1.0;" x1="291.593" x2="302.4038" y1="198.6778" y2="210.473"/></g><!--MD5=[917289f1ed0935fa1346a89abb00704f]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1465px" preserveAspectRatio="none" style="width:1946px;height:1465px;background:#FFFFFF;" version="1.1" viewBox="0 0 1946 1465" width="1946px" zoomAndPan="magnify"><defs><filter height="300%" id="fz8eo11biblag" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[0be281b4326c88bcaeac1bf5c92320e5]
+cluster cmder--><polygon fill="#FFFFFF" filter="url(#fz8eo11biblag)" points="16,6,66,6,73,29.6094,1486,29.6094,1486,1044,16,1044,16,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="73" y1="29.6094" y2="29.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="44" x="20" y="22.5332">cmder</text><!--MD5=[1ae958834b8316d1d5d06ebd32509c80]
+cluster cmder.tst--><polygon fill="#FFFFFF" filter="url(#fz8eo11biblag)" points="49,50,73,50,80,73.6094,545,73.6094,545,247,49,247,49,50" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="49" x2="80" y1="73.6094" y2="73.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="18" x="53" y="66.5332">tst</text><!--MD5=[56f367bdce1940afbf0182ac559e570d]
+cluster cmder.agent--><polygon fill="#FFFFFF" filter="url(#fz8eo11biblag)" points="561,271,607,271,614,294.6094,1462,294.6094,1462,845.5,561,845.5,561,271" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="561" x2="614" y1="294.6094" y2="294.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="40" x="565" y="287.5332">agent</text><!--MD5=[b2bac4ea415d3ffd2ed664478c1f5a69]
+class cmder.Callback--><rect codeLine="46" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="172.5234" id="cmder.Callback" style="stroke:#A80036;stroke-width:1.5;" width="410" x="32" y="719"/><ellipse cx="208.75" cy="735" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M211.5156,730.875 Q211.6719,730.6563 211.8594,730.5469 Q212.0469,730.4375 212.2656,730.4375 Q212.6406,730.4375 212.875,730.6953 Q213.1094,730.9531 213.1094,731.5625 L213.1094,733.0156 Q213.1094,733.625 212.875,733.8906 Q212.6406,734.1563 212.2656,734.1563 Q211.9219,734.1563 211.7188,733.9531 Q211.5156,733.7656 211.4063,733.25 Q211.3594,732.8906 211.1719,732.7031 Q210.8438,732.3281 210.2344,732.1094 Q209.625,731.8906 209,731.8906 Q208.2344,731.8906 207.6016,732.2188 Q206.9688,732.5469 206.4766,733.2969 Q205.9844,734.0469 205.9844,735.0781 L205.9844,736.1719 Q205.9844,737.4063 206.875,738.2266 Q207.7656,739.0469 209.3594,739.0469 Q210.2969,739.0469 210.9531,738.7969 Q211.3438,738.6406 211.7656,738.2031 Q212.0313,737.9375 212.1797,737.8594 Q212.3281,737.7813 212.5313,737.7813 Q212.8594,737.7813 213.1172,738.0391 Q213.375,738.2969 213.375,738.6406 Q213.375,738.9844 213.0313,739.3906 Q212.5313,739.9688 211.7344,740.2969 Q210.6563,740.75 209.3594,740.75 Q207.8438,740.75 206.6406,740.125 Q205.6563,739.625 204.9688,738.5547 Q204.2813,737.4844 204.2813,736.2031 L204.2813,735.0469 Q204.2813,733.7188 204.8984,732.5703 Q205.5156,731.4219 206.6094,730.8047 Q207.7031,730.1875 208.9375,730.1875 Q209.6719,730.1875 210.3203,730.3516 Q210.9688,730.5156 211.5156,730.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="229.25" y="739.9102">Callback</text><line style="stroke:#A80036;stroke-width:1.5;" x1="33" x2="441" y1="751" y2="751"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="40" y="759"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="207" x="52" y="766.4189">mMessages : std::map&lt;Key_t, Message_t&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="40" y="772.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96" x="52" y="780.2549">mMutex : std::mutex</text><line style="stroke:#A80036;stroke-width:1.5;" x1="33" x2="441" y1="786.6719" y2="786.6719"/><ellipse cx="43" cy="797.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="52" y="802.0908">Callback()</text><ellipse cx="43" cy="811.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="54" x="52" y="815.9268">~Callback()</text><ellipse cx="43" cy="825.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="384" x="52" y="829.7627">operator&lt;&lt;(std::ostream&amp; ostr, const Callback::SharedPtr&amp; cb) : std :: ostream&amp;</text><ellipse cx="43" cy="839.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="339" x="52" y="843.5986">getFirst(const Receipt&amp; receipt, Type type) : std::optional&lt;Message_t&gt;</text><ellipse cx="43" cy="853.0156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="345" x="52" y="857.4346">waitFirst(const Receipt&amp; receipt, Type type) : std::optional&lt;Message_t&gt;</text><ellipse cx="43" cy="866.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="52" y="871.2705">clear() : void</text><ellipse cx="43" cy="880.6875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="318" x="52" y="885.1064">notify(TaskId taskId, Type type, const std::string&amp; message) : void</text><!--MD5=[c409fccff81dc9b710f565b2cf24cad3]
+class cmder.IControllableThread--><rect codeLine="58" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="89.5078" id="cmder.IControllableThread" style="stroke:#A80036;stroke-width:1.5;" width="143" x="567.5" y="113.5"/><ellipse cx="582.5" cy="129.5" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M584.6875,131.2656 L580.5469,131.2656 L580.125,132.2969 L580.5469,132.2969 Q581.1563,132.2969 581.4219,132.5313 Q581.6875,132.7656 581.6875,133.1563 Q581.6875,133.5313 581.4219,133.7656 Q581.1563,134 580.5469,134 L578.25,134 Q577.6406,134 577.3828,133.7656 Q577.125,133.5313 577.125,133.1406 Q577.125,132.7656 577.3984,132.5234 Q577.6719,132.2813 578.2969,132.2969 L580.9688,125.6406 L579.8594,125.6406 Q579.25,125.6406 578.9844,125.4063 Q578.7188,125.1719 578.7188,124.7813 Q578.7188,124.4063 578.9844,124.1719 Q579.25,123.9375 579.8594,123.9375 L583.5313,123.9375 L586.9219,132.2969 Q587.5156,132.2969 587.7031,132.4375 Q588.0938,132.7031 588.0938,133.1563 Q588.0938,133.5313 587.8359,133.7656 Q587.5781,134 586.9688,134 L584.6719,134 Q584.0625,134 583.7969,133.7656 Q583.5313,133.5313 583.5313,133.1406 Q583.5313,132.7656 583.7969,132.5313 Q584.0625,132.2969 584.6719,132.2969 L585.0938,132.2969 L584.6875,131.2656 Z M583.9688,129.5625 L582.6094,126.1875 L581.2344,129.5625 L583.9688,129.5625 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="111" x="596.5" y="134.4102">IControllableThread</text><line style="stroke:#A80036;stroke-width:1.5;" x1="568.5" x2="709.5" y1="145.5" y2="145.5"/><line style="stroke:#A80036;stroke-width:1.5;" x1="568.5" x2="709.5" y1="153.5" y2="153.5"/><ellipse cx="578.5" cy="164.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing" textLength="113" x="587.5" y="168.9189">getStatus() : int {query}</text><ellipse cx="578.5" cy="178.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing" textLength="59" x="587.5" y="182.7549">start() : void</text><ellipse cx="578.5" cy="192.1719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing" textLength="58" x="587.5" y="196.5908">stop() : void</text><!--MD5=[5c19c495cf08bd51fa4e2ec4ca685e69]
+class cmder.IStatProvider--><rect codeLine="64" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="61.8359" id="cmder.IStatProvider" style="stroke:#A80036;stroke-width:1.5;" width="366" x="748" y="127.5"/><ellipse cx="891.25" cy="143.5" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M893.4375,145.2656 L889.2969,145.2656 L888.875,146.2969 L889.2969,146.2969 Q889.9063,146.2969 890.1719,146.5313 Q890.4375,146.7656 890.4375,147.1563 Q890.4375,147.5313 890.1719,147.7656 Q889.9063,148 889.2969,148 L887,148 Q886.3906,148 886.1328,147.7656 Q885.875,147.5313 885.875,147.1406 Q885.875,146.7656 886.1484,146.5234 Q886.4219,146.2813 887.0469,146.2969 L889.7188,139.6406 L888.6094,139.6406 Q888,139.6406 887.7344,139.4063 Q887.4688,139.1719 887.4688,138.7813 Q887.4688,138.4063 887.7344,138.1719 Q888,137.9375 888.6094,137.9375 L892.2813,137.9375 L895.6719,146.2969 Q896.2656,146.2969 896.4531,146.4375 Q896.8438,146.7031 896.8438,147.1563 Q896.8438,147.5313 896.5859,147.7656 Q896.3281,148 895.7188,148 L893.4219,148 Q892.8125,148 892.5469,147.7656 Q892.2813,147.5313 892.2813,147.1406 Q892.2813,146.7656 892.5469,146.5313 Q892.8125,146.2969 893.4219,146.2969 L893.8438,146.2969 L893.4375,145.2656 Z M892.7188,143.5625 L891.3594,140.1875 L889.9844,143.5625 L892.7188,143.5625 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="71" x="911.75" y="148.4102">IStatProvider</text><line style="stroke:#A80036;stroke-width:1.5;" x1="749" x2="1113" y1="159.5" y2="159.5"/><line style="stroke:#A80036;stroke-width:1.5;" x1="749" x2="1113" y1="167.5" y2="167.5"/><ellipse cx="759" cy="178.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing" textLength="340" x="768" y="182.9189">statNotification(const std::string&amp; notificationName) : uint64_t {query}</text><!--MD5=[a321fe31d8d46eceb7665bfa4836a92a]
+class cmder.Server--><rect codeLine="68" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="255.5391" id="cmder.Server" style="stroke:#A80036;stroke-width:1.5;" width="358" x="184" y="355"/><ellipse cx="341.25" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M344.0156,366.875 Q344.1719,366.6563 344.3594,366.5469 Q344.5469,366.4375 344.7656,366.4375 Q345.1406,366.4375 345.375,366.6953 Q345.6094,366.9531 345.6094,367.5625 L345.6094,369.0156 Q345.6094,369.625 345.375,369.8906 Q345.1406,370.1563 344.7656,370.1563 Q344.4219,370.1563 344.2188,369.9531 Q344.0156,369.7656 343.9063,369.25 Q343.8594,368.8906 343.6719,368.7031 Q343.3438,368.3281 342.7344,368.1094 Q342.125,367.8906 341.5,367.8906 Q340.7344,367.8906 340.1016,368.2188 Q339.4688,368.5469 338.9766,369.2969 Q338.4844,370.0469 338.4844,371.0781 L338.4844,372.1719 Q338.4844,373.4063 339.375,374.2266 Q340.2656,375.0469 341.8594,375.0469 Q342.7969,375.0469 343.4531,374.7969 Q343.8438,374.6406 344.2656,374.2031 Q344.5313,373.9375 344.6797,373.8594 Q344.8281,373.7813 345.0313,373.7813 Q345.3594,373.7813 345.6172,374.0391 Q345.875,374.2969 345.875,374.6406 Q345.875,374.9844 345.5313,375.3906 Q345.0313,375.9688 344.2344,376.2969 Q343.1563,376.75 341.8594,376.75 Q340.3438,376.75 339.1406,376.125 Q338.1563,375.625 337.4688,374.5547 Q336.7813,373.4844 336.7813,372.2031 L336.7813,371.0469 Q336.7813,369.7188 337.3984,368.5703 Q338.0156,367.4219 339.1094,366.8047 Q340.2031,366.1875 341.4375,366.1875 Q342.1719,366.1875 342.8203,366.3516 Q343.4688,366.5156 344.0156,366.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="35" x="361.75" y="375.9102">Server</text><line style="stroke:#A80036;stroke-width:1.5;" x1="185" x2="541" y1="387" y2="387"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="192" y="395"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="79" x="204" y="402.4189">mStatus : Status</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="192" y="408.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="136" x="204" y="416.2549">mMutex : mutable std::mutex</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="192" y="422.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="209" x="204" y="430.0908">mConditionVariable : std::condition_variable</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="192" y="436.5078"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="259" x="204" y="443.9268">mNotificationStatistics : std::map&lt;std::string, uint64_t&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="192" y="450.3438"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="200" x="204" y="457.7627">mThreadPtr : std::unique_ptr&lt;std::thread&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="192" y="464.1797"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="170" x="204" y="471.5986">mAgents : vector&lt;Agent::WeakPtr&gt;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="185" x2="541" y1="478.0156" y2="478.0156"/><ellipse cx="195" cy="489.0156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="41" x="204" y="493.4346">Server()</text><ellipse cx="195" cy="502.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="47" x="204" y="507.2705">~Server()</text><ellipse cx="195" cy="516.6875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="133" x="204" y="521.1064">getStatus() : Status {query}</text><ellipse cx="195" cy="530.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="332" x="204" y="534.9424">statNotification(const std::string&amp; notificationName) : uint64_t {query}</text><ellipse cx="195" cy="544.3594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="216" x="204" y="548.7783">registerAgent(Agent::SharedPtr agent) : void</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="192" y="555.1953"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="204" y="562.6143">run() : void</text><ellipse cx="195" cy="572.0313" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="204" y="576.4502">start() : void</text><ellipse cx="195" cy="585.8672" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="204" y="590.2861">stop() : void</text><ellipse cx="195" cy="599.7031" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="257" x="204" y="604.1221">unregisterAgent(const std::string&amp; agentName) : void</text><!--MD5=[952d7fc28bef7913afbd8e0fe16c6875]
+class cmder.Callback::Type--><rect codeLine="86" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="75.6719" id="cmder.Callback::Type" style="stroke:#A80036;stroke-width:1.5;" width="112" x="135" y="952"/><ellipse cx="150" cy="968" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M148.8594,968.7969 L148.8594,971.2969 L153.1875,971.2969 L153.1875,970.375 Q153.1875,969.7656 153.4297,969.5 Q153.6719,969.2344 154.0469,969.2344 Q154.4219,969.2344 154.6563,969.5 Q154.8906,969.7656 154.8906,970.375 L154.8906,973 L146.8906,973 Q146.2656,973 146.0078,972.7656 Q145.75,972.5313 145.75,972.1406 Q145.75,971.7656 146.0156,971.5313 Q146.2813,971.2969 146.8906,971.2969 L147.1563,971.2969 L147.1563,964.6406 L146.8906,964.6406 Q146.2656,964.6406 146.0078,964.4063 Q145.75,964.1719 145.75,963.7813 Q145.75,963.4063 146.0078,963.1719 Q146.2656,962.9375 146.8906,962.9375 L154.5156,962.9375 L154.5156,965.5313 Q154.5156,966.1406 154.2891,966.3984 Q154.0625,966.6563 153.6719,966.6563 Q153.2969,966.6563 153.0625,966.3984 Q152.8281,966.1406 152.8281,965.5313 L152.8281,964.6406 L148.8594,964.6406 L148.8594,967.0938 L150.3438,967.0938 Q150.3438,966.4375 150.4688,966.25 Q150.7344,965.8438 151.2031,965.8438 Q151.5781,965.8438 151.8125,966.1016 Q152.0469,966.3594 152.0469,966.9688 L152.0469,968.9375 Q152.0469,969.4844 151.9219,969.6719 Q151.6563,970.0625 151.2031,970.0625 Q150.7344,970.0625 150.4688,969.6563 Q150.3438,969.4688 150.3438,968.7969 L148.8594,968.7969 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="80" x="164" y="972.9102">Callback::Type</text><line style="stroke:#A80036;stroke-width:1.5;" x1="136" x2="246" y1="984" y2="984"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="69" x="141" y="999.4189">NOTIFICATION</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="39" x="141" y="1013.2549">RESULT</text><line style="stroke:#A80036;stroke-width:1.5;" x1="136" x2="246" y1="1019.6719" y2="1019.6719"/><!--MD5=[8bf16cc3e2c119eb9cfda44743a631e3]
+class cmder.Status--><rect codeLine="91" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="103.3438" id="cmder.Status" style="stroke:#A80036;stroke-width:1.5;" width="67" x="477.5" y="754"/><ellipse cx="492.5" cy="770" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M491.3594,770.7969 L491.3594,773.2969 L495.6875,773.2969 L495.6875,772.375 Q495.6875,771.7656 495.9297,771.5 Q496.1719,771.2344 496.5469,771.2344 Q496.9219,771.2344 497.1563,771.5 Q497.3906,771.7656 497.3906,772.375 L497.3906,775 L489.3906,775 Q488.7656,775 488.5078,774.7656 Q488.25,774.5313 488.25,774.1406 Q488.25,773.7656 488.5156,773.5313 Q488.7813,773.2969 489.3906,773.2969 L489.6563,773.2969 L489.6563,766.6406 L489.3906,766.6406 Q488.7656,766.6406 488.5078,766.4063 Q488.25,766.1719 488.25,765.7813 Q488.25,765.4063 488.5078,765.1719 Q488.7656,764.9375 489.3906,764.9375 L497.0156,764.9375 L497.0156,767.5313 Q497.0156,768.1406 496.7891,768.3984 Q496.5625,768.6563 496.1719,768.6563 Q495.7969,768.6563 495.5625,768.3984 Q495.3281,768.1406 495.3281,767.5313 L495.3281,766.6406 L491.3594,766.6406 L491.3594,769.0938 L492.8438,769.0938 Q492.8438,768.4375 492.9688,768.25 Q493.2344,767.8438 493.7031,767.8438 Q494.0781,767.8438 494.3125,768.1016 Q494.5469,768.3594 494.5469,768.9688 L494.5469,770.9375 Q494.5469,771.4844 494.4219,771.6719 Q494.1563,772.0625 493.7031,772.0625 Q493.2344,772.0625 492.9688,771.6563 Q492.8438,771.4688 492.8438,770.7969 L491.3594,770.7969 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="35" x="506.5" y="774.9102">Status</text><line style="stroke:#A80036;stroke-width:1.5;" x1="478.5" x2="543.5" y1="786" y2="786"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="13" x="483.5" y="801.4189">Init</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="19" x="483.5" y="815.2549">Run</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="23" x="483.5" y="829.0908">Start</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="22" x="483.5" y="842.9268">Stop</text><line style="stroke:#A80036;stroke-width:1.5;" x1="478.5" x2="543.5" y1="849.3438" y2="849.3438"/><!--MD5=[d696ba7ba24d9b617fd383a4d8f0a296]
+class cmder.Callback::Message_t--><rect codeLine="98" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="75.6719" id="cmder.Callback::Message_t" style="stroke:#A80036;stroke-width:1.5;" width="176" x="282" y="952"/><ellipse cx="310.05" cy="968" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M312.8156,963.875 Q312.9719,963.6563 313.1594,963.5469 Q313.3469,963.4375 313.5656,963.4375 Q313.9406,963.4375 314.175,963.6953 Q314.4094,963.9531 314.4094,964.5625 L314.4094,966.0156 Q314.4094,966.625 314.175,966.8906 Q313.9406,967.1563 313.5656,967.1563 Q313.2219,967.1563 313.0188,966.9531 Q312.8156,966.7656 312.7063,966.25 Q312.6594,965.8906 312.4719,965.7031 Q312.1438,965.3281 311.5344,965.1094 Q310.925,964.8906 310.3,964.8906 Q309.5344,964.8906 308.9016,965.2188 Q308.2688,965.5469 307.7766,966.2969 Q307.2844,967.0469 307.2844,968.0781 L307.2844,969.1719 Q307.2844,970.4063 308.175,971.2266 Q309.0656,972.0469 310.6594,972.0469 Q311.5969,972.0469 312.2531,971.7969 Q312.6438,971.6406 313.0656,971.2031 Q313.3313,970.9375 313.4797,970.8594 Q313.6281,970.7813 313.8313,970.7813 Q314.1594,970.7813 314.4172,971.0391 Q314.675,971.2969 314.675,971.6406 Q314.675,971.9844 314.3313,972.3906 Q313.8313,972.9688 313.0344,973.2969 Q311.9563,973.75 310.6594,973.75 Q309.1438,973.75 307.9406,973.125 Q306.9563,972.625 306.2688,971.5547 Q305.5813,970.4844 305.5813,969.2031 L305.5813,968.0469 Q305.5813,966.7188 306.1984,965.5703 Q306.8156,964.4219 307.9094,963.8047 Q309.0031,963.1875 310.2375,963.1875 Q310.9719,963.1875 311.6203,963.3516 Q312.2688,963.5156 312.8156,963.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="115" x="326.95" y="972.9102">Callback::Message_t</text><line style="stroke:#A80036;stroke-width:1.5;" x1="283" x2="457" y1="984" y2="984"/><ellipse cx="293" cy="995" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="150" x="302" y="999.4189">mTime : Receipt::ChronotTime_t</text><ellipse cx="293" cy="1008.8359" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="95" x="302" y="1013.2549">mResult : std::string</text><line style="stroke:#A80036;stroke-width:1.5;" x1="283" x2="457" y1="1019.6719" y2="1019.6719"/><!--MD5=[002b7a300442df73733b14ef6adf995c]
+class cmder.tst.AgentTest--><rect codeLine="104" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="144.8516" id="cmder.tst.AgentTest" style="stroke:#A80036;stroke-width:1.5;" width="235" x="293.5" y="86"/><ellipse cx="379.25" cy="102" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M382.0156,97.875 Q382.1719,97.6563 382.3594,97.5469 Q382.5469,97.4375 382.7656,97.4375 Q383.1406,97.4375 383.375,97.6953 Q383.6094,97.9531 383.6094,98.5625 L383.6094,100.0156 Q383.6094,100.625 383.375,100.8906 Q383.1406,101.1563 382.7656,101.1563 Q382.4219,101.1563 382.2188,100.9531 Q382.0156,100.7656 381.9063,100.25 Q381.8594,99.8906 381.6719,99.7031 Q381.3438,99.3281 380.7344,99.1094 Q380.125,98.8906 379.5,98.8906 Q378.7344,98.8906 378.1016,99.2188 Q377.4688,99.5469 376.9766,100.2969 Q376.4844,101.0469 376.4844,102.0781 L376.4844,103.1719 Q376.4844,104.4063 377.375,105.2266 Q378.2656,106.0469 379.8594,106.0469 Q380.7969,106.0469 381.4531,105.7969 Q381.8438,105.6406 382.2656,105.2031 Q382.5313,104.9375 382.6797,104.8594 Q382.8281,104.7813 383.0313,104.7813 Q383.3594,104.7813 383.6172,105.0391 Q383.875,105.2969 383.875,105.6406 Q383.875,105.9844 383.5313,106.3906 Q383.0313,106.9688 382.2344,107.2969 Q381.1563,107.75 379.8594,107.75 Q378.3438,107.75 377.1406,107.125 Q376.1563,106.625 375.4688,105.5547 Q374.7813,104.4844 374.7813,103.2031 L374.7813,102.0469 Q374.7813,100.7188 375.3984,99.5703 Q376.0156,98.4219 377.1094,97.8047 Q378.2031,97.1875 379.4375,97.1875 Q380.1719,97.1875 380.8203,97.3516 Q381.4688,97.5156 382.0156,97.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="55" x="399.75" y="106.9102">AgentTest</text><line style="stroke:#A80036;stroke-width:1.5;" x1="294.5" x2="527.5" y1="118" y2="118"/><polygon fill="none" points="304.5,124,308.5,128,304.5,132,300.5,128" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="81" x="313.5" y="133.4189">sServer : Server</text><polygon fill="none" points="304.5,137.8359,308.5,141.8359,304.5,145.8359,300.5,141.8359" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="188" x="313.5" y="147.2549">sAsyncAgent : static Agent::SharedPtr</text><polygon fill="none" points="304.5,151.6719,308.5,155.6719,304.5,159.6719,300.5,155.6719" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="209" x="313.5" y="161.0908">sNoCallbackAgent : static Agent::SharedPtr</text><polygon fill="none" points="304.5,165.5078,308.5,169.5078,304.5,173.5078,300.5,169.5078" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="178" x="313.5" y="174.9268">sCallback : static Callback::SharedPtr</text><line style="stroke:#A80036;stroke-width:1.5;" x1="294.5" x2="527.5" y1="181.3438" y2="181.3438"/><polygon fill="#FFFF44" points="304.5,187.3438,308.5,191.3438,304.5,195.3438,300.5,191.3438" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="313.5" y="196.7627">SetUp() : void</text><polygon fill="#FFFF44" points="304.5,201.1797,308.5,205.1797,304.5,209.1797,300.5,205.1797" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="111" x="313.5" y="210.5986">SetUpTestSuite() : void</text><polygon fill="#FFFF44" points="304.5,215.0156,308.5,219.0156,304.5,223.0156,300.5,219.0156" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="133" x="313.5" y="224.4346">TearDownTestSuite() : void</text><!--MD5=[4aeaaccfce6e612194e0fbacdb3fec6d]
+class cmder.tst.ServerTest--><rect codeLine="114" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="117.1797" id="cmder.tst.ServerTest" style="stroke:#A80036;stroke-width:1.5;" width="193" x="65.5" y="100"/><ellipse cx="128.25" cy="116" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M131.0156,111.875 Q131.1719,111.6563 131.3594,111.5469 Q131.5469,111.4375 131.7656,111.4375 Q132.1406,111.4375 132.375,111.6953 Q132.6094,111.9531 132.6094,112.5625 L132.6094,114.0156 Q132.6094,114.625 132.375,114.8906 Q132.1406,115.1563 131.7656,115.1563 Q131.4219,115.1563 131.2188,114.9531 Q131.0156,114.7656 130.9063,114.25 Q130.8594,113.8906 130.6719,113.7031 Q130.3438,113.3281 129.7344,113.1094 Q129.125,112.8906 128.5,112.8906 Q127.7344,112.8906 127.1016,113.2188 Q126.4688,113.5469 125.9766,114.2969 Q125.4844,115.0469 125.4844,116.0781 L125.4844,117.1719 Q125.4844,118.4063 126.375,119.2266 Q127.2656,120.0469 128.8594,120.0469 Q129.7969,120.0469 130.4531,119.7969 Q130.8438,119.6406 131.2656,119.2031 Q131.5313,118.9375 131.6797,118.8594 Q131.8281,118.7813 132.0313,118.7813 Q132.3594,118.7813 132.6172,119.0391 Q132.875,119.2969 132.875,119.6406 Q132.875,119.9844 132.5313,120.3906 Q132.0313,120.9688 131.2344,121.2969 Q130.1563,121.75 128.8594,121.75 Q127.3438,121.75 126.1406,121.125 Q125.1563,120.625 124.4688,119.5547 Q123.7813,118.4844 123.7813,117.2031 L123.7813,116.0469 Q123.7813,114.7188 124.3984,113.5703 Q125.0156,112.4219 126.1094,111.8047 Q127.2031,111.1875 128.4375,111.1875 Q129.1719,111.1875 129.8203,111.3516 Q130.4688,111.5156 131.0156,111.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="59" x="148.75" y="120.9102">ServerTest</text><line style="stroke:#A80036;stroke-width:1.5;" x1="66.5" x2="257.5" y1="132" y2="132"/><polygon fill="none" points="76.5,138,80.5,142,76.5,146,72.5,142" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="167" x="85.5" y="147.4189">mServer : std::unique_ptr&lt;Server&gt;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="66.5" x2="257.5" y1="153.8359" y2="153.8359"/><polygon fill="#FFFF44" points="76.5,159.8359,80.5,163.8359,76.5,167.8359,72.5,163.8359" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="85.5" y="169.2549">SetUp() : void</text><polygon fill="#FFFF44" points="76.5,173.6719,80.5,177.6719,76.5,181.6719,72.5,177.6719" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="111" x="85.5" y="183.0908">SetUpTestSuite() : void</text><polygon fill="#FFFF44" points="76.5,187.5078,80.5,191.5078,76.5,195.5078,72.5,191.5078" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="85.5" y="196.9268">TearDown() : void</text><polygon fill="#FFFF44" points="76.5,201.3438,80.5,205.3438,76.5,209.3438,72.5,205.3438" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="133" x="85.5" y="210.7627">TearDownTestSuite() : void</text><!--MD5=[d6f010d69c2d8f830024ab60e6dd46b5]
+class cmder.agent.Agent--><rect codeLine="124" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="352.3906" id="cmder.agent.Agent" style="stroke:#A80036;stroke-width:1.5;" width="457" x="705.5" y="307"/><ellipse cx="914.25" cy="323" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M917.0156,318.875 Q917.1719,318.6563 917.3594,318.5469 Q917.5469,318.4375 917.7656,318.4375 Q918.1406,318.4375 918.375,318.6953 Q918.6094,318.9531 918.6094,319.5625 L918.6094,321.0156 Q918.6094,321.625 918.375,321.8906 Q918.1406,322.1563 917.7656,322.1563 Q917.4219,322.1563 917.2188,321.9531 Q917.0156,321.7656 916.9063,321.25 Q916.8594,320.8906 916.6719,320.7031 Q916.3438,320.3281 915.7344,320.1094 Q915.125,319.8906 914.5,319.8906 Q913.7344,319.8906 913.1016,320.2188 Q912.4688,320.5469 911.9766,321.2969 Q911.4844,322.0469 911.4844,323.0781 L911.4844,324.1719 Q911.4844,325.4063 912.375,326.2266 Q913.2656,327.0469 914.8594,327.0469 Q915.7969,327.0469 916.4531,326.7969 Q916.8438,326.6406 917.2656,326.2031 Q917.5313,325.9375 917.6797,325.8594 Q917.8281,325.7813 918.0313,325.7813 Q918.3594,325.7813 918.6172,326.0391 Q918.875,326.2969 918.875,326.6406 Q918.875,326.9844 918.5313,327.3906 Q918.0313,327.9688 917.2344,328.2969 Q916.1563,328.75 914.8594,328.75 Q913.3438,328.75 912.1406,328.125 Q911.1563,327.625 910.4688,326.5547 Q909.7813,325.4844 909.7813,324.2031 L909.7813,323.0469 Q909.7813,321.7188 910.3984,320.5703 Q911.0156,319.4219 912.1094,318.8047 Q913.2031,318.1875 914.4375,318.1875 Q915.1719,318.1875 915.8203,318.3516 Q916.4688,318.5156 917.0156,318.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="31" x="934.75" y="327.9102">Agent</text><line style="stroke:#A80036;stroke-width:1.5;" x1="706.5" x2="1161.5" y1="339" y2="339"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="347"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="151" x="725.5" y="354.4189">mCallback : Callback::SharedPtr</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="360.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="169" x="725.5" y="368.2549">mClientCallback : Callback::WeakPtr</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="374.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="90" x="725.5" y="382.0908">mServer : Server&amp;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="388.5078"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="79" x="725.5" y="395.9268">mStatus : Status</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="402.3438"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="136" x="725.5" y="409.7627">mMutex : mutable std::mutex</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="416.1797"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="209" x="725.5" y="423.5986">mConditionVariable : std::condition_variable</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="430.0156"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="187" x="725.5" y="437.4346">mNotifications : std::queue&lt;std::string&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="443.8516"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="725.5" y="451.2705">mDebugName : std::string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="457.6875"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="200" x="725.5" y="465.1064">mThreadPtr : std::unique_ptr&lt;std::thread&gt;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="706.5" x2="1161.5" y1="471.5234" y2="471.5234"/><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="479.5234"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="254" x="725.5" y="486.9424">Agent(Server&amp; server, Callback::SharedPtr callback)</text><ellipse cx="716.5" cy="496.3594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="725.5" y="500.7783">~Agent()</text><ellipse cx="716.5" cy="510.1953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="431" x="725.5" y="514.6143">doTask(Receipt::Mode mode, const TaskName&amp; task, std::string&amp; result) : Receipt {query}</text><ellipse cx="716.5" cy="524.0313" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="313" x="725.5" y="528.4502">create(Server&amp; server, Callback::SharedPtr callback) : SharedPtr</text><ellipse cx="716.5" cy="537.8672" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="133" x="725.5" y="542.2861">getStatus() : Status {query}</text><ellipse cx="716.5" cy="551.7031" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="153" x="725.5" y="556.1221">getName() : std::string&amp; {query}</text><ellipse cx="716.5" cy="565.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="332" x="725.5" y="569.958">statNotification(const std::string&amp; notificationName) : uint64_t {query}</text><ellipse cx="716.5" cy="579.375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="196" x="725.5" y="583.7939">notify(const std::string&amp; message) : void</text><ellipse cx="716.5" cy="593.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="103" x="725.5" y="597.6299">registerAgent() : void</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="713.5" y="604.0469"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="725.5" y="611.4658">run() : void</text><ellipse cx="716.5" cy="620.8828" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="725.5" y="625.3018">start() : void</text><ellipse cx="716.5" cy="634.7188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="725.5" y="639.1377">stop() : void</text><ellipse cx="716.5" cy="648.5547" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="115" x="725.5" y="652.9736">unregisterAgent() : void</text><!--MD5=[cf19a68d8b4e026653aa51e03cbc2465]
+class cmder.agent.Task--><rect codeLine="149" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="61.8359" id="cmder.agent.Task" style="stroke:#A80036;stroke-width:1.5;" width="248" x="1198" y="452"/><ellipse cx="1304.25" cy="468" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1307.0156,463.875 Q1307.1719,463.6563 1307.3594,463.5469 Q1307.5469,463.4375 1307.7656,463.4375 Q1308.1406,463.4375 1308.375,463.6953 Q1308.6094,463.9531 1308.6094,464.5625 L1308.6094,466.0156 Q1308.6094,466.625 1308.375,466.8906 Q1308.1406,467.1563 1307.7656,467.1563 Q1307.4219,467.1563 1307.2188,466.9531 Q1307.0156,466.7656 1306.9063,466.25 Q1306.8594,465.8906 1306.6719,465.7031 Q1306.3438,465.3281 1305.7344,465.1094 Q1305.125,464.8906 1304.5,464.8906 Q1303.7344,464.8906 1303.1016,465.2188 Q1302.4688,465.5469 1301.9766,466.2969 Q1301.4844,467.0469 1301.4844,468.0781 L1301.4844,469.1719 Q1301.4844,470.4063 1302.375,471.2266 Q1303.2656,472.0469 1304.8594,472.0469 Q1305.7969,472.0469 1306.4531,471.7969 Q1306.8438,471.6406 1307.2656,471.2031 Q1307.5313,470.9375 1307.6797,470.8594 Q1307.8281,470.7813 1308.0313,470.7813 Q1308.3594,470.7813 1308.6172,471.0391 Q1308.875,471.2969 1308.875,471.6406 Q1308.875,471.9844 1308.5313,472.3906 Q1308.0313,472.9688 1307.2344,473.2969 Q1306.1563,473.75 1304.8594,473.75 Q1303.3438,473.75 1302.1406,473.125 Q1301.1563,472.625 1300.4688,471.5547 Q1299.7813,470.4844 1299.7813,469.2031 L1299.7813,468.0469 Q1299.7813,466.7188 1300.3984,465.5703 Q1301.0156,464.4219 1302.1094,463.8047 Q1303.2031,463.1875 1304.4375,463.1875 Q1305.1719,463.1875 1305.8203,463.3516 Q1306.4688,463.5156 1307.0156,463.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="27" x="1324.75" y="472.9102">Task</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1199" x2="1445" y1="484" y2="484"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1206" y="492"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="222" x="1218" y="499.4189">mTaskConfiguration : std::vector&lt;TaskConfig&gt;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1199" x2="1445" y1="505.8359" y2="505.8359"/><!--MD5=[1d394499aa3322b59cc6eb067ed9492d]
+class cmder.agent.TaskName--><rect codeLine="153" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="89.5078" id="cmder.agent.TaskName" style="stroke:#A80036;stroke-width:1.5;" width="93" x="577.5" y="438"/><ellipse cx="592.5" cy="454" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M591.3594,454.7969 L591.3594,457.2969 L595.6875,457.2969 L595.6875,456.375 Q595.6875,455.7656 595.9297,455.5 Q596.1719,455.2344 596.5469,455.2344 Q596.9219,455.2344 597.1563,455.5 Q597.3906,455.7656 597.3906,456.375 L597.3906,459 L589.3906,459 Q588.7656,459 588.5078,458.7656 Q588.25,458.5313 588.25,458.1406 Q588.25,457.7656 588.5156,457.5313 Q588.7813,457.2969 589.3906,457.2969 L589.6563,457.2969 L589.6563,450.6406 L589.3906,450.6406 Q588.7656,450.6406 588.5078,450.4063 Q588.25,450.1719 588.25,449.7813 Q588.25,449.4063 588.5078,449.1719 Q588.7656,448.9375 589.3906,448.9375 L597.0156,448.9375 L597.0156,451.5313 Q597.0156,452.1406 596.7891,452.3984 Q596.5625,452.6563 596.1719,452.6563 Q595.7969,452.6563 595.5625,452.3984 Q595.3281,452.1406 595.3281,451.5313 L595.3281,450.6406 L591.3594,450.6406 L591.3594,453.0938 L592.8438,453.0938 Q592.8438,452.4375 592.9688,452.25 Q593.2344,451.8438 593.7031,451.8438 Q594.0781,451.8438 594.3125,452.1016 Q594.5469,452.3594 594.5469,452.9688 L594.5469,454.9375 Q594.5469,455.4844 594.4219,455.6719 Q594.1563,456.0625 593.7031,456.0625 Q593.2344,456.0625 592.9688,455.6563 Q592.8438,455.4688 592.8438,454.7969 L591.3594,454.7969 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="606.5" y="458.9102">TaskName</text><line style="stroke:#A80036;stroke-width:1.5;" x1="578.5" x2="669.5" y1="470" y2="470"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="583.5" y="485.4189">BlockMe_3s</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="8" x="583.5" y="499.2549">Pi</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="52" x="583.5" y="513.0908">PingMe_5x</text><line style="stroke:#A80036;stroke-width:1.5;" x1="578.5" x2="669.5" y1="519.5078" y2="519.5078"/><!--MD5=[0efeed911fdf003ad280622e39377e83]
+class cmder.agent.Task::TaskConfig--><rect codeLine="159" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="48" id="cmder.agent.Task::TaskConfig" style="stroke:#A80036;stroke-width:1.5;" width="128" x="1258" y="781.5"/><ellipse cx="1273" cy="797.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1275.7656,793.375 Q1275.9219,793.1563 1276.1094,793.0469 Q1276.2969,792.9375 1276.5156,792.9375 Q1276.8906,792.9375 1277.125,793.1953 Q1277.3594,793.4531 1277.3594,794.0625 L1277.3594,795.5156 Q1277.3594,796.125 1277.125,796.3906 Q1276.8906,796.6563 1276.5156,796.6563 Q1276.1719,796.6563 1275.9688,796.4531 Q1275.7656,796.2656 1275.6563,795.75 Q1275.6094,795.3906 1275.4219,795.2031 Q1275.0938,794.8281 1274.4844,794.6094 Q1273.875,794.3906 1273.25,794.3906 Q1272.4844,794.3906 1271.8516,794.7188 Q1271.2188,795.0469 1270.7266,795.7969 Q1270.2344,796.5469 1270.2344,797.5781 L1270.2344,798.6719 Q1270.2344,799.9063 1271.125,800.7266 Q1272.0156,801.5469 1273.6094,801.5469 Q1274.5469,801.5469 1275.2031,801.2969 Q1275.5938,801.1406 1276.0156,800.7031 Q1276.2813,800.4375 1276.4297,800.3594 Q1276.5781,800.2813 1276.7813,800.2813 Q1277.1094,800.2813 1277.3672,800.5391 Q1277.625,800.7969 1277.625,801.1406 Q1277.625,801.4844 1277.2813,801.8906 Q1276.7813,802.4688 1275.9844,802.7969 Q1274.9063,803.25 1273.6094,803.25 Q1272.0938,803.25 1270.8906,802.625 Q1269.9063,802.125 1269.2188,801.0547 Q1268.5313,799.9844 1268.5313,798.7031 L1268.5313,797.5469 Q1268.5313,796.2188 1269.1484,795.0703 Q1269.7656,793.9219 1270.8594,793.3047 Q1271.9531,792.6875 1273.1875,792.6875 Q1273.9219,792.6875 1274.5703,792.8516 Q1275.2188,793.0156 1275.7656,793.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="96" x="1287" y="802.4102">Task::TaskConfig</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1259" x2="1385" y1="813.5" y2="813.5"/><line style="stroke:#A80036;stroke-width:1.5;" x1="1259" x2="1385" y1="821.5" y2="821.5"/><!--MD5=[34b75dd4d6d4601c280a5b76e9c1a953]
+class Receipt--><rect codeLine="8" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="227.8672" id="Receipt" style="stroke:#A80036;stroke-width:1.5;" width="275" x="302.5" y="1088"/><ellipse cx="414.75" cy="1104" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M417.5156,1099.875 Q417.6719,1099.6563 417.8594,1099.5469 Q418.0469,1099.4375 418.2656,1099.4375 Q418.6406,1099.4375 418.875,1099.6953 Q419.1094,1099.9531 419.1094,1100.5625 L419.1094,1102.0156 Q419.1094,1102.625 418.875,1102.8906 Q418.6406,1103.1563 418.2656,1103.1563 Q417.9219,1103.1563 417.7188,1102.9531 Q417.5156,1102.7656 417.4063,1102.25 Q417.3594,1101.8906 417.1719,1101.7031 Q416.8438,1101.3281 416.2344,1101.1094 Q415.625,1100.8906 415,1100.8906 Q414.2344,1100.8906 413.6016,1101.2188 Q412.9688,1101.5469 412.4766,1102.2969 Q411.9844,1103.0469 411.9844,1104.0781 L411.9844,1105.1719 Q411.9844,1106.4063 412.875,1107.2266 Q413.7656,1108.0469 415.3594,1108.0469 Q416.2969,1108.0469 416.9531,1107.7969 Q417.3438,1107.6406 417.7656,1107.2031 Q418.0313,1106.9375 418.1797,1106.8594 Q418.3281,1106.7813 418.5313,1106.7813 Q418.8594,1106.7813 419.1172,1107.0391 Q419.375,1107.2969 419.375,1107.6406 Q419.375,1107.9844 419.0313,1108.3906 Q418.5313,1108.9688 417.7344,1109.2969 Q416.6563,1109.75 415.3594,1109.75 Q413.8438,1109.75 412.6406,1109.125 Q411.6563,1108.625 410.9688,1107.5547 Q410.2813,1106.4844 410.2813,1105.2031 L410.2813,1104.0469 Q410.2813,1102.7188 410.8984,1101.5703 Q411.5156,1100.4219 412.6094,1099.8047 Q413.7031,1099.1875 414.9375,1099.1875 Q415.6719,1099.1875 416.3203,1099.3516 Q416.9688,1099.5156 417.5156,1099.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42" x="435.25" y="1108.9102">Receipt</text><line style="stroke:#A80036;stroke-width:1.5;" x1="303.5" x2="576.5" y1="1120" y2="1120"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="310.5" y="1128"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="69" x="322.5" y="1135.4189">mMode : Mode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="310.5" y="1141.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="79" x="322.5" y="1149.2549">mStatus : Status</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="310.5" y="1155.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="244" x="322.5" y="1163.0908">mEndTime : time_point&lt;std::chrono::system_clock&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="310.5" y="1169.5078"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="249" x="322.5" y="1176.9268">mStartTime : time_point&lt;std::chrono::system_clock&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="310.5" y="1183.3438"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="86" x="322.5" y="1190.7627">mTaskId : uint32_t</text><line style="stroke:#A80036;stroke-width:1.5;" x1="303.5" x2="576.5" y1="1197.1797" y2="1197.1797"/><ellipse cx="313.5" cy="1208.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="99" x="322.5" y="1212.5986">Receipt(Mode mode)</text><ellipse cx="313.5" cy="1222.0156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="187" x="322.5" y="1226.4346">getEndTime() : ChronotTime_t&amp; {query}</text><ellipse cx="313.5" cy="1235.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="192" x="322.5" y="1240.2705">getStartTime() : ChronotTime_t&amp; {query}</text><ellipse cx="313.5" cy="1249.6875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="133" x="322.5" y="1254.1064">getTaskId() : TaskId {query}</text><ellipse cx="313.5" cy="1263.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="155" x="322.5" y="1267.9424">getExecutionMode() : int {query}</text><ellipse cx="313.5" cy="1277.3594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="322.5" y="1281.7783">getStatus() : int {query}</text><ellipse cx="313.5" cy="1291.1953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="92" x="322.5" y="1295.6143">setEndTime() : void</text><ellipse cx="313.5" cy="1305.0313" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="322.5" y="1309.4502">setStatus(Status status) : void</text><!--MD5=[56d3b85566b7013b7a0d77cf3a9da218]
+class Receipt::Mode--><rect codeLine="25" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="75.6719" id="Receipt::Mode" style="stroke:#A80036;stroke-width:1.5;" width="110" x="311" y="1376"/><ellipse cx="326" cy="1392" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M324.8594,1392.7969 L324.8594,1395.2969 L329.1875,1395.2969 L329.1875,1394.375 Q329.1875,1393.7656 329.4297,1393.5 Q329.6719,1393.2344 330.0469,1393.2344 Q330.4219,1393.2344 330.6563,1393.5 Q330.8906,1393.7656 330.8906,1394.375 L330.8906,1397 L322.8906,1397 Q322.2656,1397 322.0078,1396.7656 Q321.75,1396.5313 321.75,1396.1406 Q321.75,1395.7656 322.0156,1395.5313 Q322.2813,1395.2969 322.8906,1395.2969 L323.1563,1395.2969 L323.1563,1388.6406 L322.8906,1388.6406 Q322.2656,1388.6406 322.0078,1388.4063 Q321.75,1388.1719 321.75,1387.7813 Q321.75,1387.4063 322.0078,1387.1719 Q322.2656,1386.9375 322.8906,1386.9375 L330.5156,1386.9375 L330.5156,1389.5313 Q330.5156,1390.1406 330.2891,1390.3984 Q330.0625,1390.6563 329.6719,1390.6563 Q329.2969,1390.6563 329.0625,1390.3984 Q328.8281,1390.1406 328.8281,1389.5313 L328.8281,1388.6406 L324.8594,1388.6406 L324.8594,1391.0938 L326.3438,1391.0938 Q326.3438,1390.4375 326.4688,1390.25 Q326.7344,1389.8438 327.2031,1389.8438 Q327.5781,1389.8438 327.8125,1390.1016 Q328.0469,1390.3594 328.0469,1390.9688 L328.0469,1392.9375 Q328.0469,1393.4844 327.9219,1393.6719 Q327.6563,1394.0625 327.2031,1394.0625 Q326.7344,1394.0625 326.4688,1393.6563 Q326.3438,1393.4688 326.3438,1392.7969 L324.8594,1392.7969 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="78" x="340" y="1396.9102">Receipt::Mode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="312" x2="420" y1="1408" y2="1408"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="317" y="1423.4189">Async</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="40" x="317" y="1437.2549">Blocking</text><line style="stroke:#A80036;stroke-width:1.5;" x1="312" x2="420" y1="1443.6719" y2="1443.6719"/><!--MD5=[c34f78efd55114cb950f71aaddf20012]
+class Receipt::Status--><rect codeLine="31" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="75.6719" id="Receipt::Status" style="stroke:#A80036;stroke-width:1.5;" width="115" x="456.5" y="1376"/><ellipse cx="471.5" cy="1392" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M470.3594,1392.7969 L470.3594,1395.2969 L474.6875,1395.2969 L474.6875,1394.375 Q474.6875,1393.7656 474.9297,1393.5 Q475.1719,1393.2344 475.5469,1393.2344 Q475.9219,1393.2344 476.1563,1393.5 Q476.3906,1393.7656 476.3906,1394.375 L476.3906,1397 L468.3906,1397 Q467.7656,1397 467.5078,1396.7656 Q467.25,1396.5313 467.25,1396.1406 Q467.25,1395.7656 467.5156,1395.5313 Q467.7813,1395.2969 468.3906,1395.2969 L468.6563,1395.2969 L468.6563,1388.6406 L468.3906,1388.6406 Q467.7656,1388.6406 467.5078,1388.4063 Q467.25,1388.1719 467.25,1387.7813 Q467.25,1387.4063 467.5078,1387.1719 Q467.7656,1386.9375 468.3906,1386.9375 L476.0156,1386.9375 L476.0156,1389.5313 Q476.0156,1390.1406 475.7891,1390.3984 Q475.5625,1390.6563 475.1719,1390.6563 Q474.7969,1390.6563 474.5625,1390.3984 Q474.3281,1390.1406 474.3281,1389.5313 L474.3281,1388.6406 L470.3594,1388.6406 L470.3594,1391.0938 L471.8438,1391.0938 Q471.8438,1390.4375 471.9688,1390.25 Q472.2344,1389.8438 472.7031,1389.8438 Q473.0781,1389.8438 473.3125,1390.1016 Q473.5469,1390.3594 473.5469,1390.9688 L473.5469,1392.9375 Q473.5469,1393.4844 473.4219,1393.6719 Q473.1563,1394.0625 472.7031,1394.0625 Q472.2344,1394.0625 471.9688,1393.6563 Q471.8438,1393.4688 471.8438,1392.7969 L470.3594,1392.7969 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="83" x="485.5" y="1396.9102">Receipt::Status</text><line style="stroke:#A80036;stroke-width:1.5;" x1="457.5" x2="570.5" y1="1408" y2="1408"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="22" x="462.5" y="1423.4189">FAIL</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="15" x="462.5" y="1437.2549">OK</text><line style="stroke:#A80036;stroke-width:1.5;" x1="457.5" x2="570.5" y1="1443.6719" y2="1443.6719"/><!--MD5=[644b5eb9c16c6c1d603327159cdb92d3]
+class scoped_logger--><rect codeLine="37" fill="#FEFECE" filter="url(#fz8eo11biblag)" height="103.3438" id="scoped_logger" style="stroke:#A80036;stroke-width:1.5;" width="430" x="1502" y="107"/><ellipse cx="1671.25" cy="123" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1674.0156,118.875 Q1674.1719,118.6563 1674.3594,118.5469 Q1674.5469,118.4375 1674.7656,118.4375 Q1675.1406,118.4375 1675.375,118.6953 Q1675.6094,118.9531 1675.6094,119.5625 L1675.6094,121.0156 Q1675.6094,121.625 1675.375,121.8906 Q1675.1406,122.1563 1674.7656,122.1563 Q1674.4219,122.1563 1674.2188,121.9531 Q1674.0156,121.7656 1673.9063,121.25 Q1673.8594,120.8906 1673.6719,120.7031 Q1673.3438,120.3281 1672.7344,120.1094 Q1672.125,119.8906 1671.5,119.8906 Q1670.7344,119.8906 1670.1016,120.2188 Q1669.4688,120.5469 1668.9766,121.2969 Q1668.4844,122.0469 1668.4844,123.0781 L1668.4844,124.1719 Q1668.4844,125.4063 1669.375,126.2266 Q1670.2656,127.0469 1671.8594,127.0469 Q1672.7969,127.0469 1673.4531,126.7969 Q1673.8438,126.6406 1674.2656,126.2031 Q1674.5313,125.9375 1674.6797,125.8594 Q1674.8281,125.7813 1675.0313,125.7813 Q1675.3594,125.7813 1675.6172,126.0391 Q1675.875,126.2969 1675.875,126.6406 Q1675.875,126.9844 1675.5313,127.3906 Q1675.0313,127.9688 1674.2344,128.2969 Q1673.1563,128.75 1671.8594,128.75 Q1670.3438,128.75 1669.1406,128.125 Q1668.1563,127.625 1667.4688,126.5547 Q1666.7813,125.4844 1666.7813,124.2031 L1666.7813,123.0469 Q1666.7813,121.7188 1667.3984,120.5703 Q1668.0156,119.4219 1669.1094,118.8047 Q1670.2031,118.1875 1671.4375,118.1875 Q1672.1719,118.1875 1672.8203,118.3516 Q1673.4688,118.5156 1674.0156,118.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="83" x="1691.75" y="127.9102">scoped_logger</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1503" x2="1931" y1="139" y2="139"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1510" y="147"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="1522" y="154.4189">_ss : std::stringstream</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1503" x2="1931" y1="160.8359" y2="160.8359"/><ellipse cx="1513" cy="171.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="404" x="1522" y="176.2549">scoped_logger(const std::string&amp; className, const char* funcName, unsigned line)</text><ellipse cx="1513" cy="185.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="86" x="1522" y="190.0908">~scoped_logger()</text><ellipse cx="1513" cy="199.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="138" x="1522" y="203.9268">stream() : std::stringstream&amp;</text><!--MD5=[9fa6e53fc963e76a9b2a5c0633c05748]
+reverse link cmder.IControllableThread to cmder.agent.Agent--><path codeLine="170" d="M693.14,218.68 C716.35,244.06 744.81,275.17 773.92,307 " fill="none" id="cmder.IControllableThread-backto-cmder.agent.Agent" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="687.73,223.15,679.4,203.67,698.06,213.7,687.73,223.15" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c18a0c15d5d26d6ea18981a6a1ee1821]
+reverse link cmder.IControllableThread to cmder.Server--><path codeLine="173" d="M588.16,218.91 C555.52,257.04 511.88,308.04 471.71,354.98 " fill="none" id="cmder.IControllableThread-backto-cmder.Server" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="582.88,214.31,601.2,203.67,593.52,223.41,582.88,214.31" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[aafd66cfa7648fdaa11b4f43e7aef32e]
+reverse link cmder.IStatProvider to cmder.agent.Agent--><path codeLine="176" d="M931.47,209.62 C931.72,236.43 932.04,271.23 932.37,306.93 " fill="none" id="cmder.IStatProvider-backto-cmder.agent.Agent" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="924.47,209.61,931.28,189.55,938.47,209.48,924.47,209.61" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e5e0cc9cad21c51ba6b65711505f62ea]
+reverse link cmder.IStatProvider to cmder.Server--><path codeLine="179" d="M863.74,199.33 C825.35,219.93 775.53,243.18 728,255 C691.95,263.97 594.59,247.11 561,263 C517.33,283.66 478.98,318.79 447.95,354.93 " fill="none" id="cmder.IStatProvider-backto-cmder.Server" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="860.44,193.15,881.33,189.64,867.19,205.42,860.44,193.15" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[082953446339a58cf00aafce55776a20]
+reverse link cmder.agent.Agent to cmder.Callback--><path codeLine="187" d="M693.73,656.28 C691.82,657.2 689.91,658.11 688,659 C593.1,703.42 559.73,686.86 460,719 C454.08,720.91 448.09,722.89 442.05,724.92 " fill="none" id="cmder.agent.Agent-backto-cmder.Callback" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="705.45,650.43,698.2955,649.5285,694.7116,655.786,701.8661,656.6875,705.45,650.43" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="690.8359" y="653.1558">2</text><!--MD5=[6571e50b801134519f60329ebf3fecc0]
+reverse link cmder.agent.Agent to cmder.Server--><path codeLine="190" d="M773.03,299.19 C741.96,278.44 707.46,263.17 670.5,259 C642.28,255.82 574.35,255.16 561,263 C521.24,286.37 485.02,320.39 454.75,354.73 " fill="none" id="cmder.agent.Agent-backto-cmder.Server" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="783.87,306.75,781.2309,300.0392,774.0213,299.8941,776.6604,306.605,783.87,306.75" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1202b43c2060a6851e0a1b28c1b78e20]
+reverse link cmder.Server to cmder.agent.Agent--><path codeLine="211" d="M463.79,344.69 C492.13,313.85 525.12,284.09 561,263 C574.35,255.16 642.28,255.82 670.5,259 C711.82,263.66 750.06,282.19 783.87,306.75 " fill="none" id="cmder.Server-backto-cmder.agent.Agent" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="454.75,354.73,461.7365,352.9444,462.7754,345.8085,455.7889,347.5941,454.75,354.73" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f80f8ffe79608b913cce052312ed3b7d]
+reverse link cmder.agent.Agent to cmder.Status--><path codeLine="193" d="M694.23,655.32 C692.15,656.56 690.07,657.79 688,659 C634.13,690.55 607.04,676.84 561,719 C550.35,728.76 541.3,741.31 533.96,753.79 " fill="none" id="cmder.agent.Agent-backto-cmder.Status" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="705.39,648.59,698.1862,648.2647,695.1152,654.7891,702.319,655.1145,705.39,648.59" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[0a308aab3b5493ac6a946519f0095cfb]
+reverse link cmder.tst.AgentTest to cmder.agent.Agent--><path codeLine="196" d="M499.45,238.26 C510.22,244.9 521.5,250.7 533,255 C565.31,267.08 656.09,249.9 688,263 C714.98,274.07 740.97,289.43 765.3,306.91 " fill="none" id="cmder.tst.AgentTest-backto-cmder.agent.Agent" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="488.43,231.08,491.2804,237.7038,498.491,237.6203,495.6406,230.9965,488.43,231.08" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="488.4765" y="252.2792">2</text><!--MD5=[c5dabf5884b277adff90eabc9556199f]
+reverse link cmder.tst.AgentTest to cmder.Callback--><path codeLine="199" d="M312.78,237.76 C300.88,244.55 288.49,250.52 276,255 C264.46,259.13 174.35,254.03 166,263 C51.07,386.59 130.29,600.11 189.23,718.74 " fill="none" id="cmder.tst.AgentTest-backto-cmder.Callback" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="324.04,231.03,316.8376,230.6761,313.7408,237.1884,320.9432,237.5423,324.04,231.03" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1399eec7fe8b5194fa91157495831a33]
+reverse link cmder.tst.AgentTest to cmder.Server--><path codeLine="202" d="M398.39,244.21 C393.36,278.02 387.46,317.67 381.93,354.8 " fill="none" id="cmder.tst.AgentTest-backto-cmder.Server" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="400.35,231.07,395.51,236.4155,398.5828,242.9392,403.4228,237.5936,400.35,231.07" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[41e1e9b72b6646534abcc3e266fa6cac]
+reverse link cmder.Callback::Message_t to Receipt--><path codeLine="205" d="M386.54,1040.62 C391.31,1054.93 396.72,1071.17 402.23,1087.68 " fill="none" id="cmder.Callback::Message_t-backto-Receipt" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="382.35,1028.06,380.4551,1035.0177,386.1487,1039.4429,388.0436,1032.4852,382.35,1028.06" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2058c616d41f3b813307d8ee40261dd6]
+reverse link Receipt to cmder.Status--><path codeLine="208" d="M471.38,1074.78 C473.02,1067.09 474.57,1059.45 476,1052 C488.84,984.98 499.2,906.84 505.23,857.04 " fill="none" id="Receipt-backto-cmder.Status" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="468.55,1087.76,473.7319,1082.7452,471.0959,1076.0332,465.914,1081.048,468.55,1087.76" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b04a896af842626c252361a19d9f149e]
+reverse link cmder.Server to cmder.Status--><path codeLine="214" d="M427.29,623.21 C448.77,669.74 471.36,718.66 487.66,753.95 " fill="none" id="cmder.Server-backto-cmder.Status" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="421.71,611.13,420.5909,618.2537,426.7362,622.0267,427.8553,614.9029,421.71,611.13" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[059318daab7456d7c910ef1b4b403ee2]
+reverse link cmder.tst.ServerTest to cmder.Server--><path codeLine="217" d="M204.87,228.28 C227.85,265.16 256.92,311.8 283.84,355 " fill="none" id="cmder.tst.ServerTest-backto-cmder.Server" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="197.93,217.16,197.7146,224.3679,204.2852,227.3389,204.5006,220.1311,197.93,217.16" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[dc54567240dce7d6625b1c377a4057f7]
+reverse link cmder.Callback to cmder.Callback::Message_t--><path codeLine="226" d="M308.36,904.41 C320.62,921.25 332.67,937.77 342.81,951.69 " fill="none" id="cmder.Callback-backto-cmder.Callback::Message_t" style="stroke:#A80036;stroke-width:1.0;"/><ellipse cx="304.1181" cy="898.6079" fill="#FFFFFF" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="308.8262" x2="299.41" y1="905.0758" y2="892.14"/><line style="stroke:#A80036;stroke-width:1.0;" x1="297.6502" x2="310.586" y1="903.316" y2="893.8998"/><!--MD5=[9c136f356381a8d6dcac758b118e8d2b]
+reverse link cmder.Callback to cmder.Callback::Type--><path codeLine="229" d="M211.7,906.86 C207.68,922.84 203.74,938.45 200.4,951.69 " fill="none" id="cmder.Callback-backto-cmder.Callback::Type" style="stroke:#A80036;stroke-width:1.0;"/><ellipse cx="213.4518" cy="899.8966" fill="#FFFFFF" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="211.4936" x2="215.41" y1="907.6533" y2="892.14"/><line style="stroke:#A80036;stroke-width:1.0;" x1="205.6952" x2="221.2084" y1="897.9384" y2="901.8548"/><!--MD5=[337e37ce856fbf4a62df92e975117e08]
+reverse link Receipt to Receipt::Mode--><path codeLine="232" d="M394.97,1330.8 C389.21,1347.12 383.73,1362.67 379.12,1375.77 " fill="none" id="Receipt-backto-Receipt::Mode" style="stroke:#A80036;stroke-width:1.0;"/><ellipse cx="397.4202" cy="1323.8449" fill="#FFFFFF" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="394.7605" x2="400.08" y1="1331.3898" y2="1316.3"/><line style="stroke:#A80036;stroke-width:1.0;" x1="389.8753" x2="404.9651" y1="1321.1851" y2="1326.5047"/><!--MD5=[ff8f68cd9860b13c4e769e1081d0a27c]
+reverse link Receipt to Receipt::Status--><path codeLine="235" d="M485.03,1330.8 C490.79,1347.12 496.27,1362.67 500.88,1375.77 " fill="none" id="Receipt-backto-Receipt::Status" style="stroke:#A80036;stroke-width:1.0;"/><ellipse cx="482.5798" cy="1323.8449" fill="#FFFFFF" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="485.2395" x2="479.92" y1="1331.3898" y2="1316.3"/><line style="stroke:#A80036;stroke-width:1.0;" x1="475.0349" x2="490.1247" y1="1326.5047" y2="1321.1851"/><!--MD5=[d394a75e24f596ee5db8020335d3b982]
+reverse link cmder.agent.Task to cmder.agent.Task::TaskConfig--><path codeLine="238" d="M1322,529.17 C1322,598.45 1322,728.47 1322,781.3 " fill="none" id="cmder.agent.Task-backto-cmder.agent.Task::TaskConfig" style="stroke:#A80036;stroke-width:1.0;"/><ellipse cx="1322" cy="522.15" fill="#FFFFFF" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1322" x2="1322" y1="530.15" y2="514.15"/><line style="stroke:#A80036;stroke-width:1.0;" x1="1314" x2="1330" y1="522.15" y2="522.15"/><!--MD5=[2c9d11100a11ab58e6f1ddac20e04cef]
 @startuml
 
 
@@ -45,160 +47,160 @@ reverse link Cmder.Task to Cmder.Task::TaskConfig--><g id="link_Cmder.Task_Cmder
 
 /' Objects '/
 
-class Callback {
-    +Callback()
-    +~Callback()
-    +operator<<(std::ostream& ostr, const Callback::SharedPtr& cb) : std :: ostream&
-    -mMessages : std::map<Key_t, Message_t>
-    -mMutex : std::mutex
-    +getFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
-    +waitFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
-    +clear() : void
-    +notify(TaskId taskId, Type type, const std::string& message) : void
-}
-
-
 class Receipt {
-    +Receipt(Mode mode)
-    +getEndTime() : ChronotTime_t& {query}
-    +getStartTime() : ChronotTime_t& {query}
-    -mMode : Mode
-    -mStatus : Status
-    +getTaskId() : TaskId {query}
-    +getExecutionMode() : int {query}
-    +getStatus() : int {query}
-    -mEndTime : time_point<std::chrono::system_clock>
-    -mStartTime : time_point<std::chrono::system_clock>
-    -mTaskId : uint32_t
-    +setEndTime() : void
-    +setStatus(Status status) : void
-}
-
-
-enum Callback::Type {
-    NOTIFICATION
-    RESULT
+	+Receipt(Mode mode)
+	+getEndTime() : ChronotTime_t& {query}
+	+getStartTime() : ChronotTime_t& {query}
+	-mMode : Mode
+	-mStatus : Status
+	+getTaskId() : TaskId {query}
+	+getExecutionMode() : int {query}
+	+getStatus() : int {query}
+	-mEndTime : time_point<std::chrono::system_clock>
+	-mStartTime : time_point<std::chrono::system_clock>
+	-mTaskId : uint32_t
+	+setEndTime() : void
+	+setStatus(Status status) : void
 }
 
 
 enum Receipt::Mode {
-    Async
-    Blocking
+	Async
+	Blocking
 }
 
 
 enum Receipt::Status {
-    FAIL
-    OK
-}
-
-
-class Callback::Message_t {
-    +mTime : Receipt::ChronotTime_t
-    +mResult : std::string
+	FAIL
+	OK
 }
 
 
 class scoped_logger {
-    +scoped_logger(const std::string& className, const char* funcName, unsigned line)
-    +~scoped_logger()
-    -_ss : std::stringstream
-    +stream() : std::stringstream&
+	+scoped_logger(const std::string& className, const char* funcName, unsigned line)
+	+~scoped_logger()
+	-_ss : std::stringstream
+	+stream() : std::stringstream&
 }
 
 
-namespace Cmder {
-    class Agent {
-        -Agent(Server& server, Callback::SharedPtr callback)
-        +~Agent()
-        -mCallback : Callback::SharedPtr
-        +doTask(Receipt::Mode mode, const TaskName& task, std::string& result) : Receipt {query}
-        -mServer : Server&
-        +{static} create(Server& server, Callback::SharedPtr callback) : SharedPtr
-        +getStatus() : Status {query}
-        -mStatus : Status
-        -mMutex : mutable std::mutex
-        -mConditionVariable : std::condition_variable
-        -mNotifications : std::queue<std::string>
-        -mDebugName : std::string
-        +getName() : std::string& {query}
-        -mThreadPtr : std::unique_ptr<std::thread>
-        +statNotification(const std::string& notificationName) : uint64_t {query}
-        +notify(const std::string& message) : void
-        +registerAgent() : void
-        -run() : void
-        +start() : void
-        +stop() : void
-        +unregisterAgent() : void
-    }
+namespace cmder {
+	class Callback {
+		+Callback()
+		+~Callback()
+		+operator<<(std::ostream& ostr, const Callback::SharedPtr& cb) : std :: ostream&
+		-mMessages : std::map<Key_t, Message_t>
+		-mMutex : std::mutex
+		+getFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
+		+waitFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
+		+clear() : void
+		+notify(TaskId taskId, Type type, const std::string& message) : void
+	}
 
-    abstract class IControllableThread {
-        +{abstract} getStatus() : int {query}
-        +{abstract} start() : void
-        +{abstract} stop() : void
-    }
+	abstract class IControllableThread {
+		+{abstract} getStatus() : int {query}
+		+{abstract} start() : void
+		+{abstract} stop() : void
+	}
 
-    abstract class IStatProvider {
-        +{abstract} statNotification(const std::string& notificationName) : uint64_t {query}
-    }
+	abstract class IStatProvider {
+		+{abstract} statNotification(const std::string& notificationName) : uint64_t {query}
+	}
 
-    class Server {
-        +Server()
-        +~Server()
-        +getStatus() : Cmder::Status {query}
-        -mStatus : Status
-        -mMutex : mutable std::mutex
-        -mConditionVariable : std::condition_variable
-        -mNotificationStatistics : std::map<std::string, uint64_t>
-        -mThreadPtr : std::unique_ptr<std::thread>
-        +statNotification(const std::string& notificationName) : uint64_t {query}
-        -mAgents : vector<Agent::WeakPtr>
-        +registerAgent(Agent::SharedPtr agent) : void
-        -run() : void
-        +start() : void
-        +stop() : void
-        +unregister(const std::string agentName) : void
-    }
+	class Server {
+		+Server()
+		+~Server()
+		+getStatus() : Status {query}
+		-mStatus : Status
+		-mMutex : mutable std::mutex
+		-mConditionVariable : std::condition_variable
+		-mNotificationStatistics : std::map<std::string, uint64_t>
+		-mThreadPtr : std::unique_ptr<std::thread>
+		+statNotification(const std::string& notificationName) : uint64_t {query}
+		-mAgents : vector<Agent::WeakPtr>
+		+registerAgent(Agent::SharedPtr agent) : void
+		-run() : void
+		+start() : void
+		+stop() : void
+		+unregisterAgent(const std::string& agentName) : void
+	}
 
-    class Task {
-        -mTaskConfiguration : std::vector<TaskConfig>
-    }
+	enum Callback::Type {
+		NOTIFICATION
+		RESULT
+	}
 
-    enum Status {
-        Init
-        Run
-        Start
-        Stop
-    }
+	enum Status {
+		Init
+		Run
+		Start
+		Stop
+	}
 
-    enum TaskName {
-        BlockMe_3s
-        Pi
-        PingMe_5x
-    }
+	class Callback::Message_t {
+		+mTime : Receipt::ChronotTime_t
+		+mResult : std::string
+	}
 
-    class Task::TaskConfig {
-    }
+	namespace tst {
+		class AgentTest {
+			#{static} sServer : Server
+			#{static} sAsyncAgent : static Agent::SharedPtr
+			#{static} sNoCallbackAgent : static Agent::SharedPtr
+			#{static} sCallback : static Callback::SharedPtr
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#{static} TearDownTestSuite() : void
+		}
 
-    namespace Testing {
-        class AgentTest {
-            #{static} sAsyncAgent : static Agent::SharedPtr
-            #{static} sNoCallbackAgent : static Agent::SharedPtr
-            #{static} sCallback : static Callback::SharedPtr
-            #{static} sServer : static Server
-            #SetUp() : void
-            #{static} SetUpTestSuite() : void
-            #{static} TearDownTestSuite() : void
-        }
+		class ServerTest {
+			#mServer : std::unique_ptr<Server>
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#TearDown() : void
+			#{static} TearDownTestSuite() : void
+		}
+	}
 
-        class ServerTest {
-            #mServer : std::unique_ptr<Server>
-            #SetUp() : void
-            #{static} SetUpTestSuite() : void
-            #TearDown() : void
-            #{static} TearDownTestSuite() : void
-        }
-    }
+	namespace agent {
+		class Agent {
+			-Agent(Server& server, Callback::SharedPtr callback)
+			+~Agent()
+			-mCallback : Callback::SharedPtr
+			-mClientCallback : Callback::WeakPtr
+			+doTask(Receipt::Mode mode, const TaskName& task, std::string& result) : Receipt {query}
+			-mServer : Server&
+			+{static} create(Server& server, Callback::SharedPtr callback) : SharedPtr
+			+getStatus() : Status {query}
+			-mStatus : Status
+			-mMutex : mutable std::mutex
+			-mConditionVariable : std::condition_variable
+			-mNotifications : std::queue<std::string>
+			-mDebugName : std::string
+			+getName() : std::string& {query}
+			-mThreadPtr : std::unique_ptr<std::thread>
+			+statNotification(const std::string& notificationName) : uint64_t {query}
+			+notify(const std::string& message) : void
+			+registerAgent() : void
+			-run() : void
+			+start() : void
+			+stop() : void
+			+unregisterAgent() : void
+		}
+
+		class Task {
+			-mTaskConfiguration : std::vector<TaskConfig>
+		}
+
+		enum TaskName {
+			BlockMe_3s
+			Pi
+			PingMe_5x
+		}
+
+		class Task::TaskConfig {
+		}
+	}
 }
 
 
@@ -207,13 +209,16 @@ namespace Cmder {
 
 /' Inheritance relationships '/
 
-Cmder.IControllableThread <|- - Cmder.Agent
+cmder.IControllableThread <|- - cmder.agent.Agent
 
 
-Cmder.IControllableThread <|- - Cmder.Server
+cmder.IControllableThread <|- - cmder.Server
 
 
-Cmder.IStatProvider <|- - Cmder.Server
+cmder.IStatProvider <|- - cmder.agent.Agent
+
+
+cmder.IStatProvider <|- - cmder.Server
 
 
 
@@ -221,37 +226,37 @@ Cmder.IStatProvider <|- - Cmder.Server
 
 /' Aggregation relationships '/
 
-Cmder.Agent *- - .Callback
+cmder.agent.Agent "2" *- - cmder.Callback
 
 
-Cmder.Agent *- - Cmder.Server
+cmder.agent.Agent *- - cmder.Server
 
 
-Cmder.Agent *- - Cmder.Status
+cmder.agent.Agent *- - cmder.Status
 
 
-Cmder.Testing.AgentTest "2" *- - Cmder.Agent
+cmder.tst.AgentTest "2" *- - cmder.agent.Agent
 
 
-Cmder.Testing.AgentTest *- - .Callback
+cmder.tst.AgentTest *- - cmder.Callback
 
 
-Cmder.Testing.AgentTest *- - Cmder.Server
+cmder.tst.AgentTest *- - cmder.Server
 
 
-.Callback::Message_t *- - .Receipt
+cmder.Callback::Message_t *- - .Receipt
 
 
-.Receipt *- - Cmder.Status
+.Receipt *- - cmder.Status
 
 
-Cmder.Server *- - Cmder.Agent
+cmder.Server *- - cmder.agent.Agent
 
 
-Cmder.Server *- - Cmder.Status
+cmder.Server *- - cmder.Status
 
 
-Cmder.Testing.ServerTest *- - Cmder.Server
+cmder.tst.ServerTest *- - cmder.Server
 
 
 
@@ -260,10 +265,10 @@ Cmder.Testing.ServerTest *- - Cmder.Server
 
 /' Nested objects '/
 
-.Callback +- - .Callback::Message_t
+cmder.Callback +- - cmder.Callback::Message_t
 
 
-.Callback +- - .Callback::Type
+cmder.Callback +- - cmder.Callback::Type
 
 
 .Receipt +- - .Receipt::Mode
@@ -272,7 +277,7 @@ Cmder.Testing.ServerTest *- - Cmder.Server
 .Receipt +- - .Receipt::Status
 
 
-Cmder.Task +- - Cmder.Task::TaskConfig
+cmder.agent.Task +- - cmder.agent.Task::TaskConfig
 
 
 
@@ -286,160 +291,160 @@ Cmder.Task +- - Cmder.Task::TaskConfig
 
 
 
-class Callback {
-    +Callback()
-    +~Callback()
-    +operator<<(std::ostream& ostr, const Callback::SharedPtr& cb) : std :: ostream&
-    -mMessages : std::map<Key_t, Message_t>
-    -mMutex : std::mutex
-    +getFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
-    +waitFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
-    +clear() : void
-    +notify(TaskId taskId, Type type, const std::string& message) : void
-}
-
-
 class Receipt {
-    +Receipt(Mode mode)
-    +getEndTime() : ChronotTime_t& {query}
-    +getStartTime() : ChronotTime_t& {query}
-    -mMode : Mode
-    -mStatus : Status
-    +getTaskId() : TaskId {query}
-    +getExecutionMode() : int {query}
-    +getStatus() : int {query}
-    -mEndTime : time_point<std::chrono::system_clock>
-    -mStartTime : time_point<std::chrono::system_clock>
-    -mTaskId : uint32_t
-    +setEndTime() : void
-    +setStatus(Status status) : void
-}
-
-
-enum Callback::Type {
-    NOTIFICATION
-    RESULT
+	+Receipt(Mode mode)
+	+getEndTime() : ChronotTime_t& {query}
+	+getStartTime() : ChronotTime_t& {query}
+	-mMode : Mode
+	-mStatus : Status
+	+getTaskId() : TaskId {query}
+	+getExecutionMode() : int {query}
+	+getStatus() : int {query}
+	-mEndTime : time_point<std::chrono::system_clock>
+	-mStartTime : time_point<std::chrono::system_clock>
+	-mTaskId : uint32_t
+	+setEndTime() : void
+	+setStatus(Status status) : void
 }
 
 
 enum Receipt::Mode {
-    Async
-    Blocking
+	Async
+	Blocking
 }
 
 
 enum Receipt::Status {
-    FAIL
-    OK
-}
-
-
-class Callback::Message_t {
-    +mTime : Receipt::ChronotTime_t
-    +mResult : std::string
+	FAIL
+	OK
 }
 
 
 class scoped_logger {
-    +scoped_logger(const std::string& className, const char* funcName, unsigned line)
-    +~scoped_logger()
-    -_ss : std::stringstream
-    +stream() : std::stringstream&
+	+scoped_logger(const std::string& className, const char* funcName, unsigned line)
+	+~scoped_logger()
+	-_ss : std::stringstream
+	+stream() : std::stringstream&
 }
 
 
-namespace Cmder {
-    class Agent {
-        -Agent(Server& server, Callback::SharedPtr callback)
-        +~Agent()
-        -mCallback : Callback::SharedPtr
-        +doTask(Receipt::Mode mode, const TaskName& task, std::string& result) : Receipt {query}
-        -mServer : Server&
-        +{static} create(Server& server, Callback::SharedPtr callback) : SharedPtr
-        +getStatus() : Status {query}
-        -mStatus : Status
-        -mMutex : mutable std::mutex
-        -mConditionVariable : std::condition_variable
-        -mNotifications : std::queue<std::string>
-        -mDebugName : std::string
-        +getName() : std::string& {query}
-        -mThreadPtr : std::unique_ptr<std::thread>
-        +statNotification(const std::string& notificationName) : uint64_t {query}
-        +notify(const std::string& message) : void
-        +registerAgent() : void
-        -run() : void
-        +start() : void
-        +stop() : void
-        +unregisterAgent() : void
-    }
+namespace cmder {
+	class Callback {
+		+Callback()
+		+~Callback()
+		+operator<<(std::ostream& ostr, const Callback::SharedPtr& cb) : std :: ostream&
+		-mMessages : std::map<Key_t, Message_t>
+		-mMutex : std::mutex
+		+getFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
+		+waitFirst(const Receipt& receipt, Type type) : std::optional<Message_t>
+		+clear() : void
+		+notify(TaskId taskId, Type type, const std::string& message) : void
+	}
 
-    abstract class IControllableThread {
-        +{abstract} getStatus() : int {query}
-        +{abstract} start() : void
-        +{abstract} stop() : void
-    }
+	abstract class IControllableThread {
+		+{abstract} getStatus() : int {query}
+		+{abstract} start() : void
+		+{abstract} stop() : void
+	}
 
-    abstract class IStatProvider {
-        +{abstract} statNotification(const std::string& notificationName) : uint64_t {query}
-    }
+	abstract class IStatProvider {
+		+{abstract} statNotification(const std::string& notificationName) : uint64_t {query}
+	}
 
-    class Server {
-        +Server()
-        +~Server()
-        +getStatus() : Cmder::Status {query}
-        -mStatus : Status
-        -mMutex : mutable std::mutex
-        -mConditionVariable : std::condition_variable
-        -mNotificationStatistics : std::map<std::string, uint64_t>
-        -mThreadPtr : std::unique_ptr<std::thread>
-        +statNotification(const std::string& notificationName) : uint64_t {query}
-        -mAgents : vector<Agent::WeakPtr>
-        +registerAgent(Agent::SharedPtr agent) : void
-        -run() : void
-        +start() : void
-        +stop() : void
-        +unregister(const std::string agentName) : void
-    }
+	class Server {
+		+Server()
+		+~Server()
+		+getStatus() : Status {query}
+		-mStatus : Status
+		-mMutex : mutable std::mutex
+		-mConditionVariable : std::condition_variable
+		-mNotificationStatistics : std::map<std::string, uint64_t>
+		-mThreadPtr : std::unique_ptr<std::thread>
+		+statNotification(const std::string& notificationName) : uint64_t {query}
+		-mAgents : vector<Agent::WeakPtr>
+		+registerAgent(Agent::SharedPtr agent) : void
+		-run() : void
+		+start() : void
+		+stop() : void
+		+unregisterAgent(const std::string& agentName) : void
+	}
 
-    class Task {
-        -mTaskConfiguration : std::vector<TaskConfig>
-    }
+	enum Callback::Type {
+		NOTIFICATION
+		RESULT
+	}
 
-    enum Status {
-        Init
-        Run
-        Start
-        Stop
-    }
+	enum Status {
+		Init
+		Run
+		Start
+		Stop
+	}
 
-    enum TaskName {
-        BlockMe_3s
-        Pi
-        PingMe_5x
-    }
+	class Callback::Message_t {
+		+mTime : Receipt::ChronotTime_t
+		+mResult : std::string
+	}
 
-    class Task::TaskConfig {
-    }
+	namespace tst {
+		class AgentTest {
+			#{static} sServer : Server
+			#{static} sAsyncAgent : static Agent::SharedPtr
+			#{static} sNoCallbackAgent : static Agent::SharedPtr
+			#{static} sCallback : static Callback::SharedPtr
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#{static} TearDownTestSuite() : void
+		}
 
-    namespace Testing {
-        class AgentTest {
-            #{static} sAsyncAgent : static Agent::SharedPtr
-            #{static} sNoCallbackAgent : static Agent::SharedPtr
-            #{static} sCallback : static Callback::SharedPtr
-            #{static} sServer : static Server
-            #SetUp() : void
-            #{static} SetUpTestSuite() : void
-            #{static} TearDownTestSuite() : void
-        }
+		class ServerTest {
+			#mServer : std::unique_ptr<Server>
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#TearDown() : void
+			#{static} TearDownTestSuite() : void
+		}
+	}
 
-        class ServerTest {
-            #mServer : std::unique_ptr<Server>
-            #SetUp() : void
-            #{static} SetUpTestSuite() : void
-            #TearDown() : void
-            #{static} TearDownTestSuite() : void
-        }
-    }
+	namespace agent {
+		class Agent {
+			-Agent(Server& server, Callback::SharedPtr callback)
+			+~Agent()
+			-mCallback : Callback::SharedPtr
+			-mClientCallback : Callback::WeakPtr
+			+doTask(Receipt::Mode mode, const TaskName& task, std::string& result) : Receipt {query}
+			-mServer : Server&
+			+{static} create(Server& server, Callback::SharedPtr callback) : SharedPtr
+			+getStatus() : Status {query}
+			-mStatus : Status
+			-mMutex : mutable std::mutex
+			-mConditionVariable : std::condition_variable
+			-mNotifications : std::queue<std::string>
+			-mDebugName : std::string
+			+getName() : std::string& {query}
+			-mThreadPtr : std::unique_ptr<std::thread>
+			+statNotification(const std::string& notificationName) : uint64_t {query}
+			+notify(const std::string& message) : void
+			+registerAgent() : void
+			-run() : void
+			+start() : void
+			+stop() : void
+			+unregisterAgent() : void
+		}
+
+		class Task {
+			-mTaskConfiguration : std::vector<TaskConfig>
+		}
+
+		enum TaskName {
+			BlockMe_3s
+			Pi
+			PingMe_5x
+		}
+
+		class Task::TaskConfig {
+		}
+	}
 }
 
 
@@ -447,61 +452,64 @@ namespace Cmder {
 
 
 
-Cmder.IControllableThread <|- - Cmder.Agent
+cmder.IControllableThread <|- - cmder.agent.Agent
 
 
-Cmder.IControllableThread <|- - Cmder.Server
+cmder.IControllableThread <|- - cmder.Server
 
 
-Cmder.IStatProvider <|- - Cmder.Server
+cmder.IStatProvider <|- - cmder.agent.Agent
 
 
-
-
-
-
-Cmder.Agent *- - .Callback
-
-
-Cmder.Agent *- - Cmder.Server
-
-
-Cmder.Agent *- - Cmder.Status
-
-
-Cmder.Testing.AgentTest "2" *- - Cmder.Agent
-
-
-Cmder.Testing.AgentTest *- - .Callback
-
-
-Cmder.Testing.AgentTest *- - Cmder.Server
-
-
-.Callback::Message_t *- - .Receipt
-
-
-.Receipt *- - Cmder.Status
-
-
-Cmder.Server *- - Cmder.Agent
-
-
-Cmder.Server *- - Cmder.Status
-
-
-Cmder.Testing.ServerTest *- - Cmder.Server
+cmder.IStatProvider <|- - cmder.Server
 
 
 
 
 
 
+cmder.agent.Agent "2" *- - cmder.Callback
 
-.Callback +- - .Callback::Message_t
+
+cmder.agent.Agent *- - cmder.Server
 
 
-.Callback +- - .Callback::Type
+cmder.agent.Agent *- - cmder.Status
+
+
+cmder.tst.AgentTest "2" *- - cmder.agent.Agent
+
+
+cmder.tst.AgentTest *- - cmder.Callback
+
+
+cmder.tst.AgentTest *- - cmder.Server
+
+
+cmder.Callback::Message_t *- - .Receipt
+
+
+.Receipt *- - cmder.Status
+
+
+cmder.Server *- - cmder.agent.Agent
+
+
+cmder.Server *- - cmder.Status
+
+
+cmder.tst.ServerTest *- - cmder.Server
+
+
+
+
+
+
+
+cmder.Callback +- - cmder.Callback::Message_t
+
+
+cmder.Callback +- - cmder.Callback::Type
 
 
 .Receipt +- - .Receipt::Mode
@@ -510,18 +518,18 @@ Cmder.Testing.ServerTest *- - Cmder.Server
 .Receipt +- - .Receipt::Status
 
 
-Cmder.Task +- - Cmder.Task::TaskConfig
+cmder.agent.Task +- - cmder.agent.Task::TaskConfig
 
 
 
 
 @enduml
 
-PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
-(EPL source distribution)
-Java Runtime: OpenJDK Runtime Environment
-JVM: OpenJDK 64-Bit Server VM
-Default Encoding: UTF-8
+PlantUML version 1.2021.10(Mon Aug 30 15:43:48 CEST 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
 Language: en
 Country: US
 --></g></svg>

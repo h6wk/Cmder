@@ -1,13 +1,13 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-13 00:12:21                               *
+ * @LastEditDate          : 2023-07-13 14:29:11                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
 #include "Agent.hpp"
 #include "../../Logger.hpp"
-#include "../../Server.hpp"
+#include <server/Server.hpp>
 
 #include <assert.h>
 #include <chrono>
@@ -55,7 +55,7 @@ namespace cmder::agent {
   }
 
 
-  Agent::SharedPtr Agent::create(Cmder::Server& server, Callback::SharedPtr callback)
+  Agent::SharedPtr Agent::create(Server& server, Callback::SharedPtr callback)
   {
     //Use a temporary subclass to make a connection between a smart pointer generator function and a class with a private constructor.
     struct MkSharedEnabler : public Agent {
