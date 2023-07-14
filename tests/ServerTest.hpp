@@ -19,7 +19,7 @@ namespace cmder::tst {
 
   using namespace cmder;
   using namespace cmder::agent;
-  using cmder::Server;
+  using cmder::srv::Server;
 
   // To use gtest fixture, derive from testing::Test 
   class ServerTest : public testing::Test {

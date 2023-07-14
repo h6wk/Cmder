@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-03 12:00:00                              *
- * @LastEditDate          : 2023-07-12 23:29:35                              *
+ * @LastEditDate          : 2023-07-14 00:07:38                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -30,10 +30,12 @@ namespace cmder {
     
     struct Message_t {
       Receipt::ChronotTime_t mTime;
-      std::string mResult;
+      TaskId mTaskId;
+      Type mType;
+      std::string mText;
     };
 
-    Callback() = default;
+    Callback();
     virtual ~Callback();
 
     /// @brief Add a new message into the callback.
@@ -56,14 +58,18 @@ namespace cmder {
     /// @return An std::optional that might include the Message (or not).
     std::optional<Message_t> waitFirst(const Receipt& receipt, Type type);
 
+    size_t messagesSize() const;
+
     friend std::ostream& operator<<(std::ostream& ostr, const Callback::SharedPtr& cb);
 
+    void setOwner(const std::string& owner);
   private:
 
-    using Key_t = std::pair<TaskId, Type>;
+    mutable std::mutex mMutex;
 
-    std::map<Key_t, Message_t> mMessages;
-    std::mutex mMutex;
+    std::string mOwnerName;
+
+    std::vector<Message_t> mMessages;
   };
 
   std::ostream& operator<<(std::ostream& ostr, const Callback::SharedPtr& cb);

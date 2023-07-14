@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-13 14:29:11                               *
+ * @LastEditDate          : 2023-07-15 00:03:41                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -35,6 +35,8 @@ namespace {
 
 namespace cmder::agent {
 
+  using cmder::srv::Server;
+
   std::ostream& operator<<(std::ostream& ostr, const Status& status)
   {
     switch (status) {
@@ -55,15 +57,17 @@ namespace cmder::agent {
   }
 
 
-  Agent::SharedPtr Agent::create(Server& server, Callback::SharedPtr callback)
+  Agent::SharedPtr Agent::create(Server& server, Callback::SharedPtr callbackUser)
   {
     //Use a temporary subclass to make a connection between a smart pointer generator function and a class with a private constructor.
     struct MkSharedEnabler : public Agent {
       MkSharedEnabler(Server& server, Callback::SharedPtr cb) : Agent(server, cb) {}
     };
-    auto instance = std::make_shared<MkSharedEnabler>(server, callback);
+    auto instance = std::make_shared<MkSharedEnabler>(server, callbackUser);
+    if (callbackUser) {
+      callbackUser->setOwner("<<User>>");
+    }
 
-    server.registerAgent(instance);
     return instance;
   }
 
@@ -75,8 +79,8 @@ namespace cmder::agent {
     result.clear();
 
     LOG("Task '" << task << "' started in " << mode << " mode");
-    if (auto clientCb = mClientCallback.lock()) {
-      clientCb->notify(receipt.getTaskId(), Callback::NOTIFICATION, "Task started: " /*+ task*/);
+    if (auto cbUserSP = mCallbackUser.lock()) {
+      cbUserSP->notify(receipt.getTaskId(), Callback::NOTIFICATION, "Task started: " /*+ task*/);
     }
     else {
       assert(mode != Receipt::Async);
@@ -96,9 +100,9 @@ namespace cmder::agent {
       const std::string result("3.14");
 
       if (mode == Receipt::Async) {
-        auto clientCb = mClientCallback.lock();
-        if (clientCb) {
-          clientCb->notify(receipt.getTaskId(), Callback::RESULT, result);
+        auto cbUserSP = mCallbackUser.lock();
+        if (cbUserSP) {
+          cbUserSP->notify(receipt.getTaskId(), Callback::RESULT, result);
         }
         return std::string("");
       }
@@ -123,13 +127,6 @@ namespace cmder::agent {
     return receipt;
   }
 
-  void Agent::notify(const std::string& message)
-  {
-    LOG("Agent " << mDebugName << " got message: " << message);
-
-    std::lock_guard guard(mMutex);
-    mNotifications.push(message);
-  }
 
   const std::string& Agent::getName() const
   {
@@ -146,26 +143,31 @@ namespace cmder::agent {
     mServer.unregisterAgent(mDebugName);
   }
 
-  uint64_t Agent::statNotification(const std::string &notificationName) const
+  uint64_t Agent::statNotification(const std::string& notificationName) const
   {
     std::lock_guard guard(mMutex);
-    return mNotifications.size();
+    if (mCallbackAgent) {
+      return mCallbackAgent->messagesSize();
+    }
+    return 0;
   }
 
-  Agent::Agent(Server &server, Callback::SharedPtr callback)
+  Agent::Agent(Server &server, Callback::SharedPtr callbackUser)
   : mMutex()
   , mThreadPtr()
   , mConditionVariable()
   , mServer(server)
-  , mClientCallback(callback)
-  , mCallback(std::make_shared<Callback>())
-  , mNotifications()
+  , mCallbackUser(callbackUser)
+  , mCallbackAgent(std::make_shared<Callback>())
   , mDebugName(getNextAgentName())
   {
     {
       std::lock_guard guard(mMutex);
       mStatus = Status::Init;
     }
+
+    server.registerAgent(mDebugName, mCallbackAgent);
+    mCallbackAgent->setOwner(mDebugName);
 
     LOG("Agent " << mDebugName << " created. Status set to " << mStatus);
   }

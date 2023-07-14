@@ -1,10 +1,19 @@
-#ifndef RECEIPT_H_INCLUDED
-#define RECEIPT_H_INCLUDED
+/*****************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                          *
+ * @CreatedDate           : 2023-07-05 12:00:00                              *
+ * @LastEditDate          : 2023-07-13 22:26:48                              *
+ * @CopyRight             : GNU GPL                                          *
+ ****************************************************************************/
+
+#ifndef F39AA2B7_290B_47E7_A935_50D0339ECDA3
+#define F39AA2B7_290B_47E7_A935_50D0339ECDA3
 
 #include <chrono>
 #include <cstdint>
 
 using TaskId = uint32_t;
+
+#define INVALID_TASK_ID 0u
 
 /**
  * Ackowledgement of recipt (of the task)
@@ -46,4 +55,4 @@ private:
 
 std::ostream& operator<<(std::ostream& ostr, const Receipt::Mode& mode);
 
-#endif
+#endif /* F39AA2B7_290B_47E7_A935_50D0339ECDA3 */

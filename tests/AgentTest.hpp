@@ -15,7 +15,7 @@
 
 namespace cmder::tst {
 
-  using cmder::Server;
+  using cmder::srv::Server;
   using namespace cmder::agent;
 
   class AgentTest : public testing::Test {

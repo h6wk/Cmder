@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-01 12:00:00                              *
- * @LastEditDate          : 2023-07-13 15:20:43                              *
+ * @LastEditDate          : 2023-07-14 23:59:22                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -21,7 +21,7 @@
 #include <string>
 #include <thread>
 
-namespace cmder {
+namespace cmder::srv {
 
   // -- forward declaration
   class Server;
@@ -30,6 +30,7 @@ namespace cmder {
 
 namespace cmder::agent {
 
+  using cmder::srv::Server;
   
   /**
    * Client uses the agent to get access to a service. This represents a layer
@@ -43,7 +44,6 @@ namespace cmder::agent {
   {
   public:
     using SharedPtr = std::shared_ptr<Agent>;
-    using WeakPtr = std::weak_ptr<Agent>;
 
     /// @brief Create a new Agent object.
     /// @param server Reference to the server that will be called to do the task
@@ -77,10 +77,6 @@ namespace cmder::agent {
     ///         async result.
     Receipt doTask(Receipt::Mode mode, const TaskName& task, std::string& result) const;
 
-    /// @brief Server uses this interface to send notifications to the agent
-    /// @param message Notification
-    void notify(const std::string& message);
-
     /// @brief Get the name of the agent (for debugging).
     ///        It is automatically generated at the time of creation.
     /// @return Name as a string constant reference.
@@ -110,12 +106,10 @@ namespace cmder::agent {
                                               //< service will be selected for a task based on
                                               //< some selection criteria.
 
-    Callback::WeakPtr mClientCallback;        //< Client's callback to send async responses
+    Callback::WeakPtr mCallbackUser;          //< User's callback to send async responses
                                               //< Since this ia a weak pointer, agent doesn't own it!
 
-    Callback::SharedPtr mCallback;            //< Agent's callback to receive notifications and async responses from the server
-
-    std::queue<std::string> mNotifications;   //< Notification queue (recevied from the server)
+    Callback::SharedPtr mCallbackAgent;       //< Agent's callback to receive notifications and async responses from the server
 
     std::string mDebugName;                   //< To name (ID) for better logging
   };

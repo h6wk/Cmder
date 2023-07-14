@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-06 12:00:00                              *
- * @LastEditDate          : 2023-07-13 15:02:16                              *
+ * @LastEditDate          : 2023-07-14 00:28:46                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -12,8 +12,6 @@
 #include <server/Server.hpp>
 
 namespace cmder::tst {
-
-  using cmder::Server;
 
   Server AgentTest::sServer;
   Callback::SharedPtr AgentTest::sCallback;
@@ -54,7 +52,7 @@ namespace cmder::tst {
     // RESULT is in the callback.
     std::optional<Callback::Message_t> message = sCallback->waitFirst(receipt, Callback::RESULT);
     EXPECT_TRUE(message.has_value());
-    EXPECT_EQ(message->mResult, "3.14");
+    EXPECT_EQ(message->mText, "3.14");
   }
 
   TEST_F(AgentTest, AsyncNoCallback)

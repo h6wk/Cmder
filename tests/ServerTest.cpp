@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-07 12:00:00                              *
- * @LastEditDate          : 2023-07-13 15:22:28                              *
+ * @LastEditDate          : 2023-07-15 00:06:21                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -29,8 +29,11 @@ namespace cmder::tst {
   {
     mServer->start();
 
-    Agent::SharedPtr agentShortLife = Agent::create(*mServer, Callback::SharedPtr());
-    Agent::SharedPtr agentLongLife = Agent::create(*mServer, Callback::SharedPtr());
+    auto cb1 = std::make_shared<Callback>();
+    auto cb2 = std::make_shared<Callback>();
+
+    Agent::SharedPtr agentShortLife = Agent::create(*mServer, cb1);
+    Agent::SharedPtr agentLongLife = Agent::create(*mServer, cb2);
 
     std::this_thread::sleep_for(1000ms);
     agentShortLife->unregisterAgent();

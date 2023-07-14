@@ -1,17 +1,18 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-13 15:21:40                              *
+ * @LastEditDate          : 2023-07-13 23:23:32                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
 #include <cassert>
 
-#include "Server.hpp"
+#include <server/Server.hpp>
+
 #include "../Logger.hpp"
 
 
-namespace cmder {
+namespace cmder::srv {
 
   Server::Server()
   : mMutex()
@@ -62,35 +63,31 @@ namespace cmder {
     return mStatus;
   }
 
-  void Server::registerAgent(Agent::SharedPtr agent)
+  void Server::registerAgent(const std::string& agentName, const Callback::SharedPtr& callback)
   {
-    assert(agent);
-
     std::lock_guard guard(mMutex);
-    mAgents.push_back(agent);
-
-    LOG("Agent #" << mAgents.size() << " called " << agent->getName() << " is registered");
+    const AgentInfo ai(agentName, callback);
+    mAgents.insert(std::make_pair(agentName, ai));
+    LOG("Agent #" << mAgents.size() << " called " << agentName << " was registered");
   }
 
   void Server::unregisterAgent(const std::string& agentName)
   {
     std::lock_guard guard(mMutex);
-    for (AgentCont_t::const_iterator agentWptrIter = mAgents.begin(); agentWptrIter != mAgents.end(); /* inc. in body*/) {
-
-      Agent::SharedPtr agent = agentWptrIter->lock();
-      if ( ! agent) {
-        LOG("Removing a dead reference onto an agent. No more info about!");
-        agentWptrIter = mAgents.erase(agentWptrIter);
-      }
-      else if (agent->getName() == agentName) {
-        LOG("Unregister agent called: " << agentName);
-        agentWptrIter = mAgents.erase(agentWptrIter);
-      }
-      else {
-        ++agentWptrIter;
-      }
-    }
+    unregisterAgentUnsafe(agentName);
   }
+
+  void Server::unregisterAgentUnsafe(const std::string& agentName)
+  {
+    const size_t count = mAgents.erase(agentName);
+    if (count) {
+      LOG("Agent " << agentName << " was removed (" << count << ")");      
+    }
+    else {
+      LOG("Cannot remove NOT registered agetn " << agentName);
+    }    
+  }
+
 
   uint64_t Server::statNotification(const std::string& notificationName) const
   {
@@ -125,12 +122,21 @@ namespace cmder {
       // Send TICK to all of the registered and alive agents
       std::for_each(std::begin(mAgents)
         , std::end(mAgents)
-        , [&tickStat](const Agent::WeakPtr& agentWptr) {
+        , [&tickStat](const std::pair<AgentName_t, AgentInfo>& agentData) {
           LOG("TICK");
-          Agent::SharedPtr agent = agentWptr.lock();
-          if (agent) {
-            agent->notify("TICK");
-            ++(*tickStat);
+
+          if (agentData.second.mHasCallback) {
+
+            // check if the callback still "valid"
+            Callback::SharedPtr cb = agentData.second.mCallback.lock();
+            if (cb) {
+              cb->notify(INVALID_TASK_ID, Callback::Type::NOTIFICATION, "TICK");
+              ++(*tickStat);
+            }
+            else {
+              // this is a callback that no longer exists!
+              //unregisterAgentUnsafe(agentName);
+            }
           }
         }
       );
