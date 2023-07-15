@@ -1,14 +1,14 @@
-/*****************************************************************************
- * @Author                : h6wk<h6wking@gmail.com>                          *
- * @CreatedDate           : 2023-07-03 12:00:00                              *
- * @LastEditDate          : 2023-07-14 23:12:47                              *
- * @CopyRight             : GNU GPL                                          *
- ****************************************************************************/
+/******************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                           *
+ * @CreatedDate           : 2023-07-03 12:00:00                               *
+ * @LastEditDate          : 2023-07-15 21:47:14                               *
+ * @CopyRight             : GNU GPL                                           *
+ *****************************************************************************/
 
 #include "Callback.hpp"
 #include "Logger.hpp"
+#include <Types.hpp>
 
-#include <chrono>
 #include <iostream>
 
 namespace cmder {
@@ -27,7 +27,7 @@ namespace cmder {
     mMessages.clear();
   }
 
-  void Callback::notify(TaskId taskId, Callback::Type type, const std::string& message)
+  void Callback::notify(TaskId_t taskId, Callback::Type type, const std::string& message)
   {
     std::lock_guard guard(mMutex);
 

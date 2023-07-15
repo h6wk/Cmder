@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-06 12:00:00                              *
- * @LastEditDate          : 2023-07-14 00:28:46                              *
+ * @LastEditDate          : 2023-07-15 22:14:50                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -23,13 +23,13 @@ namespace cmder::tst {
     ASSERT_TRUE(sAsyncAgent);
     ASSERT_TRUE(sCallback);
     std::string result;
-    Receipt receipt = sAsyncAgent->doTask(Receipt::Blocking, TaskName::Pi, result);
+    Receipt receipt = sAsyncAgent->doTask(ExecutionMode_t::Blocking, TaskName::Pi, result);
 
     EXPECT_EQ(result, "3.14");
 
     EXPECT_GE(receipt.getTaskId(), 0); 
     EXPECT_EQ(receipt.getStatus(), Receipt::OK); 
-    EXPECT_EQ(receipt.getExecutionMode(), Receipt::Blocking);
+    EXPECT_EQ(receipt.getExecutionMode(), ExecutionMode_t::Blocking);
 
     // Don't have any RESULT in the callback. Result was given as the return value of the blocking doCmd()
     std::optional<Callback::Message_t> message = sCallback->getFirst(receipt, Callback::RESULT);
@@ -41,13 +41,13 @@ namespace cmder::tst {
     ASSERT_TRUE(sAsyncAgent);
     ASSERT_TRUE(sCallback);
     std::string result("No result yet");
-    Receipt receipt = sAsyncAgent->doTask(Receipt::Async, TaskName::Pi, result);
+    Receipt receipt = sAsyncAgent->doTask(ExecutionMode_t::Async, TaskName::Pi, result);
 
     EXPECT_EQ(result, "");
 
     EXPECT_GT(receipt.getTaskId(), 0);
     EXPECT_EQ(receipt.getStatus(), Receipt::OK);
-    EXPECT_EQ(receipt.getExecutionMode(), Receipt::Async);
+    EXPECT_EQ(receipt.getExecutionMode(), ExecutionMode_t::Async);
 
     // RESULT is in the callback.
     std::optional<Callback::Message_t> message = sCallback->waitFirst(receipt, Callback::RESULT);

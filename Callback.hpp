@@ -1,16 +1,17 @@
-/*****************************************************************************
- * @Author                : h6wk<h6wking@gmail.com>                          *
- * @CreatedDate           : 2023-07-03 12:00:00                              *
- * @LastEditDate          : 2023-07-14 00:07:38                              *
- * @CopyRight             : GNU GPL                                          *
- ****************************************************************************/
+/******************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                           *
+ * @CreatedDate           : 2023-07-03 12:00:00                               *
+ * @LastEditDate          : 2023-07-15 21:56:29                               *
+ * @CopyRight             : GNU GPL                                           *
+ *****************************************************************************/
 
 #ifndef BC631564_DD35_4804_91C9_7CE0EAC96FFF
 #define BC631564_DD35_4804_91C9_7CE0EAC96FFF
 
 #include "Receipt.hpp"
 
-#include <chrono>
+#include <Types.hpp>
+
 #include <map>
 #include <memory>
 #include <string>
@@ -29,8 +30,8 @@ namespace cmder {
     enum Type {NOTIFICATION, RESULT};
     
     struct Message_t {
-      Receipt::ChronotTime_t mTime;
-      TaskId mTaskId;
+      ChronoTime_t mTime;
+      TaskId_t mTaskId;
       Type mType;
       std::string mText;
     };
@@ -39,7 +40,7 @@ namespace cmder {
     virtual ~Callback();
 
     /// @brief Add a new message into the callback.
-    void notify(TaskId taskId, Type type, const std::string& message);
+    void notify(TaskId_t taskId, Type type, const std::string& message);
 
     /// @brief Clean the messages
     void clear();

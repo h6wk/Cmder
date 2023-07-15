@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-15 00:03:41                               *
+ * @LastEditDate          : 2023-07-15 23:54:09                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -72,7 +72,7 @@ namespace cmder::agent {
   }
 
 
-  Receipt Agent::doTask(Receipt::Mode mode, const TaskName& task, std::string& result) const
+  Receipt Agent::doTask(ExecutionMode_t mode, const TaskName& task, std::string& result) const
   {
     Receipt receipt(mode);
 
@@ -83,7 +83,7 @@ namespace cmder::agent {
       cbUserSP->notify(receipt.getTaskId(), Callback::NOTIFICATION, "Task started: " /*+ task*/);
     }
     else {
-      assert(mode != Receipt::Async);
+      assert(mode != ExecutionMode_t::Async);
     }
 
     // This is the Agent's internal thread!
@@ -99,7 +99,7 @@ namespace cmder::agent {
 
       const std::string result("3.14");
 
-      if (mode == Receipt::Async) {
+      if (mode == ExecutionMode_t::Async) {
         auto cbUserSP = mCallbackUser.lock();
         if (cbUserSP) {
           cbUserSP->notify(receipt.getTaskId(), Callback::RESULT, result);
@@ -112,10 +112,10 @@ namespace cmder::agent {
 
 
     switch (mode) {
-    case Receipt::Async:
+    case ExecutionMode_t::Async:
       // TODO: register the future in a store, put the result later into the callback
       break;
-    case Receipt::Blocking:
+    case ExecutionMode_t::Blocking:
       // The client's thred is blocked until the future is not calculated!
       result = futureResult.get();
       break;

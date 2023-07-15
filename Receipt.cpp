@@ -1,34 +1,39 @@
-/*****************************************************************************
- * @Author                : h6wk<h6wking@gmail.com>                          *
- * @CreatedDate           : 2023-07-05 12:00:00                              *
- * @LastEditDate          : 2023-07-13 22:27:13                              *
- * @CopyRight             : GNU GPL                                          *
- ****************************************************************************/
+/******************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                           *
+ * @CreatedDate           : 2023-07-05 12:00:00                               *
+ * @LastEditDate          : 2023-07-16 00:00:02                               *
+ * @CopyRight             : GNU GPL                                           *
+ *****************************************************************************/
 
 #include "Receipt.hpp"
+
+#include <Types.hpp>
 
 #include <atomic>
 #include <iostream>
 
 
-static std::atomic<TaskId> sNextTaskId = 0; 
+static std::atomic<TaskId_t> sNextTaskId = 0; 
 
+using namespace cmder;
 
-std::ostream& operator<<(std::ostream& ostr, const Receipt::Mode& mode)
-{
-  switch (mode) {
-  case Receipt::Async:
-    ostr << "async";
-    break;
-  case Receipt::Blocking:
-    ostr << "blocking";
-    break;
+namespace cmder {
+  std::ostream& operator<<(std::ostream& ostr, const ExecutionMode_t& mode)
+  {
+    switch (mode) {
+    case ExecutionMode_t::Async:
+      ostr << "async";
+      break;
+    case ExecutionMode_t::Blocking:
+      ostr << "blocking";
+      break;
+    }
+    return ostr;
   }
-  return ostr;
+
 }
 
-
-Receipt::Receipt(Receipt::Mode mode)
+Receipt::Receipt(ExecutionMode_t mode)
 : mMode(mode)
 , mTaskId(sNextTaskId++)
 , mStartTime(std::chrono::system_clock::now())
@@ -42,32 +47,32 @@ void Receipt::setEndTime()
   mEndTime = std::chrono::system_clock::now();
 }
 
-Receipt::Mode Receipt::getExecutionMode() const
+ExecutionMode_t Receipt::getExecutionMode() const
 {
   return mMode;
 }
 
-TaskId Receipt::getTaskId() const
+TaskId_t Receipt::getTaskId() const
 {
   return mTaskId;
 }
 
-const Receipt::ChronotTime_t& Receipt::getStartTime() const
+const ChronoTime_t& Receipt::getStartTime() const
 {
   return mStartTime;
 }
 
-const Receipt::ChronotTime_t& Receipt::getEndTime() const
+const ChronoTime_t& Receipt::getEndTime() const
 {
     return mEndTime;
 }
 
-Receipt::Status Receipt::getStatus() const
+Receipt::Status_t Receipt::getStatus() const
 {
   return mStatus;
 }
 
-void Receipt::setStatus(Status status)
+void Receipt::setStatus(Status_t status)
 {
   mStatus = status;
 }

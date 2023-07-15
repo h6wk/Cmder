@@ -75,7 +75,7 @@ namespace cmder::agent {
     ///         into the callbak.
     /// @return Get back a receipt of ackowledge that can be used to find the corresponding
     ///         async result.
-    Receipt doTask(Receipt::Mode mode, const TaskName& task, std::string& result) const;
+    Receipt doTask(ExecutionMode_t mode, const TaskName& task, std::string& result) const;
 
     /// @brief Get the name of the agent (for debugging).
     ///        It is automatically generated at the time of creation.

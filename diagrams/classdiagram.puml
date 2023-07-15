@@ -7,29 +7,23 @@
 /' Objects '/
 
 class Receipt {
-	+Receipt(Mode mode)
-	+getEndTime() : ChronotTime_t& {query}
-	+getStartTime() : ChronotTime_t& {query}
-	-mMode : Mode
-	-mStatus : Status
-	+getTaskId() : TaskId {query}
-	+getExecutionMode() : int {query}
+	+Receipt(ExecutionMode_t mode)
+	-mEndTime : ChronoTime_t
+	-mStartTime : ChronoTime_t
+	+getEndTime() : ChronoTime_t& {query}
+	+getStartTime() : ChronoTime_t& {query}
+	+getExecutionMode() : ExecutionMode_t {query}
+	-mStatus : Status_t
+	+getTaskId() : TaskId_t {query}
+	-mMode : const ExecutionMode_t
+	-mTaskId : const TaskId_t
 	+getStatus() : int {query}
-	-mEndTime : time_point<std::chrono::system_clock>
-	-mStartTime : time_point<std::chrono::system_clock>
-	-mTaskId : uint32_t
 	+setEndTime() : void
-	+setStatus(Status status) : void
+	+setStatus(Status_t status) : void
 }
 
 
-enum Receipt::Mode {
-	Async
-	Blocking
-}
-
-
-enum Receipt::Status {
+enum Receipt::Status_t {
 	FAIL
 	OK
 }
@@ -55,7 +49,7 @@ namespace cmder {
 		-mOwnerName : std::string
 		-mMessages : std::vector<Message_t>
 		+clear() : void
-		+notify(TaskId taskId, Type type, const std::string& message) : void
+		+notify(TaskId_t taskId, Type type, const std::string& message) : void
 		+setOwner(const std::string& owner) : void
 	}
 
@@ -74,6 +68,11 @@ namespace cmder {
 		RESULT
 	}
 
+	enum ExecutionMode_t {
+		Async
+		Blocking
+	}
+
 	enum Status {
 		Init
 		Run
@@ -82,8 +81,8 @@ namespace cmder {
 	}
 
 	class Callback::Message_t {
-		+mTime : Receipt::ChronotTime_t
-		+mTaskId : TaskId
+		+mTime : ChronoTime_t
+		+mTaskId : TaskId_t
 		+mType : Type
 		+mText : std::string
 	}
@@ -93,6 +92,13 @@ namespace cmder {
 			#{static} sServer : Server
 			#{static} sAsyncAgent : static Agent::SharedPtr
 			#{static} sNoCallbackAgent : static Agent::SharedPtr
+			#{static} sCallback : static Callback::SharedPtr
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#{static} TearDownTestSuite() : void
+		}
+
+		class CallbackTest {
 			#{static} sCallback : static Callback::SharedPtr
 			#SetUp() : void
 			#{static} SetUpTestSuite() : void
@@ -142,7 +148,7 @@ namespace cmder {
 			+~Agent()
 			-mCallbackAgent : Callback::SharedPtr
 			-mCallbackUser : Callback::WeakPtr
-			+doTask(Receipt::Mode mode, const TaskName& task, std::string& result) : Receipt {query}
+			+doTask(ExecutionMode_t mode, const TaskName& task, std::string& result) : Receipt {query}
 			-mServer : Server
 			+{static} create(Server server, Callback::SharedPtr callback) : SharedPtr
 			+getStatus() : Status {query}
@@ -216,10 +222,10 @@ cmder.tst.AgentTest *-- cmder.Callback
 cmder.tst.AgentTest *-- cmder.srv.Server
 
 
-cmder.Callback::Message_t *-- .Receipt
+cmder.tst.CallbackTest *-- cmder.Callback
 
 
-.Receipt *-- cmder.Status
+.Receipt *-- cmder.ExecutionMode_t
 
 
 cmder.srv.Server *-- cmder.Status
@@ -243,10 +249,7 @@ cmder.Callback +-- cmder.Callback::Message_t
 cmder.Callback +-- cmder.Callback::Type
 
 
-.Receipt +-- .Receipt::Mode
-
-
-.Receipt +-- .Receipt::Status
+.Receipt +-- .Receipt::Status_t
 
 
 cmder.srv.Server +-- cmder.srv.Server::AgentInfo
