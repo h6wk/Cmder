@@ -1,19 +1,21 @@
-/*****************************************************************************
- * @Author                : h6wk<h6wking@gmail.com>                          *
- * @CreatedDate           : 2023-07-16 00:03:05                              *
- * @LastEditDate          : 2023-07-16 00:06:23                              *
- * @CopyRight             : GNU GPL                                          *
- ****************************************************************************/
+/******************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                           *
+ * @CreatedDate           : 2023-07-16 00:03:05                               *
+ * @LastEditDate          : 2023-07-16 22:33:07                               *
+ * @CopyRight             : GNU GPL                                           *
+ *****************************************************************************/
 
 #ifndef FADCA300_E0AC_4E96_908A_23F47B84398D
 #define FADCA300_E0AC_4E96_908A_23F47B84398D
 
 #include <gtest/gtest.h>
 
-#include "../Callback.hpp"
+#include <callback/Callback.hpp>
 
 
 namespace cmder::tst {
+
+  using cmder::cb::Callback;
 
   class CallbackTest : public testing::Test {
   protected:  // You should make the members protected s.t. they can be accessed from sub-classes.

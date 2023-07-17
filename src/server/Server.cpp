@@ -1,9 +1,9 @@
-/*****************************************************************************
- * @Author                : h6wk<h6wking@gmail.com>                          *
- * @CreatedDate           : 2023-07-02 12:00:00                              *
- * @LastEditDate          : 2023-07-13 23:23:32                              *
- * @CopyRight             : GNU GPL                                          *
- ****************************************************************************/
+/******************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                           *
+ * @CreatedDate           : 2023-07-02 12:00:00                               *
+ * @LastEditDate          : 2023-07-16 23:00:21                               *
+ * @CopyRight             : GNU GPL                                           *
+ *****************************************************************************/
 
 #include <cassert>
 
@@ -130,7 +130,7 @@ namespace cmder::srv {
             // check if the callback still "valid"
             Callback::SharedPtr cb = agentData.second.mCallback.lock();
             if (cb) {
-              cb->notify(INVALID_TASK_ID, Callback::Type::NOTIFICATION, "TICK");
+              cb->notify(INVALID_TASK_ID, CallbackMessageType_t::NOTIFICATION, "TICK");
               ++(*tickStat);
             }
             else {

@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-15 23:54:09                               *
+ * @LastEditDate          : 2023-07-16 23:01:49                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -80,7 +80,7 @@ namespace cmder::agent {
 
     LOG("Task '" << task << "' started in " << mode << " mode");
     if (auto cbUserSP = mCallbackUser.lock()) {
-      cbUserSP->notify(receipt.getTaskId(), Callback::NOTIFICATION, "Task started: " /*+ task*/);
+      cbUserSP->notify(receipt.getTaskId(), CallbackMessageType_t::NOTIFICATION, "Task started: " /*+ task*/);
     }
     else {
       assert(mode != ExecutionMode_t::Async);
@@ -102,7 +102,7 @@ namespace cmder::agent {
       if (mode == ExecutionMode_t::Async) {
         auto cbUserSP = mCallbackUser.lock();
         if (cbUserSP) {
-          cbUserSP->notify(receipt.getTaskId(), Callback::RESULT, result);
+          cbUserSP->notify(receipt.getTaskId(), CallbackMessageType_t::RESULT, result);
         }
         return std::string("");
       }

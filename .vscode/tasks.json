@@ -12,6 +12,7 @@
                 "${workspaceFolder}/*.cpp",
                 "${workspaceFolder}/src/agent/*.cpp",
                 "${workspaceFolder}/src/server/*.cpp",
+                "${workspaceFolder}/src/callback/*.cpp",
                 "${workspaceFolder}/tests/*.cpp",
                 "-lgtest",
                 "-o",

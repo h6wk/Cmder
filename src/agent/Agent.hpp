@@ -1,16 +1,16 @@
-/*****************************************************************************
- * @Author                : h6wk<h6wking@gmail.com>                          *
- * @CreatedDate           : 2023-07-01 12:00:00                              *
- * @LastEditDate          : 2023-07-14 23:59:22                              *
- * @CopyRight             : GNU GPL                                          *
- ****************************************************************************/
+/******************************************************************************
+ * @Author                : h6wk<h6wking@gmail.com>                           *
+ * @CreatedDate           : 2023-07-01 12:00:00                               *
+ * @LastEditDate          : 2023-07-16 22:33:58                               *
+ * @CopyRight             : GNU GPL                                           *
+ *****************************************************************************/
 
 #ifndef C5CEADB5_5E42_402E_B2D4_5B6CAA2A11FA
 #define C5CEADB5_5E42_402E_B2D4_5B6CAA2A11FA
 
 #include <agent/Task.hpp>
 
-#include "../../Callback.hpp"
+#include <callback/Callback.hpp>
 #include <IControllableThread.hpp>
 #include <IStatProvider.hpp>
 #include "../../Receipt.hpp"
@@ -30,8 +30,9 @@ namespace cmder::srv {
 
 namespace cmder::agent {
 
+  using cmder::cb::Callback;
   using cmder::srv::Server;
-  
+    
   /**
    * Client uses the agent to get access to a service. This represents a layer
    * between the client and the service layer. In a multi service environment the

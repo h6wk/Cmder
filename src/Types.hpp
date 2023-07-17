@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-15 21:19:21                              *
- * @LastEditDate          : 2023-07-15 22:08:22                              *
+ * @LastEditDate          : 2023-07-16 23:13:54                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -12,7 +12,9 @@
 #include <cstdint>
 
 
-#define INVALID_TASK_ID 0u
+
+#define NO_TASK_ID 0u
+#define INVALID_TASK_ID 0xFFFFFFFF
 
 
 namespace cmder {
@@ -22,9 +24,13 @@ namespace cmder {
   using TaskId_t = uint32_t;
 
   enum class ExecutionMode_t {
-    Async
-    , Blocking
+    Async, Blocking
   };
+
+  enum class CallbackMessageType_t {
+    NOTIFICATION, RESULT
+  };
+
 
 }
 
