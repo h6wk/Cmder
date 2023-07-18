@@ -1,19 +1,19 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-16 22:33:58                               *
+ * @LastEditDate          : 2023-07-18 11:34:03                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
 #ifndef C5CEADB5_5E42_402E_B2D4_5B6CAA2A11FA
 #define C5CEADB5_5E42_402E_B2D4_5B6CAA2A11FA
 
+#include <agent/Receipt.hpp>
 #include <agent/Task.hpp>
 
 #include <callback/Callback.hpp>
 #include <IControllableThread.hpp>
 #include <IStatProvider.hpp>
-#include "../../Receipt.hpp"
 
 #include <condition_variable>
 #include <memory>

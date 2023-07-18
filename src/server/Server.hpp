@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-02 12:00:00                               *
- * @LastEditDate          : 2023-07-16 22:35:41                               *
+ * @LastEditDate          : 2023-07-18 11:35:54                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -12,7 +12,7 @@
 #include <IControllableThread.hpp>
 #include <IStatProvider.hpp>
 
-#include "../../Logger.hpp"
+#include <Logger.hpp>
 
 #include <condition_variable>
 #include <map>
@@ -22,7 +22,7 @@
 namespace cmder::srv {
 
   using namespace cmder::agent;
-  using cmder::cb::Callback;
+  using namespace cmder::cb;
   
   /**
    * Entity that accepts the task does the job and delivers the result to the

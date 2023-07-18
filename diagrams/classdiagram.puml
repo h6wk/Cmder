@@ -120,6 +120,31 @@ namespace cmder {
 		}
 	}
 
+	namespace cb {
+		class Callback {
+			+Callback()
+			+~Callback()
+			-mMutex : mutable std::mutex
+			+messagesSize() : size_t {query}
+			+operator<<(std::ostream& ostr, const Callback::SharedPtr& cb) : std :: ostream&
+			-mConditionVariable : std::condition_variable
+			+pop() : std::optional<Message_t>
+			+tryPop() : std::optional<Message_t>
+			-mMessages : std::queue<Message_t>
+			-mOwnerName : std::string
+			+clear() : void
+			+notify(TaskId_t taskId, CallbackMessageType_t type, const std::string& message) : void
+			+setOwner(const std::string& owner) : void
+		}
+
+		class Callback::Message_t {
+			+mType : CallbackMessageType_t
+			+mTime : ChronoTime_t
+			+mTaskId : TaskId_t
+			+mText : std::string
+		}
+	}
+
 	namespace agent {
 		class Agent {
 			-Agent(Server server, Callback::SharedPtr callback)
@@ -182,6 +207,9 @@ cmder.IStatProvider <|-- cmder.srv.Server
 
 /' Aggregation relationships '/
 
+cmder.agent.Agent "2" *-- cmder.cb.Callback
+
+
 cmder.agent.Agent *-- cmder.srv.Server
 
 
@@ -191,13 +219,25 @@ cmder.agent.Agent *-- cmder.Status
 cmder.tst.AgentTest "2" *-- cmder.agent.Agent
 
 
+cmder.tst.AgentTest *-- cmder.cb.Callback
+
+
 cmder.tst.AgentTest *-- cmder.srv.Server
+
+
+cmder.cb.Callback::Message_t *-- cmder.CallbackMessageType_t
+
+
+cmder.tst.CallbackTest *-- cmder.cb.Callback
 
 
 .Receipt *-- cmder.ExecutionMode_t
 
 
 cmder.srv.Server *-- cmder.Status
+
+
+cmder.srv.Server::AgentInfo *-- cmder.cb.Callback
 
 
 cmder.tst.ServerTest *-- cmder.srv.Server
@@ -208,6 +248,9 @@ cmder.tst.ServerTest *-- cmder.srv.Server
 
 
 /' Nested objects '/
+
+cmder.cb.Callback +-- cmder.cb.Callback::Message_t
+
 
 .Receipt +-- .Receipt::Status_t
 

@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-06 12:00:00                               *
- * @LastEditDate          : 2023-07-17 21:52:18                               *
+ * @LastEditDate          : 2023-07-18 10:25:12                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -32,13 +32,13 @@ namespace cmder::tst {
     EXPECT_EQ(receipt.getExecutionMode(), ExecutionMode_t::Blocking);
 
     // Don't have any RESULT in the callback. Result was given as the return value of the blocking doCmd()
-    EXPECT_LT(0, sCallback->messagesSize());
-    while (sCallback->messagesSize()) {
+    EXPECT_LT(0, sCallback->size());
+    while (sCallback->size()) {
       std::optional<Callback::Message_t> message = sCallback->tryPop();
       EXPECT_TRUE(message.has_value());
       EXPECT_EQ(message->mType, CallbackMessageType_t::NOTIFICATION);
     }
-    EXPECT_EQ(sCallback->messagesSize(), 0);
+    EXPECT_EQ(sCallback->size(), 0);
 
     std::optional<Callback::Message_t> message = sCallback->tryPop();
     EXPECT_FALSE(message.has_value());
@@ -69,7 +69,7 @@ namespace cmder::tst {
       }
       EXPECT_EQ(message->mTaskId, receipt.getTaskId());
     }
-    EXPECT_EQ(sCallback->messagesSize(), 0);
+    EXPECT_EQ(sCallback->size(), 0);
 
     std::optional<Callback::Message_t> message = sCallback->tryPop();
     EXPECT_FALSE(message.has_value());

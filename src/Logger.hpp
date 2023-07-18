@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-06-29 12:00:00                               *
- * @LastEditDate          : 2023-07-12 09:17:44                               *
+ * @LastEditDate          : 2023-07-18 11:22:42                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -51,7 +51,8 @@ struct scoped_logger
   ~scoped_logger()
   {
     std::lock_guard<std::mutex> guard(sLoggerMutex);
-    std::cout << "\n" << _ss.str();
+    //std::cout << "\n" << _ss.str();
+    std::cout << "............ " << _ss.str() << std::endl;
   }
 
 private:

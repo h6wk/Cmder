@@ -1,14 +1,12 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-03 12:00:00                               *
- * @LastEditDate          : 2023-07-17 00:14:54                               *
+ * @LastEditDate          : 2023-07-18 11:34:43                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
 #ifndef BC631564_DD35_4804_91C9_7CE0EAC96FFF
 #define BC631564_DD35_4804_91C9_7CE0EAC96FFF
-
-#include "../../Receipt.hpp"
 
 #include <Types.hpp>
 
@@ -61,7 +59,13 @@ namespace cmder::cb {
     /// @return An std::optional that might include the Message (or not).
     std::optional<Message_t> pop();
 
-    size_t messagesSize() const;
+    /// @brief Get back the number of messages stored actually within the callback.
+    /// @return Unsigned integer
+    size_t size() const;
+
+    /// @brief Check the emptyness of the internal queue
+    /// @return Boolean
+    bool empty() const;
 
     friend std::ostream& operator<<(std::ostream& ostr, const Callback::SharedPtr& cb);
 

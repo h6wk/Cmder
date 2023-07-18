@@ -1,15 +1,16 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-03 12:00:00                               *
- * @LastEditDate          : 2023-07-17 21:33:56                               *
+ * @LastEditDate          : 2023-07-18 11:03:16                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
 #include <callback/Callback.hpp>
-#include "../../Logger.hpp"
+#include <Logger.hpp>
 #include <Types.hpp>
 
 #include <iostream>
+#include "Callback.hpp"
 
 namespace cmder::cb {
 
@@ -71,11 +72,17 @@ namespace cmder::cb {
     return retVal;
   }
 
-  size_t Callback::messagesSize() const
+  size_t Callback::size() const
   {
     std::lock_guard guard(mMutex);
     LOG("Callback message size is " << mMessages.size() << " (" << mOwnerName << ")");
     return mMessages.size();
+  }
+
+  bool Callback::empty() const
+  {
+    std::lock_guard guard(mMutex);
+    return mMessages.empty();
   }
 
   void Callback::setOwner(const std::string &owner)

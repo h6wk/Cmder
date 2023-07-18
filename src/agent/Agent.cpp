@@ -1,12 +1,14 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-16 23:01:49                               *
+ * @LastEditDate          : 2023-07-18 11:04:28                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
 #include "Agent.hpp"
-#include "../../Logger.hpp"
+
+#include <Logger.hpp>
+
 #include <server/Server.hpp>
 
 #include <assert.h>
@@ -147,7 +149,7 @@ namespace cmder::agent {
   {
     std::lock_guard guard(mMutex);
     if (mCallbackAgent) {
-      return mCallbackAgent->messagesSize();
+      return mCallbackAgent->size();
     }
     return 0;
   }
