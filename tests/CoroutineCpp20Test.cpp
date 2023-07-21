@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-19 21:48:49                              *
- * @LastEditDate          : 2023-07-20 00:41:10                              *
+ * @LastEditDate          : 2023-07-21 11:51:26                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -11,7 +11,15 @@
 
 #include <coroutine>
 
-/////////////////////////////////////////////////////// EXAMPLE1
+/////////////////////////////////////////////////////// DEFINITIONS
+/// Task: Coroutine that does a job without returning a value
+/// Generator: Coroutine that does a job and returns a value
+///
+
+
+
+
+/////////////////////////////////////////////////////// EXAMPLE 1
 
 namespace {
 
@@ -148,7 +156,8 @@ namespace cmder::tst {
 }
 
 
-/////////////////////////////////////////////////////// EXAMPLE2
+/////////////////////////////////////////////////////// EXAMPLE 2
+// Author: C++20’s Coroutines for Beginners - Andreas Fertig - CppCon 2022
 
 struct Chat {
 
@@ -232,5 +241,137 @@ namespace cmder::tst {
     std::cout << chat.listen();             // <---- trigger the machine
     chat.answer("where are you?\n");        // <---- sends data into the coroutine
     std::cout << chat.listen();             // <---- wait more data from the coroutine
+  }
+}
+
+/////////////////////////////////////////////////////// EXAMPLE 3 (Interleave two std::vector s)
+// Author: C++20’s Coroutines for Beginners - Andreas Fertig - CppCon 2022
+
+
+struct GeneratorInterleave {
+
+  struct promise_type {
+    int mVal{};
+
+    GeneratorInterleave get_return_object() noexcept { 
+      LOG("");
+      return GeneratorInterleave{this};
+    }
+    
+    std::suspend_never initial_suspend() noexcept {     // <---- startup
+      LOG("");
+      return {};
+    }
+    std::suspend_always final_suspend() noexcept {      // <---- ending
+      LOG("");
+      return {};
+    }
+
+    std::suspend_always yield_value(int v) noexcept     // <---- value from co_yield
+    {
+      LOG("value=" << v);
+      mVal = v;
+      return {};
+    }
+
+    void unhandled_exception() noexcept {
+      LOG("");
+    }
+  };
+
+  using Handle = std::coroutine_handle<promise_type>;       // <------ shortcut to the type
+  Handle mCoroHandle;
+
+  explicit GeneratorInterleave(promise_type *p)                            // <------ get the handle from the promise
+  : mCoroHandle{Handle::from_promise(*p)}
+  {
+    LOG("");
+  }
+
+  GeneratorInterleave(GeneratorInterleave&& other)
+  : mCoroHandle{std::exchange(other.mCoroHandle, nullptr)}
+  {
+    LOG("");
+  }
+
+  ~GeneratorInterleave()
+  {
+    LOG("");
+    if (mCoroHandle) {mCoroHandle.destroy();}
+  }
+
+  int value() const
+  {
+    LOG("");
+    return mCoroHandle.promise().mVal;
+  }
+
+  bool finished()
+  {
+    LOG("");
+    return mCoroHandle.done();
+  }
+
+  void resume()
+  {
+    LOG("");
+    if (not finished()) {
+      mCoroHandle.resume();
+    }
+  }
+
+};
+
+
+GeneratorInterleave interleaved(std::vector<int> a, std::vector<int> b)
+{
+  LOG("");
+  auto lamb = [](std::vector<int>& v) -> GeneratorInterleave {
+    for (const auto& e : v) {
+      LOG("co_yield " << e);
+      co_yield e;
+    }
+  };
+
+  LOG("");
+  auto x = lamb(a);
+  LOG("");
+  auto y = lamb(b);
+  LOG("");
+
+
+  while (not x.finished() or not y.finished()) {
+    LOG("");
+    if (not x.finished()) {
+      LOG("");
+      co_yield x.value();
+      LOG("");
+      x.resume();
+    }
+
+    if (not y.finished()) {
+      LOG("");
+      co_yield y.value();
+      LOG("");
+      y.resume();
+    }
+  }
+}
+
+namespace cmder::tst {
+  TEST_F(CoroutineCpp20Test, VectorInterleave)
+  {
+    std::vector a{1,3,5,7,9};
+    std::vector b{2,4,6};
+
+    LOG("");
+    GeneratorInterleave g{interleaved(std::move(a), std::move(b))};
+    LOG("");
+    while (not g.finished()) {
+      LOG("");
+      std::cout << g.value() << std::endl;
+      LOG("");
+      g.resume();
+    }
   }
 }
