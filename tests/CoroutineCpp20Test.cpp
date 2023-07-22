@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-19 21:48:49                              *
- * @LastEditDate          : 2023-07-21 11:51:26                              *
+ * @LastEditDate          : 2023-07-21 23:16:37                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -10,6 +10,9 @@
 #include <Logger.hpp>
 
 #include <coroutine>
+#include <list>
+
+
 
 /////////////////////////////////////////////////////// DEFINITIONS
 /// Task: Coroutine that does a job without returning a value
@@ -375,3 +378,89 @@ namespace cmder::tst {
     }
   }
 }
+
+/////////////////////////////////////////////////////// EXAMPLE 4 (Schedule multiple tasks)
+
+struct Task {       // <-- tiny wrapper type. Not interested anything only to store the promise_type
+  struct promise_type {
+    Task get_return_object() { return {}; }
+    std::suspend_never initial_suspend() noexcept { return {}; }
+    std::suspend_never final_suspend() noexcept { return {}; }
+    void unhandled_exception() {}
+  };
+};
+
+struct Scheduler
+{
+  std::list<std::coroutine_handle<>> mTasks;
+
+  bool schedule()
+  {
+    auto task = mTasks.front();
+    mTasks.pop_front();
+
+    if (not task.done()) {
+      task.resume();
+    }
+
+    return not mTasks.empty();
+  }
+
+  auto suspend()
+  {
+    struct awaiter : public std::suspend_always {
+      Scheduler& mSch;
+
+      explicit awaiter(Scheduler &sch)
+      : mSch(sch)
+      {
+      }
+
+      void await_suspend(std::coroutine_handle<> coro) const noexcept
+      {
+        mSch.mTasks.push_back(coro);
+      }
+    };
+    return awaiter(*this);
+  }
+
+};
+
+
+Task taskA(Scheduler& scheduler)
+{
+  std::cout << "Hello from task A\n";
+
+  co_await scheduler.suspend();                   // <-- suspend themself! gives control back to the caller
+  std::cout << "Task A is back doing work\n";
+
+  co_await scheduler.suspend();
+  std::cout << "Task A is back doing more work\n";
+} 
+
+Task taskB(Scheduler& scheduler)
+{
+  std::cout << "Hello from task B\n";
+
+  co_await scheduler.suspend();
+  std::cout << "Task B is back doing work\n";
+
+  co_await scheduler.suspend();
+  std::cout << "Task B is back doing more work\n";
+} 
+
+
+namespace cmder::tst {
+  TEST_F(CoroutineCpp20Test, Scheduler)
+  {
+    Scheduler scheduler{};          // <-- create a scheduler object
+
+    taskA(scheduler);               // <-- taskA passing scheduler (not return anything - don't interested in wrapper)
+    taskB(scheduler);               // 
+
+    while (scheduler.schedule()) {  // <-- schedule the two tasks
+      ;
+    }
+  }
+}
+
