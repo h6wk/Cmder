@@ -6,29 +6,6 @@
 
 /' Objects '/
 
-class Receipt {
-	+Receipt(ExecutionMode_t mode)
-	-mEndTime : ChronoTime_t
-	-mStartTime : ChronoTime_t
-	+getEndTime() : ChronoTime_t& {query}
-	+getStartTime() : ChronoTime_t& {query}
-	+getExecutionMode() : ExecutionMode_t {query}
-	-mStatus : Status_t
-	+getTaskId() : TaskId_t {query}
-	-mMode : const ExecutionMode_t
-	-mTaskId : const TaskId_t
-	+getStatus() : int {query}
-	+setEndTime() : void
-	+setStatus(Status_t status) : void
-}
-
-
-enum Receipt::Status_t {
-	FAIL
-	OK
-}
-
-
 class scoped_logger {
 	+scoped_logger(const std::string& className, const char* funcName, unsigned line)
 	+~scoped_logger()
@@ -83,12 +60,38 @@ namespace cmder {
 			#{static} TearDownTestSuite() : void
 		}
 
+		class CoroutineCpp20Test {
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#{static} TearDownTestSuite() : void
+		}
+
 		class ServerTest {
 			#mServer : std::unique_ptr<Server>
 			#SetUp() : void
 			#{static} SetUpTestSuite() : void
 			#TearDown() : void
 			#{static} TearDownTestSuite() : void
+		}
+
+		class ThreadPoolTest {
+			#SetUp() : void
+			#{static} SetUpTestSuite() : void
+			#TearDown() : void
+			#{static} TearDownTestSuite() : void
+		}
+	}
+
+	namespace tools {
+		class ThreadPool {
+			+ThreadPool(size_t threadCount)
+			-function<void()
+			+result_of_t<F(Args ... )>>execute ( F&& f, Args&& ... args)
+			+~ThreadPool()
+			-mStopThreadPool : bool
+			-mConditionVariable : std::condition_variable
+			-mMutex : std::mutex
+			-mThreads : std::vector<std::thread>
 		}
 	}
 
@@ -124,8 +127,9 @@ namespace cmder {
 		class Callback {
 			+Callback()
 			+~Callback()
+			+empty() : bool {query}
 			-mMutex : mutable std::mutex
-			+messagesSize() : size_t {query}
+			+size() : size_t {query}
 			+operator<<(std::ostream& ostr, const Callback::SharedPtr& cb) : std :: ostream&
 			-mConditionVariable : std::condition_variable
 			+pop() : std::optional<Message_t>
@@ -169,8 +173,29 @@ namespace cmder {
 			+unregisterAgent() : void
 		}
 
+		class Receipt {
+			+Receipt(ExecutionMode_t mode)
+			-mEndTime : ChronoTime_t
+			-mStartTime : ChronoTime_t
+			+getEndTime() : ChronoTime_t& {query}
+			+getStartTime() : ChronoTime_t& {query}
+			+getExecutionMode() : ExecutionMode_t {query}
+			-mStatus : Status_t
+			+getTaskId() : TaskId_t {query}
+			-mMode : const ExecutionMode_t
+			-mTaskId : const TaskId_t
+			+getStatus() : int {query}
+			+setEndTime() : void
+			+setStatus(Status_t status) : void
+		}
+
 		class Task {
 			-mTaskConfiguration : std::vector<TaskConfig>
+		}
+
+		enum Receipt::Status_t {
+			FAIL
+			OK
 		}
 
 		enum TaskName {
@@ -231,7 +256,7 @@ cmder.cb.Callback::Message_t *-- cmder.CallbackMessageType_t
 cmder.tst.CallbackTest *-- cmder.cb.Callback
 
 
-.Receipt *-- cmder.ExecutionMode_t
+cmder.agent.Receipt *-- cmder.ExecutionMode_t
 
 
 cmder.srv.Server *-- cmder.Status
@@ -252,7 +277,7 @@ cmder.tst.ServerTest *-- cmder.srv.Server
 cmder.cb.Callback +-- cmder.cb.Callback::Message_t
 
 
-.Receipt +-- .Receipt::Status_t
+cmder.agent.Receipt +-- cmder.agent.Receipt::Status_t
 
 
 cmder.srv.Server +-- cmder.srv.Server::AgentInfo
