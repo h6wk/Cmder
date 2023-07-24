@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-22 22:50:35                              *
- * @LastEditDate          : 2023-07-24 16:07:11                              *
+ * @LastEditDate          : 2023-07-24 22:49:50                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -41,7 +41,7 @@ namespace cmder::tst
 
   TEST_F(ThreadPoolTest, TaskWithParam)
   {
-    constexpr int N = 1e7;
+    constexpr int N = 100;
     std::vector<int> nums(N);
 
     srand(time(nullptr));
@@ -72,6 +72,10 @@ namespace cmder::tst
         std::printf("Pass [%d, %d). \n", l, r); 
     }
 
+    // for (size_t i = 0; i < nums.size(); ++i) {
+    //   if (i % 25 == 0) std::cout << std::endl;
+    //   std::cout << nums[i] << " ";
+    // }
   }
     
 } // namespace cmder::tst

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-22 22:34:30                              *
- * @LastEditDate          : 2023-07-24 09:05:33                              *
+ * @LastEditDate          : 2023-07-25 00:17:25                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -16,6 +16,8 @@
 #include <vector>
 
 #include <Logger.hpp>
+
+#include <concepts>
 
 namespace cmder::tools {
 
@@ -41,6 +43,7 @@ namespace cmder::tools {
     /// @param ...args Arguments of the task
     /// @return Future that will contain the result
     template<class F, class... Args>
+    requires std::invocable<F, Args...>
     std::future<std::result_of_t<F(Args...)>> execute(F &&f, Args &&...args);
 
   private:
@@ -54,6 +57,7 @@ namespace cmder::tools {
   };
 
   template <class F, class... Args>
+  requires std::invocable<F, Args...>
   inline std::future<std::result_of_t<F(Args...)>> ThreadPool::execute(F &&f, Args &&...args)
   {
     LOG("Task accepted");
