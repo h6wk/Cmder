@@ -75,6 +75,7 @@ namespace cmder {
 		}
 
 		class ThreadPoolTest {
+			#mThreadPool : std::unique_ptr<ThreadPool>
 			#SetUp() : void
 			#{static} SetUpTestSuite() : void
 			#TearDown() : void
@@ -266,6 +267,9 @@ cmder.srv.Server::AgentInfo *-- cmder.cb.Callback
 
 
 cmder.tst.ServerTest *-- cmder.srv.Server
+
+
+cmder.tst.ThreadPoolTest *-- cmder.tools.ThreadPool
 
 
 

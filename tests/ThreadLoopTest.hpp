@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                          *
  * @CreatedDate           : 2023-07-22 22:50:41                              *
- * @LastEditDate          : 2023-07-22 23:00:47                              *
+ * @LastEditDate          : 2023-07-24 16:06:35                              *
  * @CopyRight             : GNU GPL                                          *
  ****************************************************************************/
 
@@ -40,7 +40,12 @@ namespace cmder::tst {
 
     // virtual void TearDown() will be called after each test is run. You should define it if there is cleanup work to do.
     virtual void TearDown() {
+      if (mThreadPool) {
+        mThreadPool.release();
+      }
     }
+
+    std::unique_ptr<ThreadPool> mThreadPool;
   };
 
 }
