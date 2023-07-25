@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-18 11:04:28                               *
+ * @LastEditDate          : 2023-07-25 22:12:25                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -66,9 +66,6 @@ namespace cmder::agent {
       MkSharedEnabler(Server& server, Callback::SharedPtr cb) : Agent(server, cb) {}
     };
     auto instance = std::make_shared<MkSharedEnabler>(server, callbackUser);
-    if (callbackUser) {
-      callbackUser->setOwner("<<User>>");
-    }
 
     return instance;
   }
@@ -160,8 +157,8 @@ namespace cmder::agent {
   , mConditionVariable()
   , mServer(server)
   , mCallbackUser(callbackUser)
-  , mCallbackAgent(std::make_shared<Callback>())
   , mDebugName(getNextAgentName())
+  , mCallbackAgent(std::make_shared<Callback>(mDebugName))
   {
     {
       std::lock_guard guard(mMutex);
@@ -169,7 +166,6 @@ namespace cmder::agent {
     }
 
     server.registerAgent(mDebugName, mCallbackAgent);
-    mCallbackAgent->setOwner(mDebugName);
 
     LOG("Agent " << mDebugName << " created. Status set to " << mStatus);
   }

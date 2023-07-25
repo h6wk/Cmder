@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-01 12:00:00                               *
- * @LastEditDate          : 2023-07-18 11:34:03                               *
+ * @LastEditDate          : 2023-07-25 22:12:42                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -110,9 +110,9 @@ namespace cmder::agent {
     Callback::WeakPtr mCallbackUser;          //< User's callback to send async responses
                                               //< Since this ia a weak pointer, agent doesn't own it!
 
-    Callback::SharedPtr mCallbackAgent;       //< Agent's callback to receive notifications and async responses from the server
-
     std::string mDebugName;                   //< To name (ID) for better logging
+
+    Callback::SharedPtr mCallbackAgent;       //< Agent's callback to receive notifications and async responses from the server
   };
 
   std::ostream& operator<<(std::ostream& ostr, const Status& status);

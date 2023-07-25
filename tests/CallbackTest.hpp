@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-16 00:03:05                               *
- * @LastEditDate          : 2023-07-16 22:33:07                               *
+ * @LastEditDate          : 2023-07-25 22:24:12                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -24,7 +24,7 @@ namespace cmder::tst {
     // Called before the first test in this test suite.
     static void SetUpTestSuite()
     {
-      sCallback = std::make_shared<Callback>();
+      sCallback = std::make_shared<Callback>("<<Test>>");
     }
 
     // Per-test-suite tear-down.

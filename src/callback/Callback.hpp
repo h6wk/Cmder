@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-03 12:00:00                               *
- * @LastEditDate          : 2023-07-18 11:34:43                               *
+ * @LastEditDate          : 2023-07-25 22:06:08                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -40,7 +40,7 @@ namespace cmder::cb {
       std::string mText;
     };
 
-    Callback();
+    explicit Callback(const std::string& owner);
     virtual ~Callback();
 
     /// @brief Add a new message into the callback's queue
@@ -69,7 +69,6 @@ namespace cmder::cb {
 
     friend std::ostream& operator<<(std::ostream& ostr, const Callback::SharedPtr& cb);
 
-    void setOwner(const std::string& owner);
   private:
 
     mutable std::mutex mMutex;                  //< Protect data containers against data race

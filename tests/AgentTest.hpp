@@ -25,7 +25,7 @@ namespace cmder::tst {
     // Called before the first test in this test suite.
     static void SetUpTestSuite()
     {
-      sCallback = std::make_shared<Callback>();
+      sCallback = std::make_shared<Callback>("<<User>>");
       sNoCallbackAgent = Agent::create(sServer, Callback::SharedPtr());
       sAsyncAgent = Agent::create(sServer, sCallback);
     }

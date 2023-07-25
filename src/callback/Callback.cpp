@@ -1,7 +1,7 @@
 /******************************************************************************
  * @Author                : h6wk<h6wking@gmail.com>                           *
  * @CreatedDate           : 2023-07-03 12:00:00                               *
- * @LastEditDate          : 2023-07-18 11:03:16                               *
+ * @LastEditDate          : 2023-07-25 22:20:36                               *
  * @CopyRight             : GNU GPL                                           *
  *****************************************************************************/
 
@@ -14,18 +14,18 @@
 
 namespace cmder::cb {
 
-  Callback::Callback()
+  Callback::Callback(const std::string& owner)
   : mMutex()
   , mConditionVariable()
-  , mOwnerName("N/A")
+  , mOwnerName(owner)
   , mMessages()
   {
   }
 
   Callback::~Callback()
   {
-    std::lock_guard guard(mMutex);
     LOG("");
+    std::lock_guard guard(mMutex);
     mMessages = {};
   }
 
@@ -41,9 +41,10 @@ namespace cmder::cb {
 
   void Callback::clear()
   {
-    std::lock_guard guard(mMutex);
     LOG("");
-//    mMessages.clear();
+    std::lock_guard guard(mMutex);
+    //std::queue<Message_t> emptyQ;
+    //std::swap(mMessages, emptyQ);
   }
 
   std::optional<Callback::Message_t> Callback::tryPop()
@@ -83,12 +84,6 @@ namespace cmder::cb {
   {
     std::lock_guard guard(mMutex);
     return mMessages.empty();
-  }
-
-  void Callback::setOwner(const std::string &owner)
-  {
-    std::lock_guard guard(mMutex);
-    mOwnerName = owner;
   }
 
   std::ostream& operator<<(std::ostream& ostr, const Callback::Message_t& msg)
