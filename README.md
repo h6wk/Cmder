@@ -8,10 +8,17 @@ There are three layers involved:
 * Server level
 The communication way between the layers are done either in **synchronous** (blocking the caller) or in **asynchronous** way (don't block the result will be submitted later once it is available).
 
-More details later.
+... More details later.
 
-# Build
-This is a small project. Visual Studio Code's task.json will be used to build the project.
+## Threadpool
+
+... More details later.
+
+## C++20 coroutines
+
+... More details later.
+
+# Build & IDE
 
 Extensions used:
 - Auto Header Plus v1.3.0 (Auto add header to a new file or existing file)
@@ -29,12 +36,38 @@ Extensions used:
 - PlantUML v2.17.5 (Rich PlantUML support for Visual Studio Code)
 - Svg Preview v2.8.3 (Preview for Svg files)
 
+This is a small project. ~~Visual Studio Code's tasks.json will be used to build the project.~~ The VS Code's tasks.json will be kept updated that can be used to build the project on Windows. The build with MSYS2 takes minutes, a more efficient build system (caching) is required. A Dockerfile is provided that will use a lightweight Debian distribution with bazel to build the project.
 
 ## Windows
-Install MSYS2. Follow https://code.visualstudio.com/docs/cpp/config-mingw to setup the developer environment.
+Install MSYS2. Follow https://code.visualstudio.com/docs/cpp/config-mingw to setup the developer environment. Pay attention to the tasks.json pathes and the installation folder of the mingw binaries.
 
-## Linux
-...
+
+## Running Debian in a Docker container
+
+The __Dockerfile__ is used to set up a linux developer environment for the project. Install docker package on Linux or Docker Desktop on Windows Docker Desktop that enables you to build and share containerized applications and microservices. Run the commands to get the image and start a container of it:
+
+```console
+$ docker build -t  IMAGENAME .
+```
+
+```console
+$ docker run -d -p 2222:22 --security-opt seccomp:unconfined -v .:/source --name IMAGENAME
+```
+
+### Dockerfile
+
+Base image: __Debian__ (bookworm)
+
+Packages:
+* g++, gdb, build-essentials
+* git
+* openssh-server
+* wget
+
+Additional binaries:
+- Bazelisk 1.17 copied into /usr/local/bin/bazel
+
+The content of the __Cmder__ project mapped into the /source folder (-v .:/source).
 
 # Design
 
