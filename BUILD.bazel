@@ -1,0 +1,6 @@
+genrule(
+    name="genrule_example",
+    srcs=[],
+    outs=["helloworld.txt"],
+    cmd="sleep 3s && echo 'Hello World' > $@",
+)

@@ -69,6 +69,25 @@ Additional binaries:
 
 The content of the __Cmder__ project mapped into the /source folder (-v .:/source).
 
+## Bazel
+
+The __Dockerfile__ downloads and installs the __bazelisk__ to the Debian image. The bazel build environment is defined by the configuration files checked in the GIT repository.
+
+* __.bazelversion__: the bazel version to use
+* __WORKSPACE.bazel__: the artifacts that are added to the build process
+* __BUILD.bazel__: the build targets
+
+Get the bazel version (downloads from Google Cloud if missing):
+```console
+$ bazel --version
+```
+
+Build everything:
+```console
+$ bazel build //...
+```
+
+
 # Design
 
 ## Class diagram

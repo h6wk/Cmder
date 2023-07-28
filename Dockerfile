@@ -16,6 +16,9 @@ RUN apt-get install -y libopenblas-dev liblapack-dev python3-dev \
 # install wget
 RUN apt-get install -y wget
 
+# install gtest
+RUN apt-get install libgtest-dev
+
 # configure SSH for communication with Visual Studio Code
 RUN mkdir -p /var/run/sshd
 

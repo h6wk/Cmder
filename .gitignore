@@ -2,3 +2,7 @@ CmderTest.exe
 todo.txt
 external/plantuml.1.2021.10.jar
 external/plantuml-1.2022.7.jar
+bazel-bin
+bazel-out
+bazel-source
+bazel-testlogs
